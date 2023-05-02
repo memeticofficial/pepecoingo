@@ -123,7 +123,7 @@ func Test_Completion(t *testing.T) {
 		require.NoError(syncer.Wait(context.Background()))
 		require.NoError(err)
 		syncer.workLock.Lock()
-		require.Equal(0, syncer.unprocessedWork.Len())
+		require.Zero(syncer.unprocessedWork.Len())
 		require.Equal(1, syncer.processedWork.Len())
 		syncer.workLock.Unlock()
 	}
@@ -1088,7 +1088,7 @@ func Test_Sync_UpdateSyncTarget(t *testing.T) {
 	<-gotSignalChan
 
 	require.Equal(newSyncRoot, m.config.TargetRoot)
-	require.Equal(0, m.processedWork.Len())
+	require.Zero(m.processedWork.Len())
 	require.Equal(1, m.unprocessedWork.Len())
 }
 
