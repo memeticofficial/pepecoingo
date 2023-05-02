@@ -659,7 +659,7 @@ func Test_Trie_ChainDeletion(t *testing.T) {
 	require.NoError(newTrie.(*trieView).calculateNodeIDs(context.Background()))
 	root, err := newTrie.getEditableNode(EmptyPath)
 	require.NoError(err)
-	require.Equal(1, len(root.children))
+	require.Len(root.children, 1)
 
 	require.NoError(newTrie.Remove(context.Background(), []byte("k")))
 	require.NoError(newTrie.Remove(context.Background(), []byte("ke")))
@@ -669,7 +669,7 @@ func Test_Trie_ChainDeletion(t *testing.T) {
 	root, err = newTrie.getEditableNode(EmptyPath)
 	require.NoError(err)
 	// since all values have been deleted, the nodes should have been cleaned up
-	require.Equal(0, len(root.children))
+	require.Empty(root.children)
 }
 
 func Test_Trie_Invalidate_Children_On_Edits(t *testing.T) {
@@ -747,15 +747,15 @@ func Test_Trie_NodeCollapse(t *testing.T) {
 	require.NoError(trie.(*trieView).calculateNodeIDs(context.Background()))
 	root, err := trie.getEditableNode(EmptyPath)
 	require.NoError(err)
-	require.Equal(1, len(root.children))
+	require.Len(root.children, 1)
 
 	root, err = trie.getEditableNode(EmptyPath)
 	require.NoError(err)
-	require.Equal(1, len(root.children))
+	require.Len(root.children, 1)
 
 	firstNode, err := trie.getEditableNode(root.getSingleChildPath())
 	require.NoError(err)
-	require.Equal(1, len(firstNode.children))
+	require.Len(firstNode.children, 1)
 
 	// delete the middle values
 	require.NoError(trie.Remove(context.Background(), []byte("k")))
@@ -766,11 +766,11 @@ func Test_Trie_NodeCollapse(t *testing.T) {
 
 	root, err = trie.getEditableNode(EmptyPath)
 	require.NoError(err)
-	require.Equal(1, len(root.children))
+	require.Len(root.children, 1)
 
 	firstNode, err = trie.getEditableNode(root.getSingleChildPath())
 	require.NoError(err)
-	require.Equal(2, len(firstNode.children))
+	require.Len(firstNode.children, 2)
 }
 
 func Test_Trie_MultipleStates(t *testing.T) {
