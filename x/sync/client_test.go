@@ -45,8 +45,7 @@ func sendRangeRequest(
 	handler := NewNetworkServer(sender, db, logging.NoLog{})
 	clientNodeID, serverNodeID := ids.GenerateTestNodeID(), ids.GenerateTestNodeID()
 	networkClient := NewNetworkClient(sender, clientNodeID, 1, logging.NoLog{})
-	err := networkClient.Connected(context.Background(), serverNodeID, version.CurrentApp)
-	require.NoError(err)
+	require.NoError(networkClient.Connected(context.Background(), serverNodeID, version.CurrentApp))
 	client := NewClient(&ClientConfig{
 		NetworkClient: networkClient,
 		Metrics:       &mockMetrics{},
@@ -75,8 +74,7 @@ func sendRangeRequest(
 			wg.Add(1)
 			go func() {
 				defer wg.Done()
-				err := handler.AppRequest(ctx, clientNodeID, requestID, deadline, requestBytes)
-				require.NoError(err)
+				require.NoError(handler.AppRequest(ctx, clientNodeID, requestID, deadline, requestBytes))
 			}() // should be on a goroutine so the test can make progress.
 			return nil
 		},
@@ -301,8 +299,7 @@ func sendChangeRequest(
 	handler := NewNetworkServer(sender, db, logging.NoLog{})
 	clientNodeID, serverNodeID := ids.GenerateTestNodeID(), ids.GenerateTestNodeID()
 	networkClient := NewNetworkClient(sender, clientNodeID, 1, logging.NoLog{})
-	err := networkClient.Connected(context.Background(), serverNodeID, version.CurrentApp)
-	require.NoError(err)
+	require.NoError(networkClient.Connected(context.Background(), serverNodeID, version.CurrentApp))
 	client := NewClient(&ClientConfig{
 		NetworkClient: networkClient,
 		Metrics:       &mockMetrics{},
@@ -331,8 +328,7 @@ func sendChangeRequest(
 			wg.Add(1)
 			go func() {
 				defer wg.Done()
-				err := handler.AppRequest(ctx, clientNodeID, requestID, deadline, requestBytes)
-				require.NoError(err)
+				require.NoError(handler.AppRequest(ctx, clientNodeID, requestID, deadline, requestBytes))
 			}() // should be on a goroutine so the test can make progress.
 			return nil
 		},

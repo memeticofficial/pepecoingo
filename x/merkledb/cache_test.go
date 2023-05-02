@@ -28,8 +28,7 @@ func TestNewOnEvictCache(t *testing.T) {
 	require.Zero(cache.fifo.Len())
 	// Can't test function equality directly so do this
 	// to make sure it was assigned correctly
-	err := cache.onEviction(0)
-	require.NoError(err)
+	require.NoError(cache.onEviction(0))
 	require.True(called)
 }
 
@@ -53,8 +52,7 @@ func TestOnEvictCacheNoOnEvictionError(t *testing.T) {
 	require.False(ok)
 
 	// Put key
-	err := cache.Put(0, 0)
-	require.NoError(err)
+	require.NoError(cache.Put(0, 0))
 	require.Equal(1, cache.fifo.Len())
 
 	// Get key
@@ -68,8 +66,7 @@ func TestOnEvictCacheNoOnEvictionError(t *testing.T) {
 
 	// Fill the cache
 	for i := 1; i < maxSize; i++ {
-		err := cache.Put(i, i)
-		require.NoError(err)
+		require.NoError(cache.Put(i, i))
 		require.Equal(i+1, cache.fifo.Len())
 	}
 	require.Empty(evicted)
@@ -174,8 +171,7 @@ func TestOnEvictCacheOnEvictionError(t *testing.T) {
 
 	// Fill the cache
 	for i := 0; i < maxSize; i++ {
-		err := cache.Put(i, i)
-		require.NoError(err)
+		require.NoError(cache.Put(i, i))
 		require.Equal(i+1, cache.fifo.Len())
 	}
 
@@ -183,8 +179,7 @@ func TestOnEvictCacheOnEvictionError(t *testing.T) {
 
 	// Put another key. This should evict the first key (0)
 	// and return an error since 0 is even.
-	err := cache.Put(maxSize, maxSize)
-	require.ErrorIs(err, errTest)
+	require.ErrorIs(cache.Put(maxSize, maxSize), errTest)
 
 	// Cache has [1,2]
 	require.Equal(evicted, []int{0})
@@ -197,8 +192,7 @@ func TestOnEvictCacheOnEvictionError(t *testing.T) {
 	require.True(ok)
 
 	// Flush the cache. Should error on last element (2).
-	err = cache.Flush()
-	require.ErrorIs(err, errTest)
+	require.ErrorIs(cache.Flush(), errTest)
 
 	// Should still be empty.
 	require.Zero(cache.fifo.Len())

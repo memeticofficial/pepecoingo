@@ -21,8 +21,7 @@ func Test_Node_Marshal(t *testing.T) {
 	childNode.setValue(Some([]byte("value")))
 	require.NotNil(childNode)
 
-	err := childNode.calculateID(&mockMetrics{})
-	require.NoError(err)
+	require.NoError(childNode.calculateID(&mockMetrics{}))
 	root.addChild(childNode)
 
 	data, err := root.marshal()
@@ -49,8 +48,7 @@ func Test_Node_Marshal_Errors(t *testing.T) {
 	childNode1.setValue(Some([]byte("value1")))
 	require.NotNil(childNode1)
 
-	err := childNode1.calculateID(&mockMetrics{})
-	require.NoError(err)
+	require.NoError(childNode1.calculateID(&mockMetrics{}))
 	root.addChild(childNode1)
 
 	fullpath = newPath([]byte{237})

@@ -500,8 +500,7 @@ func TestDatabaseCommitChanges(t *testing.T) {
 	invalidView, err := db.NewView()
 	require.NoError(err)
 	invalidView.(*trieView).invalidate()
-	err = invalidView.commitToDB(context.Background())
-	require.ErrorIs(err, ErrInvalid)
+	require.ErrorIs(invalidView.commitToDB(context.Background()), ErrInvalid)
 
 	// Add key-value pairs to the database
 	require.NoError(db.Put([]byte{1}, []byte{1}))
@@ -759,13 +758,11 @@ func runRandDBTest(require *require.Assertions, r *rand.Rand, rt randTest) {
 		require.LessOrEqual(i, len(rt))
 		switch step.op {
 		case opUpdate:
-			err := currentBatch.Put(step.key, step.value)
-			require.NoError(err)
+			require.NoError(currentBatch.Put(step.key, step.value))
 			currentValues[newPath(step.key)] = step.value
 			delete(deleteValues, newPath(step.key))
 		case opDelete:
-			err := currentBatch.Delete(step.key)
-			require.NoError(err)
+			require.NoError(currentBatch.Delete(step.key))
 			deleteValues[newPath(step.key)] = struct{}{}
 			delete(currentValues, newPath(step.key))
 		case opGenerateRangeProof:
@@ -776,13 +773,12 @@ func runRandDBTest(require *require.Assertions, r *rand.Rand, rt randTest) {
 			}
 			rangeProof, err := db.GetRangeProofAtRoot(context.Background(), root, step.key, step.value, 100)
 			require.NoError(err)
-			err = rangeProof.Verify(
+			require.NoError(rangeProof.Verify(
 				context.Background(),
 				step.key,
 				step.value,
 				root,
-			)
-			require.NoError(err)
+			))
 			require.LessOrEqual(len(rangeProof.KeyValues), 100)
 		case opGenerateChangeProof:
 			root, err := db.GetMerkleRoot(context.Background())
@@ -798,14 +794,13 @@ func runRandDBTest(require *require.Assertions, r *rand.Rand, rt randTest) {
 			require.NoError(err)
 			changeProofDB, err := getBasicDB()
 			require.NoError(err)
-			err = changeProof.Verify(
+			require.NoError(changeProof.Verify(
 				context.Background(),
 				changeProofDB,
 				step.key,
 				step.value,
 				root,
-			)
-			require.NoError(err)
+			))
 			require.LessOrEqual(len(changeProof.KeyChanges), 100)
 		case opWriteBatch:
 			oldRoot, err := db.GetMerkleRoot(context.Background())
@@ -858,8 +853,7 @@ func runRandDBTest(require *require.Assertions, r *rand.Rand, rt randTest) {
 			require.NoError(err)
 			localTrie := Trie(dbTrie)
 			for key, value := range values {
-				err := localTrie.Insert(context.Background(), key.Serialize().Value, value)
-				require.NoError(err)
+				require.NoError(localTrie.Insert(context.Background(), key.Serialize().Value, value))
 			}
 			calculatedRoot, err := localTrie.GetMerkleRoot(context.Background())
 			require.NoError(err)

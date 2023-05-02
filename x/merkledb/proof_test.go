@@ -67,8 +67,7 @@ func Test_Proof_Empty(t *testing.T) {
 	require := require.New(t)
 
 	proof := &Proof{}
-	err := proof.Verify(context.Background(), ids.Empty)
-	require.ErrorIs(err, ErrNoProof)
+	require.ErrorIs(proof.Verify(context.Background(), ids.Empty), ErrNoProof)
 }
 
 func Test_Proof_MissingValue(t *testing.T) {
@@ -243,13 +242,12 @@ func Test_RangeProof_Extra_Value(t *testing.T) {
 	require.NoError(err)
 	require.NotNil(proof)
 
-	err = proof.Verify(
+	require.NoError(proof.Verify(
 		context.Background(),
 		[]byte{1},
 		[]byte{5, 5},
 		db.root.id,
-	)
-	require.NoError(err)
+	))
 
 	proof.KeyValues = append(proof.KeyValues, KeyValue{Key: []byte{5}, Value: []byte{5}})
 
@@ -376,8 +374,7 @@ func Test_Proof(t *testing.T) {
 
 	proof.Path[0].ValueOrHash = Some([]byte("value2"))
 
-	err = proof.Verify(context.Background(), expectedRootID)
-	require.ErrorIs(err, ErrInvalidProof)
+	require.ErrorIs(proof.Verify(context.Background(), expectedRootID), ErrInvalidProof)
 }
 
 func Test_RangeProof_Syntactic_Verify(t *testing.T) {
@@ -578,13 +575,12 @@ func Test_RangeProof(t *testing.T) {
 	// only a single node here since others are duplicates in endproof
 	require.Equal([]byte{1}, proof.StartProof[0].KeyPath.Value)
 
-	err = proof.Verify(
+	require.NoError(proof.Verify(
 		context.Background(),
 		[]byte{1},
 		[]byte{3, 5},
 		db.root.id,
-	)
-	require.NoError(err)
+	))
 }
 
 func Test_RangeProof_BadBounds(t *testing.T) {
@@ -631,13 +627,12 @@ func Test_RangeProof_NilStart(t *testing.T) {
 	require.Equal(SerializedPath{Value: []uint8{0x6b, 0x65, 0x79, 0x30}, NibbleLength: 7}, proof.EndProof[1].KeyPath)
 	require.Equal(newPath([]byte("")).Serialize(), proof.EndProof[0].KeyPath)
 
-	err = proof.Verify(
+	require.NoError(proof.Verify(
 		context.Background(),
 		nil,
 		[]byte("key35"),
 		db.root.id,
-	)
-	require.NoError(err)
+	))
 }
 
 func Test_RangeProof_NilEnd(t *testing.T) {
@@ -666,13 +661,12 @@ func Test_RangeProof_NilEnd(t *testing.T) {
 	require.Equal([]byte{0}, proof.EndProof[1].KeyPath.Value)
 	require.Equal([]byte{2}, proof.EndProof[2].KeyPath.Value)
 
-	err = proof.Verify(
+	require.NoError(proof.Verify(
 		context.Background(),
 		[]byte{1},
 		nil,
 		db.root.id,
-	)
-	require.NoError(err)
+	))
 }
 
 func Test_RangeProof_EmptyValues(t *testing.T) {
@@ -709,13 +703,12 @@ func Test_RangeProof_EmptyValues(t *testing.T) {
 	require.Equal(newPath([]byte("key2")).Serialize(), proof.EndProof[2].KeyPath)
 	require.Equal(newPath([]byte{}).Serialize(), proof.EndProof[0].KeyPath)
 
-	err = proof.Verify(
+	require.NoError(proof.Verify(
 		context.Background(),
 		[]byte("key1"),
 		[]byte("key2"),
 		db.root.id,
-	)
-	require.NoError(err)
+	))
 }
 
 func Test_RangeProof_Marshal_Nil(t *testing.T) {
@@ -1308,8 +1301,6 @@ func Test_ChangeProof_Syntactic_Verify(t *testing.T) {
 }
 
 func TestVerifyKeyValues(t *testing.T) {
-	require := require.New(t)
-
 	type test struct {
 		name        string
 		start       []byte
@@ -1380,15 +1371,14 @@ func TestVerifyKeyValues(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			err := verifyKeyValues(tt.kvs, tt.start, tt.end)
-			require.ErrorIs(err, tt.expectedErr)
+			require := require.New(t)
+
+			require.ErrorIs(verifyKeyValues(tt.kvs, tt.start, tt.end), tt.expectedErr)
 		})
 	}
 }
 
 func TestVerifyProofPath(t *testing.T) {
-	require := require.New(t)
-
 	type test struct {
 		name        string
 		path        []ProofNode
@@ -1517,8 +1507,9 @@ func TestVerifyProofPath(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			err := verifyProofPath(tt.path, newPath(tt.proofKey))
-			require.ErrorIs(err, tt.expectedErr)
+			require := require.New(t)
+
+			require.ErrorIs(verifyProofPath(tt.path, newPath(tt.proofKey)), tt.expectedErr)
 		})
 	}
 }
