@@ -138,8 +138,7 @@ func FuzzCodecBool(f *testing.F) {
 
 			// Encoding [got] should be the same as [b].
 			var buf bytes.Buffer
-			err = codec.encodeBool(&buf, got)
-			require.NoError(err)
+			require.NoError(codec.encodeBool(&buf, got))
 			bufBytes := buf.Bytes()
 			require.Len(bufBytes, numRead)
 			require.Equal(b[:numRead], bufBytes)
@@ -167,8 +166,7 @@ func FuzzCodecInt(f *testing.F) {
 
 			// Encoding [got] should be the same as [b].
 			var buf bytes.Buffer
-			err = codec.encodeInt(&buf, got)
-			require.NoError(err)
+			require.NoError(codec.encodeInt(&buf, got))
 			bufBytes := buf.Bytes()
 			require.Len(bufBytes, numRead)
 			require.Equal(b[:numRead], bufBytes)
@@ -196,8 +194,7 @@ func FuzzCodecSerializedPath(f *testing.F) {
 
 			// Encoding [got] should be the same as [b].
 			var buf bytes.Buffer
-			err = codec.encodeSerializedPath(got, &buf)
-			require.NoError(err)
+			require.NoError(codec.encodeSerializedPath(got, &buf))
 			bufBytes := buf.Bytes()
 			require.Len(bufBytes, numRead)
 			require.Equal(b[:numRead], bufBytes)
@@ -443,6 +440,8 @@ func FuzzCodecRangeProofDeterministic(f *testing.F) {
 			numEndProofNodes uint,
 			numKeyValues uint,
 		) {
+			require := require.New(t)
+
 			r := rand.New(rand.NewSource(int64(randSeed))) // #nosec G404
 
 			var rootID ids.ID
@@ -477,19 +476,19 @@ func FuzzCodecRangeProofDeterministic(f *testing.F) {
 			}
 
 			proofBytes, err := Codec.EncodeRangeProof(Version, &proof)
-			require.NoError(t, err)
+			require.NoError(err)
 
 			var gotProof RangeProof
 			_, err = Codec.DecodeRangeProof(proofBytes, &gotProof)
-			require.NoError(t, err)
+			require.NoError(err)
 
 			nilEmptySlices(&proof)
 			nilEmptySlices(&gotProof)
-			require.Equal(t, proof, gotProof)
+			require.Equal(proof, gotProof)
 
 			proofBytes2, err := Codec.EncodeRangeProof(Version, &gotProof)
-			require.NoError(t, err)
-			require.Equal(t, proofBytes, proofBytes2)
+			require.NoError(err)
+			require.Equal(proofBytes, proofBytes2)
 		},
 	)
 }
@@ -601,8 +600,7 @@ func TestCodec_DecodeChangeProof(t *testing.T) {
 
 	// Put key-values length of -1
 	proofBytesBuf := bytes.NewBuffer(proofBytes)
-	err = Codec.(*codecImpl).encodeInt(proofBytesBuf, -1)
-	require.NoError(err)
+	require.NoError(Codec.(*codecImpl).encodeInt(proofBytesBuf, -1))
 
 	_, err = Codec.DecodeChangeProof(proofBytesBuf.Bytes(), &parsedProof)
 	require.ErrorIs(err, errNegativeNumKeyValues)
@@ -634,8 +632,7 @@ func TestCodec_DecodeRangeProof(t *testing.T) {
 	proofBytes = proofBytes[:len(proofBytes)-minVarIntLen]
 	proofBytesBuf := bytes.NewBuffer(proofBytes)
 	// Put key-value length (-1) at end
-	err = Codec.(*codecImpl).encodeInt(proofBytesBuf, -1)
-	require.NoError(err)
+	require.NoError(Codec.(*codecImpl).encodeInt(proofBytesBuf, -1))
 
 	_, err = Codec.DecodeRangeProof(proofBytesBuf.Bytes(), &parsedProof)
 	require.ErrorIs(err, errNegativeNumKeyValues)
@@ -666,8 +663,7 @@ func TestCodec_DecodeDBNode(t *testing.T) {
 	nodeBytes = nodeBytes[:len(nodeBytes)-minVarIntLen]
 	proofBytesBuf := bytes.NewBuffer(nodeBytes)
 	// Put num children -1 at end
-	err = Codec.(*codecImpl).encodeInt(proofBytesBuf, -1)
-	require.NoError(err)
+	require.NoError(Codec.(*codecImpl).encodeInt(proofBytesBuf, -1))
 
 	_, err = Codec.decodeDBNode(proofBytesBuf.Bytes(), &parsedDBNode)
 	require.ErrorIs(err, errNegativeNumChildren)
@@ -677,8 +673,7 @@ func TestCodec_DecodeDBNode(t *testing.T) {
 	nodeBytes = nodeBytes[:len(nodeBytes)-minVarIntLen]
 	proofBytesBuf = bytes.NewBuffer(nodeBytes)
 	// Put num children NodeBranchFactor+1 at end
-	err = Codec.(*codecImpl).encodeInt(proofBytesBuf, NodeBranchFactor+1)
-	require.NoError(err)
+	require.NoError(Codec.(*codecImpl).encodeInt(proofBytesBuf, NodeBranchFactor+1))
 
 	_, err = Codec.decodeDBNode(proofBytesBuf.Bytes(), &parsedDBNode)
 	require.ErrorIs(err, errTooManyChildren)
