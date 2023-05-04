@@ -6,8 +6,8 @@ package constants
 // Const variables to be exported
 const (
 	// PlatformName exports the name of the platform
-	PlatformName = "avalanche"
+	PlatformName = "pepecoin"
 
-	// AppName exports the name of the avalanche application
-	AppName = "avalanchego"
+	// AppName exports the name of the pepecoin application
+	AppName = "pepecoingo"
 )

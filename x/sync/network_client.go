@@ -14,11 +14,11 @@ import (
 
 	"golang.org/x/sync/semaphore"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/snow/engine/common"
-	"github.com/ava-labs/avalanchego/utils/logging"
-	"github.com/ava-labs/avalanchego/utils/set"
-	"github.com/ava-labs/avalanchego/version"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/snow/engine/common"
+	"github.com/memeticofficial/pepecoingo/utils/logging"
+	"github.com/memeticofficial/pepecoingo/utils/set"
+	"github.com/memeticofficial/pepecoingo/version"
 )
 
 // Minimum amount of time to handle a request
@@ -111,7 +111,7 @@ func (c *networkClient) AppResponse(_ context.Context, nodeID ids.NodeID, reques
 	return nil
 }
 
-// AppRequestFailed can be called by the avalanchego -> VM in following cases:
+// AppRequestFailed can be called by the pepecoingo -> VM in following cases:
 // - node is benched
 // - failed to send message to [nodeID] due to a network issue
 // - timeout

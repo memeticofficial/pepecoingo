@@ -19,14 +19,14 @@ import (
 	"golang.org/x/exp/maps"
 	"golang.org/x/exp/slices"
 
-	"github.com/ava-labs/avalanchego/database"
-	"github.com/ava-labs/avalanchego/database/prefixdb"
-	"github.com/ava-labs/avalanchego/database/versiondb"
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/trace"
-	"github.com/ava-labs/avalanchego/utils"
-	"github.com/ava-labs/avalanchego/utils/math"
-	"github.com/ava-labs/avalanchego/utils/set"
+	"github.com/memeticofficial/pepecoingo/database"
+	"github.com/memeticofficial/pepecoingo/database/prefixdb"
+	"github.com/memeticofficial/pepecoingo/database/versiondb"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/trace"
+	"github.com/memeticofficial/pepecoingo/utils"
+	"github.com/memeticofficial/pepecoingo/utils/math"
+	"github.com/memeticofficial/pepecoingo/utils/set"
 )
 
 const (

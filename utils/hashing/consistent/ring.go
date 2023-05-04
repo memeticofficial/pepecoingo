@@ -7,7 +7,7 @@ import (
 	"errors"
 	"sync"
 
-	"github.com/ava-labs/avalanchego/utils/hashing"
+	"github.com/memeticofficial/pepecoingo/utils/hashing"
 	"github.com/google/btree"
 )
 

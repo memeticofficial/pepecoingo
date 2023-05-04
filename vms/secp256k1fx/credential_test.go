@@ -8,10 +8,10 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ava-labs/avalanchego/codec"
-	"github.com/ava-labs/avalanchego/codec/linearcodec"
-	"github.com/ava-labs/avalanchego/utils/crypto/secp256k1"
-	"github.com/ava-labs/avalanchego/vms/components/verify"
+	"github.com/memeticofficial/pepecoingo/codec"
+	"github.com/memeticofficial/pepecoingo/codec/linearcodec"
+	"github.com/memeticofficial/pepecoingo/utils/crypto/secp256k1"
+	"github.com/memeticofficial/pepecoingo/vms/components/verify"
 )
 
 func TestCredentialVerify(t *testing.T) {

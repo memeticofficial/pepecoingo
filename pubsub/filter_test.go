@@ -8,11 +8,11 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ava-labs/avalanchego/api"
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/bloom"
-	"github.com/ava-labs/avalanchego/utils/constants"
-	"github.com/ava-labs/avalanchego/utils/formatting/address"
+	"github.com/memeticofficial/pepecoingo/api"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/utils/bloom"
+	"github.com/memeticofficial/pepecoingo/utils/constants"
+	"github.com/memeticofficial/pepecoingo/utils/formatting/address"
 )
 
 func TestAddAddressesParseAddresses(t *testing.T) {

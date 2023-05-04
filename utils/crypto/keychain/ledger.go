@@ -4,8 +4,8 @@
 package keychain
 
 import (
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/version"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/version"
 )
 
 // Ledger interface for the ledger wrapper

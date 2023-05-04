@@ -12,15 +12,15 @@ import (
 
 	"google.golang.org/protobuf/types/known/emptypb"
 
-	"github.com/ava-labs/avalanchego/vms/rpcchainvm/ghttp/gconn"
-	"github.com/ava-labs/avalanchego/vms/rpcchainvm/ghttp/greader"
-	"github.com/ava-labs/avalanchego/vms/rpcchainvm/ghttp/gwriter"
-	"github.com/ava-labs/avalanchego/vms/rpcchainvm/grpcutils"
+	"github.com/memeticofficial/pepecoingo/vms/rpcchainvm/ghttp/gconn"
+	"github.com/memeticofficial/pepecoingo/vms/rpcchainvm/ghttp/greader"
+	"github.com/memeticofficial/pepecoingo/vms/rpcchainvm/ghttp/gwriter"
+	"github.com/memeticofficial/pepecoingo/vms/rpcchainvm/grpcutils"
 
-	responsewriterpb "github.com/ava-labs/avalanchego/proto/pb/http/responsewriter"
-	readerpb "github.com/ava-labs/avalanchego/proto/pb/io/reader"
-	writerpb "github.com/ava-labs/avalanchego/proto/pb/io/writer"
-	connpb "github.com/ava-labs/avalanchego/proto/pb/net/conn"
+	responsewriterpb "github.com/memeticofficial/pepecoingo/proto/pb/http/responsewriter"
+	readerpb "github.com/memeticofficial/pepecoingo/proto/pb/io/reader"
+	writerpb "github.com/memeticofficial/pepecoingo/proto/pb/io/writer"
+	connpb "github.com/memeticofficial/pepecoingo/proto/pb/net/conn"
 )
 
 var (

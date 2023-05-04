@@ -4,9 +4,9 @@
 package peer
 
 import (
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/proto/pb/p2p"
-	"github.com/ava-labs/avalanchego/utils/ips"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/proto/pb/p2p"
+	"github.com/memeticofficial/pepecoingo/utils/ips"
 )
 
 // Network defines the interface that is used by a peer to help establish a well

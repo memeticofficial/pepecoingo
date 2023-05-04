@@ -21,68 +21,68 @@ import (
 
 	"go.uber.org/zap"
 
-	coreth "github.com/ava-labs/coreth/plugin/evm"
+	coreth "github.com/memeticofficial/coreth/plugin/evm"
 
-	"github.com/ava-labs/avalanchego/api/admin"
-	"github.com/ava-labs/avalanchego/api/auth"
-	"github.com/ava-labs/avalanchego/api/health"
-	"github.com/ava-labs/avalanchego/api/info"
-	"github.com/ava-labs/avalanchego/api/keystore"
-	"github.com/ava-labs/avalanchego/api/metrics"
-	"github.com/ava-labs/avalanchego/api/server"
-	"github.com/ava-labs/avalanchego/chains"
-	"github.com/ava-labs/avalanchego/chains/atomic"
-	"github.com/ava-labs/avalanchego/database"
-	"github.com/ava-labs/avalanchego/database/leveldb"
-	"github.com/ava-labs/avalanchego/database/manager"
-	"github.com/ava-labs/avalanchego/database/memdb"
-	"github.com/ava-labs/avalanchego/database/prefixdb"
-	"github.com/ava-labs/avalanchego/genesis"
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/indexer"
-	"github.com/ava-labs/avalanchego/ipcs"
-	"github.com/ava-labs/avalanchego/message"
-	"github.com/ava-labs/avalanchego/network"
-	"github.com/ava-labs/avalanchego/network/dialer"
-	"github.com/ava-labs/avalanchego/network/peer"
-	"github.com/ava-labs/avalanchego/network/throttling"
-	"github.com/ava-labs/avalanchego/snow"
-	"github.com/ava-labs/avalanchego/snow/engine/common"
-	"github.com/ava-labs/avalanchego/snow/networking/benchlist"
-	"github.com/ava-labs/avalanchego/snow/networking/router"
-	"github.com/ava-labs/avalanchego/snow/networking/timeout"
-	"github.com/ava-labs/avalanchego/snow/networking/tracker"
-	"github.com/ava-labs/avalanchego/snow/uptime"
-	"github.com/ava-labs/avalanchego/snow/validators"
-	"github.com/ava-labs/avalanchego/trace"
-	"github.com/ava-labs/avalanchego/utils"
-	"github.com/ava-labs/avalanchego/utils/constants"
-	"github.com/ava-labs/avalanchego/utils/crypto/bls"
-	"github.com/ava-labs/avalanchego/utils/filesystem"
-	"github.com/ava-labs/avalanchego/utils/hashing"
-	"github.com/ava-labs/avalanchego/utils/ips"
-	"github.com/ava-labs/avalanchego/utils/logging"
-	"github.com/ava-labs/avalanchego/utils/math/meter"
-	"github.com/ava-labs/avalanchego/utils/perms"
-	"github.com/ava-labs/avalanchego/utils/profiler"
-	"github.com/ava-labs/avalanchego/utils/resource"
-	"github.com/ava-labs/avalanchego/utils/set"
-	"github.com/ava-labs/avalanchego/utils/timer"
-	"github.com/ava-labs/avalanchego/utils/wrappers"
-	"github.com/ava-labs/avalanchego/version"
-	"github.com/ava-labs/avalanchego/vms"
-	"github.com/ava-labs/avalanchego/vms/avm"
-	"github.com/ava-labs/avalanchego/vms/nftfx"
-	"github.com/ava-labs/avalanchego/vms/platformvm"
-	"github.com/ava-labs/avalanchego/vms/platformvm/signer"
-	"github.com/ava-labs/avalanchego/vms/propertyfx"
-	"github.com/ava-labs/avalanchego/vms/registry"
-	"github.com/ava-labs/avalanchego/vms/rpcchainvm/runtime"
-	"github.com/ava-labs/avalanchego/vms/secp256k1fx"
+	"github.com/memeticofficial/pepecoingo/api/admin"
+	"github.com/memeticofficial/pepecoingo/api/auth"
+	"github.com/memeticofficial/pepecoingo/api/health"
+	"github.com/memeticofficial/pepecoingo/api/info"
+	"github.com/memeticofficial/pepecoingo/api/keystore"
+	"github.com/memeticofficial/pepecoingo/api/metrics"
+	"github.com/memeticofficial/pepecoingo/api/server"
+	"github.com/memeticofficial/pepecoingo/chains"
+	"github.com/memeticofficial/pepecoingo/chains/atomic"
+	"github.com/memeticofficial/pepecoingo/database"
+	"github.com/memeticofficial/pepecoingo/database/leveldb"
+	"github.com/memeticofficial/pepecoingo/database/manager"
+	"github.com/memeticofficial/pepecoingo/database/memdb"
+	"github.com/memeticofficial/pepecoingo/database/prefixdb"
+	"github.com/memeticofficial/pepecoingo/genesis"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/indexer"
+	"github.com/memeticofficial/pepecoingo/ipcs"
+	"github.com/memeticofficial/pepecoingo/message"
+	"github.com/memeticofficial/pepecoingo/network"
+	"github.com/memeticofficial/pepecoingo/network/dialer"
+	"github.com/memeticofficial/pepecoingo/network/peer"
+	"github.com/memeticofficial/pepecoingo/network/throttling"
+	"github.com/memeticofficial/pepecoingo/snow"
+	"github.com/memeticofficial/pepecoingo/snow/engine/common"
+	"github.com/memeticofficial/pepecoingo/snow/networking/benchlist"
+	"github.com/memeticofficial/pepecoingo/snow/networking/router"
+	"github.com/memeticofficial/pepecoingo/snow/networking/timeout"
+	"github.com/memeticofficial/pepecoingo/snow/networking/tracker"
+	"github.com/memeticofficial/pepecoingo/snow/uptime"
+	"github.com/memeticofficial/pepecoingo/snow/validators"
+	"github.com/memeticofficial/pepecoingo/trace"
+	"github.com/memeticofficial/pepecoingo/utils"
+	"github.com/memeticofficial/pepecoingo/utils/constants"
+	"github.com/memeticofficial/pepecoingo/utils/crypto/bls"
+	"github.com/memeticofficial/pepecoingo/utils/filesystem"
+	"github.com/memeticofficial/pepecoingo/utils/hashing"
+	"github.com/memeticofficial/pepecoingo/utils/ips"
+	"github.com/memeticofficial/pepecoingo/utils/logging"
+	"github.com/memeticofficial/pepecoingo/utils/math/meter"
+	"github.com/memeticofficial/pepecoingo/utils/perms"
+	"github.com/memeticofficial/pepecoingo/utils/profiler"
+	"github.com/memeticofficial/pepecoingo/utils/resource"
+	"github.com/memeticofficial/pepecoingo/utils/set"
+	"github.com/memeticofficial/pepecoingo/utils/timer"
+	"github.com/memeticofficial/pepecoingo/utils/wrappers"
+	"github.com/memeticofficial/pepecoingo/version"
+	"github.com/memeticofficial/pepecoingo/vms"
+	"github.com/memeticofficial/pepecoingo/vms/avm"
+	"github.com/memeticofficial/pepecoingo/vms/nftfx"
+	"github.com/memeticofficial/pepecoingo/vms/platformvm"
+	"github.com/memeticofficial/pepecoingo/vms/platformvm/signer"
+	"github.com/memeticofficial/pepecoingo/vms/propertyfx"
+	"github.com/memeticofficial/pepecoingo/vms/registry"
+	"github.com/memeticofficial/pepecoingo/vms/rpcchainvm/runtime"
+	"github.com/memeticofficial/pepecoingo/vms/secp256k1fx"
 
-	ipcsapi "github.com/ava-labs/avalanchego/api/ipcs"
-	avmconfig "github.com/ava-labs/avalanchego/vms/avm/config"
-	platformconfig "github.com/ava-labs/avalanchego/vms/platformvm/config"
+	ipcsapi "github.com/memeticofficial/pepecoingo/api/ipcs"
+	avmconfig "github.com/memeticofficial/pepecoingo/vms/avm/config"
+	platformconfig "github.com/memeticofficial/pepecoingo/vms/platformvm/config"
 )
 
 var (
@@ -93,7 +93,7 @@ var (
 	errShuttingDown  = errors.New("server shutting down")
 )
 
-// Node is an instance of an Avalanche node.
+// Node is an instance of an Pepecoin node.
 type Node struct {
 	Log          logging.Logger
 	VMFactoryLog logging.Logger
@@ -758,7 +758,7 @@ func (n *Node) initChainManager(avaxAssetID ids.ID) error {
 	return nil
 }
 
-// initVMs initializes the VMs Avalanche supports + any additional vms installed as plugins.
+// initVMs initializes the VMs Pepecoin supports + any additional vms installed as plugins.
 func (n *Node) initVMs() error {
 	n.Log.Info("initializing VMs")
 
@@ -780,7 +780,7 @@ func (n *Node) initVMs() error {
 		VMManager:    n.VMManager,
 	})
 
-	// Register the VMs that Avalanche supports
+	// Register the VMs that Pepecoin supports
 	errs := wrappers.Errs{}
 	errs.Add(
 		vmRegisterer.Register(context.TODO(), constants.PlatformVMID, &platformvm.Factory{

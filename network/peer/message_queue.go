@@ -9,11 +9,11 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/message"
-	"github.com/ava-labs/avalanchego/network/throttling"
-	"github.com/ava-labs/avalanchego/utils/buffer"
-	"github.com/ava-labs/avalanchego/utils/logging"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/message"
+	"github.com/memeticofficial/pepecoingo/network/throttling"
+	"github.com/memeticofficial/pepecoingo/utils/buffer"
+	"github.com/memeticofficial/pepecoingo/utils/logging"
 )
 
 const initialQueueSize = 64

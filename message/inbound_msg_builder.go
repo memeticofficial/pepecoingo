@@ -6,9 +6,9 @@ package message
 import (
 	"time"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/proto/pb/p2p"
-	"github.com/ava-labs/avalanchego/utils/timer/mockable"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/proto/pb/p2p"
+	"github.com/memeticofficial/pepecoingo/utils/timer/mockable"
 )
 
 var _ InboundMsgBuilder = (*inMsgBuilder)(nil)

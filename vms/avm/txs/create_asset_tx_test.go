@@ -8,13 +8,13 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/constants"
-	"github.com/ava-labs/avalanchego/utils/units"
-	"github.com/ava-labs/avalanchego/vms/avm/fxs"
-	"github.com/ava-labs/avalanchego/vms/components/avax"
-	"github.com/ava-labs/avalanchego/vms/components/verify"
-	"github.com/ava-labs/avalanchego/vms/secp256k1fx"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/utils/constants"
+	"github.com/memeticofficial/pepecoingo/utils/units"
+	"github.com/memeticofficial/pepecoingo/vms/avm/fxs"
+	"github.com/memeticofficial/pepecoingo/vms/components/avax"
+	"github.com/memeticofficial/pepecoingo/vms/components/verify"
+	"github.com/memeticofficial/pepecoingo/vms/secp256k1fx"
 )
 
 func TestCreateAssetTxSerialization(t *testing.T) {

@@ -6,9 +6,9 @@ package snowman
 import (
 	"context"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/snow/consensus/snowman"
-	"github.com/ava-labs/avalanchego/utils/set"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/snow/consensus/snowman"
+	"github.com/memeticofficial/pepecoingo/utils/set"
 )
 
 // issuer issues [blk] into to consensus after its dependencies are met.

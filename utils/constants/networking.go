@@ -7,8 +7,8 @@ import (
 	"math"
 	"time"
 
-	"github.com/ava-labs/avalanchego/utils/compression"
-	"github.com/ava-labs/avalanchego/utils/units"
+	"github.com/memeticofficial/pepecoingo/utils/compression"
+	"github.com/memeticofficial/pepecoingo/utils/units"
 )
 
 // Const variables to be exported

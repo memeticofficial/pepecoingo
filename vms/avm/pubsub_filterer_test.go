@@ -9,11 +9,11 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/pubsub"
-	"github.com/ava-labs/avalanchego/vms/avm/txs"
-	"github.com/ava-labs/avalanchego/vms/components/avax"
-	"github.com/ava-labs/avalanchego/vms/secp256k1fx"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/pubsub"
+	"github.com/memeticofficial/pepecoingo/vms/avm/txs"
+	"github.com/memeticofficial/pepecoingo/vms/components/avax"
+	"github.com/memeticofficial/pepecoingo/vms/secp256k1fx"
 )
 
 type mockFilter struct {

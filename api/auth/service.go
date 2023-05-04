@@ -8,7 +8,7 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/ava-labs/avalanchego/api"
+	"github.com/memeticofficial/pepecoingo/api"
 )
 
 // Service that serves the Auth API functionality.

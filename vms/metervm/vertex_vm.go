@@ -8,14 +8,14 @@ import (
 
 	"github.com/prometheus/client_golang/prometheus"
 
-	"github.com/ava-labs/avalanchego/api/metrics"
-	"github.com/ava-labs/avalanchego/database/manager"
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/snow"
-	"github.com/ava-labs/avalanchego/snow/consensus/snowstorm"
-	"github.com/ava-labs/avalanchego/snow/engine/avalanche/vertex"
-	"github.com/ava-labs/avalanchego/snow/engine/common"
-	"github.com/ava-labs/avalanchego/utils/timer/mockable"
+	"github.com/memeticofficial/pepecoingo/api/metrics"
+	"github.com/memeticofficial/pepecoingo/database/manager"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/snow"
+	"github.com/memeticofficial/pepecoingo/snow/consensus/snowstorm"
+	"github.com/memeticofficial/pepecoingo/snow/engine/pepecoin/vertex"
+	"github.com/memeticofficial/pepecoingo/snow/engine/common"
+	"github.com/memeticofficial/pepecoingo/utils/timer/mockable"
 )
 
 var (

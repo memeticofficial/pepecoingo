@@ -9,12 +9,12 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/crypto/bls"
-	"github.com/ava-labs/avalanchego/utils/formatting"
-	"github.com/ava-labs/avalanchego/utils/math"
-	"github.com/ava-labs/avalanchego/utils/sampler"
-	"github.com/ava-labs/avalanchego/utils/set"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/utils/crypto/bls"
+	"github.com/memeticofficial/pepecoingo/utils/formatting"
+	"github.com/memeticofficial/pepecoingo/utils/math"
+	"github.com/memeticofficial/pepecoingo/utils/sampler"
+	"github.com/memeticofficial/pepecoingo/utils/set"
 )
 
 var (

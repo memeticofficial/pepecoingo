@@ -6,8 +6,8 @@ package queue
 import (
 	"context"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/set"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/utils/set"
 )
 
 // Job defines the interface required to be placed on the job queue.

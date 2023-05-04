@@ -4,8 +4,8 @@
 package blocks
 
 import (
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/hashing"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/utils/hashing"
 )
 
 // CommonBlock contains fields and methods common to all blocks in this VM.

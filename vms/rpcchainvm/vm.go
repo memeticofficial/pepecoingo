@@ -16,14 +16,14 @@ import (
 
 	healthpb "google.golang.org/grpc/health/grpc_health_v1"
 
-	"github.com/ava-labs/avalanchego/snow/engine/snowman/block"
-	"github.com/ava-labs/avalanchego/version"
-	"github.com/ava-labs/avalanchego/vms/rpcchainvm/grpcutils"
-	"github.com/ava-labs/avalanchego/vms/rpcchainvm/gruntime"
-	"github.com/ava-labs/avalanchego/vms/rpcchainvm/runtime"
+	"github.com/memeticofficial/pepecoingo/snow/engine/snowman/block"
+	"github.com/memeticofficial/pepecoingo/version"
+	"github.com/memeticofficial/pepecoingo/vms/rpcchainvm/grpcutils"
+	"github.com/memeticofficial/pepecoingo/vms/rpcchainvm/gruntime"
+	"github.com/memeticofficial/pepecoingo/vms/rpcchainvm/runtime"
 
-	vmpb "github.com/ava-labs/avalanchego/proto/pb/vm"
-	runtimepb "github.com/ava-labs/avalanchego/proto/pb/vm/runtime"
+	vmpb "github.com/memeticofficial/pepecoingo/proto/pb/vm"
+	runtimepb "github.com/memeticofficial/pepecoingo/proto/pb/vm/runtime"
 )
 
 const defaultRuntimeDialTimeout = 5 * time.Second

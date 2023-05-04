@@ -1,7 +1,7 @@
-module github.com/ava-labs/avalanchego
+module github.com/memeticofficial/pepecoingo
 
 // Changes to the minimum golang version must also be replicated in
-// scripts/build_avalanche.sh
+// scripts/build_pepecoin.sh
 // scripts/local.Dockerfile
 // Dockerfile
 // README.md
@@ -12,9 +12,6 @@ require (
 	github.com/DataDog/zstd v1.5.2
 	github.com/Microsoft/go-winio v0.5.2
 	github.com/NYTimes/gziphandler v1.1.1
-	github.com/ava-labs/avalanche-network-runner-sdk v0.3.0
-	github.com/ava-labs/coreth v0.12.1-rc.0
-	github.com/ava-labs/ledger-avalanche/go v0.0.0-20230105152938-00a24d05a8c7
 	github.com/btcsuite/btcd/btcutil v1.1.3
 	github.com/decred/dcrd/dcrec/secp256k1/v4 v4.1.0
 	github.com/golang-jwt/jwt/v4 v4.3.0
@@ -28,6 +25,9 @@ require (
 	github.com/huin/goupnp v1.0.3
 	github.com/jackpal/gateway v1.0.6
 	github.com/jackpal/go-nat-pmp v1.0.2
+	github.com/memeticofficial/coreth v0.12.2-0.20230504133037-a6dbe27a39d2
+	github.com/memeticofficial/ledger-pepecoin/go v0.0.0-20230504125542-888bdaafacc9
+	github.com/memeticofficial/pepecoin-network-runner-sdk v0.3.1-0.20230504125912-aa1ab400757c
 	github.com/mr-tron/base58 v1.2.0
 	github.com/nbutton23/zxcvbn-go v0.0.0-20180912185939-ae427f1e4c1d
 	github.com/onsi/ginkgo/v2 v2.4.0

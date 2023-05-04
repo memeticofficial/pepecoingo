@@ -7,14 +7,14 @@ import (
 	"errors"
 	"time"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/vms/components/avax"
-	"github.com/ava-labs/avalanchego/vms/platformvm"
-	"github.com/ava-labs/avalanchego/vms/platformvm/signer"
-	"github.com/ava-labs/avalanchego/vms/platformvm/status"
-	"github.com/ava-labs/avalanchego/vms/platformvm/txs"
-	"github.com/ava-labs/avalanchego/vms/secp256k1fx"
-	"github.com/ava-labs/avalanchego/wallet/subnet/primary/common"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/vms/components/avax"
+	"github.com/memeticofficial/pepecoingo/vms/platformvm"
+	"github.com/memeticofficial/pepecoingo/vms/platformvm/signer"
+	"github.com/memeticofficial/pepecoingo/vms/platformvm/status"
+	"github.com/memeticofficial/pepecoingo/vms/platformvm/txs"
+	"github.com/memeticofficial/pepecoingo/vms/secp256k1fx"
+	"github.com/memeticofficial/pepecoingo/wallet/subnet/primary/common"
 )
 
 var (

@@ -6,11 +6,11 @@ package executor
 import (
 	"time"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/snow"
-	"github.com/ava-labs/avalanchego/vms/platformvm/blocks"
-	"github.com/ava-labs/avalanchego/vms/platformvm/state"
-	"github.com/ava-labs/avalanchego/vms/platformvm/txs/mempool"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/snow"
+	"github.com/memeticofficial/pepecoingo/vms/platformvm/blocks"
+	"github.com/memeticofficial/pepecoingo/vms/platformvm/state"
+	"github.com/memeticofficial/pepecoingo/vms/platformvm/txs/mempool"
 )
 
 // Shared fields used by visitors.

@@ -6,17 +6,17 @@ package executor
 import (
 	"errors"
 
-	"github.com/ava-labs/avalanchego/chains/atomic"
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/snow/consensus/snowman"
-	"github.com/ava-labs/avalanchego/utils/set"
-	"github.com/ava-labs/avalanchego/utils/timer/mockable"
-	"github.com/ava-labs/avalanchego/vms/avm/blocks"
-	"github.com/ava-labs/avalanchego/vms/avm/metrics"
-	"github.com/ava-labs/avalanchego/vms/avm/states"
-	"github.com/ava-labs/avalanchego/vms/avm/txs"
-	"github.com/ava-labs/avalanchego/vms/avm/txs/executor"
-	"github.com/ava-labs/avalanchego/vms/avm/txs/mempool"
+	"github.com/memeticofficial/pepecoingo/chains/atomic"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/snow/consensus/snowman"
+	"github.com/memeticofficial/pepecoingo/utils/set"
+	"github.com/memeticofficial/pepecoingo/utils/timer/mockable"
+	"github.com/memeticofficial/pepecoingo/vms/avm/blocks"
+	"github.com/memeticofficial/pepecoingo/vms/avm/metrics"
+	"github.com/memeticofficial/pepecoingo/vms/avm/states"
+	"github.com/memeticofficial/pepecoingo/vms/avm/txs"
+	"github.com/memeticofficial/pepecoingo/vms/avm/txs/executor"
+	"github.com/memeticofficial/pepecoingo/vms/avm/txs/mempool"
 )
 
 var (

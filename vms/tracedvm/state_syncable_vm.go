@@ -10,7 +10,7 @@ import (
 
 	oteltrace "go.opentelemetry.io/otel/trace"
 
-	"github.com/ava-labs/avalanchego/snow/engine/snowman/block"
+	"github.com/memeticofficial/pepecoingo/snow/engine/snowman/block"
 )
 
 func (vm *blockVM) StateSyncEnabled(ctx context.Context) (bool, error) {

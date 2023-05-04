@@ -9,11 +9,11 @@ import (
 
 	"google.golang.org/protobuf/types/known/emptypb"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/snow/validators"
-	"github.com/ava-labs/avalanchego/utils/crypto/bls"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/snow/validators"
+	"github.com/memeticofficial/pepecoingo/utils/crypto/bls"
 
-	pb "github.com/ava-labs/avalanchego/proto/pb/validatorstate"
+	pb "github.com/memeticofficial/pepecoingo/proto/pb/validatorstate"
 )
 
 var (

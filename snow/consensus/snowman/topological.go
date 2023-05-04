@@ -14,13 +14,13 @@ import (
 
 	"golang.org/x/exp/maps"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/snow"
-	"github.com/ava-labs/avalanchego/snow/choices"
-	"github.com/ava-labs/avalanchego/snow/consensus/metrics"
-	"github.com/ava-labs/avalanchego/snow/consensus/snowball"
-	"github.com/ava-labs/avalanchego/utils/bag"
-	"github.com/ava-labs/avalanchego/utils/set"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/snow"
+	"github.com/memeticofficial/pepecoingo/snow/choices"
+	"github.com/memeticofficial/pepecoingo/snow/consensus/metrics"
+	"github.com/memeticofficial/pepecoingo/snow/consensus/snowball"
+	"github.com/memeticofficial/pepecoingo/utils/bag"
+	"github.com/memeticofficial/pepecoingo/utils/set"
 )
 
 var (

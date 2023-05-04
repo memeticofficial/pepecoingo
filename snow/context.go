@@ -8,15 +8,15 @@ import (
 
 	"github.com/prometheus/client_golang/prometheus"
 
-	"github.com/ava-labs/avalanchego/api/keystore"
-	"github.com/ava-labs/avalanchego/api/metrics"
-	"github.com/ava-labs/avalanchego/chains/atomic"
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/snow/validators"
-	"github.com/ava-labs/avalanchego/utils"
-	"github.com/ava-labs/avalanchego/utils/crypto/bls"
-	"github.com/ava-labs/avalanchego/utils/logging"
-	"github.com/ava-labs/avalanchego/vms/platformvm/warp"
+	"github.com/memeticofficial/pepecoingo/api/keystore"
+	"github.com/memeticofficial/pepecoingo/api/metrics"
+	"github.com/memeticofficial/pepecoingo/chains/atomic"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/snow/validators"
+	"github.com/memeticofficial/pepecoingo/utils"
+	"github.com/memeticofficial/pepecoingo/utils/crypto/bls"
+	"github.com/memeticofficial/pepecoingo/utils/logging"
+	"github.com/memeticofficial/pepecoingo/vms/platformvm/warp"
 )
 
 // ContextInitializable represents an object that can be initialized
@@ -65,15 +65,15 @@ type Registerer interface {
 type ConsensusContext struct {
 	*Context
 
-	// Registers all common and snowman consensus metrics. Unlike the avalanche
+	// Registers all common and snowman consensus metrics. Unlike the pepecoin
 	// consensus engine metrics, we do not prefix the name with the engine name,
 	// as snowman is used for all chains by default.
 	Registerer Registerer
-	// Only used to register Avalanche consensus metrics. Previously, all
-	// metrics were prefixed with "avalanche_{chainID}_". Now we add avalanche
-	// to the prefix, "avalanche_{chainID}_avalanche_", to differentiate
+	// Only used to register Pepecoin consensus metrics. Previously, all
+	// metrics were prefixed with "pepecoin_{chainID}_". Now we add pepecoin
+	// to the prefix, "pepecoin_{chainID}_pepecoin_", to differentiate
 	// consensus operations after the DAG linearization.
-	AvalancheRegisterer Registerer
+	PepecoinRegisterer Registerer
 
 	// BlockAcceptor is the callback that will be fired whenever a VM is
 	// notified that their block was accepted.
@@ -120,7 +120,7 @@ func DefaultConsensusContextTest() *ConsensusContext {
 	return &ConsensusContext{
 		Context:             DefaultContextTest(),
 		Registerer:          prometheus.NewRegistry(),
-		AvalancheRegisterer: prometheus.NewRegistry(),
+		PepecoinRegisterer: prometheus.NewRegistry(),
 		BlockAcceptor:       noOpAcceptor{},
 		TxAcceptor:          noOpAcceptor{},
 		VertexAcceptor:      noOpAcceptor{},

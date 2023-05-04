@@ -16,25 +16,25 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/message"
-	"github.com/ava-labs/avalanchego/proto/pb/p2p"
-	"github.com/ava-labs/avalanchego/snow"
-	"github.com/ava-labs/avalanchego/snow/engine/common"
-	"github.com/ava-labs/avalanchego/snow/networking/benchlist"
-	"github.com/ava-labs/avalanchego/snow/networking/handler"
-	"github.com/ava-labs/avalanchego/snow/networking/router"
-	"github.com/ava-labs/avalanchego/snow/networking/timeout"
-	"github.com/ava-labs/avalanchego/snow/networking/tracker"
-	"github.com/ava-labs/avalanchego/snow/validators"
-	"github.com/ava-labs/avalanchego/subnets"
-	"github.com/ava-labs/avalanchego/utils/constants"
-	"github.com/ava-labs/avalanchego/utils/logging"
-	"github.com/ava-labs/avalanchego/utils/math/meter"
-	"github.com/ava-labs/avalanchego/utils/resource"
-	"github.com/ava-labs/avalanchego/utils/set"
-	"github.com/ava-labs/avalanchego/utils/timer"
-	"github.com/ava-labs/avalanchego/version"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/message"
+	"github.com/memeticofficial/pepecoingo/proto/pb/p2p"
+	"github.com/memeticofficial/pepecoingo/snow"
+	"github.com/memeticofficial/pepecoingo/snow/engine/common"
+	"github.com/memeticofficial/pepecoingo/snow/networking/benchlist"
+	"github.com/memeticofficial/pepecoingo/snow/networking/handler"
+	"github.com/memeticofficial/pepecoingo/snow/networking/router"
+	"github.com/memeticofficial/pepecoingo/snow/networking/timeout"
+	"github.com/memeticofficial/pepecoingo/snow/networking/tracker"
+	"github.com/memeticofficial/pepecoingo/snow/validators"
+	"github.com/memeticofficial/pepecoingo/subnets"
+	"github.com/memeticofficial/pepecoingo/utils/constants"
+	"github.com/memeticofficial/pepecoingo/utils/logging"
+	"github.com/memeticofficial/pepecoingo/utils/math/meter"
+	"github.com/memeticofficial/pepecoingo/utils/resource"
+	"github.com/memeticofficial/pepecoingo/utils/set"
+	"github.com/memeticofficial/pepecoingo/utils/timer"
+	"github.com/memeticofficial/pepecoingo/version"
 )
 
 const testThreadPoolSize = 2
@@ -148,7 +148,7 @@ func TestTimeout(t *testing.T) {
 		return nil
 	}
 	h.SetEngineManager(&handler.EngineManager{
-		Avalanche: &handler.Engine{
+		Pepecoin: &handler.Engine{
 			StateSyncer:  nil,
 			Bootstrapper: bootstrapper,
 			Consensus:    nil,
@@ -432,7 +432,7 @@ func TestReliableMessages(t *testing.T) {
 	}
 	bootstrapper.CantGossip = false
 	h.SetEngineManager(&handler.EngineManager{
-		Avalanche: &handler.Engine{
+		Pepecoin: &handler.Engine{
 			StateSyncer:  nil,
 			Bootstrapper: bootstrapper,
 			Consensus:    nil,
@@ -580,7 +580,7 @@ func TestReliableMessagesToMyself(t *testing.T) {
 		return nil
 	}
 	h.SetEngineManager(&handler.EngineManager{
-		Avalanche: &handler.Engine{
+		Pepecoin: &handler.Engine{
 			StateSyncer:  nil,
 			Bootstrapper: bootstrapper,
 			Consensus:    nil,
@@ -639,7 +639,7 @@ func TestSender_Bootstrap_Requests(t *testing.T) {
 	snowCtx := &snow.ConsensusContext{
 		Context:             ctx,
 		Registerer:          prometheus.NewRegistry(),
-		AvalancheRegisterer: prometheus.NewRegistry(),
+		PepecoinRegisterer: prometheus.NewRegistry(),
 	}
 
 	type test struct {
@@ -923,7 +923,7 @@ func TestSender_Bootstrap_Responses(t *testing.T) {
 		ctx               = snow.DefaultContextTest()
 		summaryIDs        = []ids.ID{ids.GenerateTestID(), ids.GenerateTestID()}
 		summary           = []byte{1, 2, 3}
-		engineType        = p2p.EngineType_ENGINE_TYPE_AVALANCHE
+		engineType        = p2p.EngineType_ENGINE_TYPE_PEPECOIN
 	)
 	ctx.ChainID = chainID
 	ctx.SubnetID = subnetID
@@ -931,7 +931,7 @@ func TestSender_Bootstrap_Responses(t *testing.T) {
 	snowCtx := &snow.ConsensusContext{
 		Context:             ctx,
 		Registerer:          prometheus.NewRegistry(),
-		AvalancheRegisterer: prometheus.NewRegistry(),
+		PepecoinRegisterer: prometheus.NewRegistry(),
 	}
 
 	type test struct {
@@ -1079,7 +1079,7 @@ func TestSender_Bootstrap_Responses(t *testing.T) {
 			// Instantiate new registerers to avoid duplicate metrics
 			// registration
 			snowCtx.Registerer = prometheus.NewRegistry()
-			snowCtx.AvalancheRegisterer = prometheus.NewRegistry()
+			snowCtx.PepecoinRegisterer = prometheus.NewRegistry()
 
 			sender, err := New(
 				snowCtx,
@@ -1141,7 +1141,7 @@ func TestSender_Single_Request(t *testing.T) {
 	snowCtx := &snow.ConsensusContext{
 		Context:             ctx,
 		Registerer:          prometheus.NewRegistry(),
-		AvalancheRegisterer: prometheus.NewRegistry(),
+		PepecoinRegisterer: prometheus.NewRegistry(),
 	}
 
 	type test struct {

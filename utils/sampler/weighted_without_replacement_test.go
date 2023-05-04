@@ -13,7 +13,7 @@ import (
 
 	"golang.org/x/exp/slices"
 
-	"github.com/ava-labs/avalanchego/utils/math"
+	"github.com/memeticofficial/pepecoingo/utils/math"
 )
 
 var (

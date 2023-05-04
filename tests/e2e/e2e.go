@@ -15,12 +15,12 @@ import (
 
 	"github.com/onsi/gomega"
 
-	runner_sdk "github.com/ava-labs/avalanche-network-runner-sdk"
+	runner_sdk "github.com/memeticofficial/pepecoin-network-runner-sdk"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/tests"
-	"github.com/ava-labs/avalanchego/utils/crypto/secp256k1"
-	"github.com/ava-labs/avalanchego/vms/secp256k1fx"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/tests"
+	"github.com/memeticofficial/pepecoingo/utils/crypto/secp256k1"
+	"github.com/memeticofficial/pepecoingo/vms/secp256k1fx"
 )
 
 type ClusterType byte
@@ -58,8 +58,8 @@ type testEnvironmentConfig struct {
 	clusterType               ClusterType
 	logLevel                  string
 	networkRunnerGRPCEndpoint string
-	avalancheGoExecPath       string
-	avalancheGoLogLevel       string
+	pepecoinGoExecPath       string
+	pepecoinGoLogLevel       string
 	testKeysFile              string
 
 	// we snapshot initial state, right after starting cluster
@@ -90,14 +90,14 @@ type TestEnvironment struct {
 func (te *TestEnvironment) ConfigCluster(
 	logLevel string,
 	networkRunnerGRPCEp string,
-	avalancheGoExecPath string,
-	avalancheGoLogLevel string,
+	pepecoinGoExecPath string,
+	pepecoinGoLogLevel string,
 	uris string,
 	testKeysFile string,
 ) error {
-	if avalancheGoExecPath != "" {
-		if _, err := os.Stat(avalancheGoExecPath); err != nil {
-			return fmt.Errorf("could not find avalanchego binary: %w", err)
+	if pepecoinGoExecPath != "" {
+		if _, err := os.Stat(pepecoinGoExecPath); err != nil {
+			return fmt.Errorf("could not find pepecoingo binary: %w", err)
 		}
 	}
 
@@ -108,8 +108,8 @@ func (te *TestEnvironment) ConfigCluster(
 		te.clusterType = StandAlone
 		te.logLevel = logLevel
 		te.networkRunnerGRPCEndpoint = networkRunnerGRPCEp
-		te.avalancheGoExecPath = avalancheGoExecPath
-		te.avalancheGoLogLevel = avalancheGoLogLevel
+		te.pepecoinGoExecPath = pepecoinGoExecPath
+		te.pepecoinGoLogLevel = pepecoinGoLogLevel
 
 		err := te.setRunnerClient(te.logLevel, te.networkRunnerGRPCEndpoint)
 		if err != nil {
@@ -155,11 +155,11 @@ func (te *TestEnvironment) LoadKeys() error {
 func (te *TestEnvironment) StartCluster() error {
 	switch te.clusterType {
 	case StandAlone:
-		tests.Outf("{{magenta}}starting network-runner with %q{{/}}\n", te.avalancheGoExecPath)
+		tests.Outf("{{magenta}}starting network-runner with %q{{/}}\n", te.pepecoinGoExecPath)
 		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
-		resp, err := te.GetRunnerClient().Start(ctx, te.avalancheGoExecPath,
+		resp, err := te.GetRunnerClient().Start(ctx, te.pepecoinGoExecPath,
 			runner_sdk.WithNumNodes(5),
-			runner_sdk.WithGlobalNodeConfig(fmt.Sprintf(`{"log-level":"%s"}`, te.avalancheGoLogLevel)),
+			runner_sdk.WithGlobalNodeConfig(fmt.Sprintf(`{"log-level":"%s"}`, te.pepecoinGoLogLevel)),
 		)
 		cancel()
 		if err != nil {

@@ -6,9 +6,9 @@ package warp
 import (
 	"math"
 
-	"github.com/ava-labs/avalanchego/codec"
-	"github.com/ava-labs/avalanchego/codec/linearcodec"
-	"github.com/ava-labs/avalanchego/utils/wrappers"
+	"github.com/memeticofficial/pepecoingo/codec"
+	"github.com/memeticofficial/pepecoingo/codec/linearcodec"
+	"github.com/memeticofficial/pepecoingo/utils/wrappers"
 )
 
 const codecVersion = 0

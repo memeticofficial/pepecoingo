@@ -6,7 +6,7 @@ package nftfx
 import (
 	"testing"
 
-	"github.com/ava-labs/avalanchego/vms/components/verify"
+	"github.com/memeticofficial/pepecoingo/vms/components/verify"
 )
 
 func TestCredentialState(t *testing.T) {

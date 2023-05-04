@@ -7,9 +7,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ava-labs/avalanchego/utils"
-	"github.com/ava-labs/avalanchego/utils/buffer"
-	"github.com/ava-labs/avalanchego/utils/timer/mockable"
+	"github.com/memeticofficial/pepecoingo/utils"
+	"github.com/memeticofficial/pepecoingo/utils/buffer"
+	"github.com/memeticofficial/pepecoingo/utils/timer/mockable"
 )
 
 var _ Window[struct{}] = (*window[struct{}])(nil)

@@ -4,7 +4,7 @@
 package state
 
 import (
-	"github.com/ava-labs/avalanchego/ids"
+	"github.com/memeticofficial/pepecoingo/ids"
 )
 
 var _ StakerIterator = (*maskedIterator)(nil)

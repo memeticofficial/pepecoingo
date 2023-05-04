@@ -13,22 +13,22 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/snow"
-	"github.com/ava-labs/avalanchego/utils/crypto/secp256k1"
-	"github.com/ava-labs/avalanchego/utils/logging"
-	"github.com/ava-labs/avalanchego/utils/timer/mockable"
-	"github.com/ava-labs/avalanchego/vms/components/avax"
-	"github.com/ava-labs/avalanchego/vms/components/verify"
-	"github.com/ava-labs/avalanchego/vms/platformvm/blocks"
-	"github.com/ava-labs/avalanchego/vms/platformvm/state"
-	"github.com/ava-labs/avalanchego/vms/platformvm/txs"
-	"github.com/ava-labs/avalanchego/vms/platformvm/txs/mempool"
-	"github.com/ava-labs/avalanchego/vms/secp256k1fx"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/snow"
+	"github.com/memeticofficial/pepecoingo/utils/crypto/secp256k1"
+	"github.com/memeticofficial/pepecoingo/utils/logging"
+	"github.com/memeticofficial/pepecoingo/utils/timer/mockable"
+	"github.com/memeticofficial/pepecoingo/vms/components/avax"
+	"github.com/memeticofficial/pepecoingo/vms/components/verify"
+	"github.com/memeticofficial/pepecoingo/vms/platformvm/blocks"
+	"github.com/memeticofficial/pepecoingo/vms/platformvm/state"
+	"github.com/memeticofficial/pepecoingo/vms/platformvm/txs"
+	"github.com/memeticofficial/pepecoingo/vms/platformvm/txs/mempool"
+	"github.com/memeticofficial/pepecoingo/vms/secp256k1fx"
 
-	blockexecutor "github.com/ava-labs/avalanchego/vms/platformvm/blocks/executor"
-	txbuilder "github.com/ava-labs/avalanchego/vms/platformvm/txs/builder"
-	txexecutor "github.com/ava-labs/avalanchego/vms/platformvm/txs/executor"
+	blockexecutor "github.com/memeticofficial/pepecoingo/vms/platformvm/blocks/executor"
+	txbuilder "github.com/memeticofficial/pepecoingo/vms/platformvm/txs/builder"
+	txexecutor "github.com/memeticofficial/pepecoingo/vms/platformvm/txs/executor"
 )
 
 var errTestingDropped = errors.New("testing dropped")

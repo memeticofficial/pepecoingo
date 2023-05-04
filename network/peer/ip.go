@@ -8,9 +8,9 @@ import (
 	"crypto/rand"
 	"crypto/x509"
 
-	"github.com/ava-labs/avalanchego/utils/hashing"
-	"github.com/ava-labs/avalanchego/utils/ips"
-	"github.com/ava-labs/avalanchego/utils/wrappers"
+	"github.com/memeticofficial/pepecoingo/utils/hashing"
+	"github.com/memeticofficial/pepecoingo/utils/ips"
+	"github.com/memeticofficial/pepecoingo/utils/wrappers"
 )
 
 // UnsignedIP is used for a validator to claim an IP. The [Timestamp] is used to

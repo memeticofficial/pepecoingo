@@ -7,7 +7,7 @@ import (
 	"errors"
 	"math"
 
-	safemath "github.com/ava-labs/avalanchego/utils/math"
+	safemath "github.com/memeticofficial/pepecoingo/utils/math"
 )
 
 var (

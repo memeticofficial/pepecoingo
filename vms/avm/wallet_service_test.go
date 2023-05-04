@@ -7,12 +7,12 @@ import (
 	"context"
 	"testing"
 
-	"github.com/ava-labs/avalanchego/api"
-	"github.com/ava-labs/avalanchego/chains/atomic"
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/linkedhashmap"
-	"github.com/ava-labs/avalanchego/vms/avm/txs"
-	"github.com/ava-labs/avalanchego/vms/components/keystore"
+	"github.com/memeticofficial/pepecoingo/api"
+	"github.com/memeticofficial/pepecoingo/chains/atomic"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/utils/linkedhashmap"
+	"github.com/memeticofficial/pepecoingo/vms/avm/txs"
+	"github.com/memeticofficial/pepecoingo/vms/components/keystore"
 )
 
 // Returns:

@@ -10,7 +10,7 @@ import (
 
 	"github.com/shirou/gopsutil/process"
 
-	"github.com/ava-labs/avalanchego/utils/storage"
+	"github.com/memeticofficial/pepecoingo/utils/storage"
 )
 
 var (

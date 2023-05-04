@@ -7,14 +7,14 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/ava-labs/avalanchego/utils/logging"
-	"github.com/ava-labs/avalanchego/utils/resource"
-	"github.com/ava-labs/avalanchego/vms"
-	"github.com/ava-labs/avalanchego/vms/rpcchainvm/grpcutils"
-	"github.com/ava-labs/avalanchego/vms/rpcchainvm/runtime"
-	"github.com/ava-labs/avalanchego/vms/rpcchainvm/runtime/subprocess"
+	"github.com/memeticofficial/pepecoingo/utils/logging"
+	"github.com/memeticofficial/pepecoingo/utils/resource"
+	"github.com/memeticofficial/pepecoingo/vms"
+	"github.com/memeticofficial/pepecoingo/vms/rpcchainvm/grpcutils"
+	"github.com/memeticofficial/pepecoingo/vms/rpcchainvm/runtime"
+	"github.com/memeticofficial/pepecoingo/vms/rpcchainvm/runtime/subprocess"
 
-	vmpb "github.com/ava-labs/avalanchego/proto/pb/vm"
+	vmpb "github.com/memeticofficial/pepecoingo/proto/pb/vm"
 )
 
 var _ vms.Factory = (*factory)(nil)

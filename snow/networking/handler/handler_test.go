@@ -16,16 +16,16 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/message"
-	"github.com/ava-labs/avalanchego/proto/pb/p2p"
-	"github.com/ava-labs/avalanchego/snow"
-	"github.com/ava-labs/avalanchego/snow/engine/common"
-	"github.com/ava-labs/avalanchego/snow/networking/tracker"
-	"github.com/ava-labs/avalanchego/snow/validators"
-	"github.com/ava-labs/avalanchego/subnets"
-	"github.com/ava-labs/avalanchego/utils/math/meter"
-	"github.com/ava-labs/avalanchego/utils/resource"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/message"
+	"github.com/memeticofficial/pepecoingo/proto/pb/p2p"
+	"github.com/memeticofficial/pepecoingo/snow"
+	"github.com/memeticofficial/pepecoingo/snow/engine/common"
+	"github.com/memeticofficial/pepecoingo/snow/networking/tracker"
+	"github.com/memeticofficial/pepecoingo/snow/validators"
+	"github.com/memeticofficial/pepecoingo/subnets"
+	"github.com/memeticofficial/pepecoingo/utils/math/meter"
+	"github.com/memeticofficial/pepecoingo/utils/resource"
 )
 
 const testThreadPoolSize = 2
@@ -468,12 +468,12 @@ func TestDynamicEngineTypeDispatch(t *testing.T) {
 		)
 	}{
 		{
-			name:                "current - avalanche, requested - unspecified",
-			currentEngineType:   p2p.EngineType_ENGINE_TYPE_AVALANCHE,
+			name:                "current - pepecoin, requested - unspecified",
+			currentEngineType:   p2p.EngineType_ENGINE_TYPE_PEPECOIN,
 			requestedEngineType: p2p.EngineType_ENGINE_TYPE_UNSPECIFIED,
 			setup: func(h Handler, b common.BootstrapableEngine, e common.Engine) {
 				h.SetEngineManager(&EngineManager{
-					Avalanche: &Engine{
+					Pepecoin: &Engine{
 						StateSyncer:  nil,
 						Bootstrapper: b,
 						Consensus:    e,
@@ -483,12 +483,12 @@ func TestDynamicEngineTypeDispatch(t *testing.T) {
 			},
 		},
 		{
-			name:                "current - avalanche, requested - avalanche",
-			currentEngineType:   p2p.EngineType_ENGINE_TYPE_AVALANCHE,
-			requestedEngineType: p2p.EngineType_ENGINE_TYPE_AVALANCHE,
+			name:                "current - pepecoin, requested - pepecoin",
+			currentEngineType:   p2p.EngineType_ENGINE_TYPE_PEPECOIN,
+			requestedEngineType: p2p.EngineType_ENGINE_TYPE_PEPECOIN,
 			setup: func(h Handler, b common.BootstrapableEngine, e common.Engine) {
 				h.SetEngineManager(&EngineManager{
-					Avalanche: &Engine{
+					Pepecoin: &Engine{
 						StateSyncer:  nil,
 						Bootstrapper: b,
 						Consensus:    e,
@@ -503,7 +503,7 @@ func TestDynamicEngineTypeDispatch(t *testing.T) {
 			requestedEngineType: p2p.EngineType_ENGINE_TYPE_UNSPECIFIED,
 			setup: func(h Handler, b common.BootstrapableEngine, e common.Engine) {
 				h.SetEngineManager(&EngineManager{
-					Avalanche: nil,
+					Pepecoin: nil,
 					Snowman: &Engine{
 						StateSyncer:  nil,
 						Bootstrapper: b,
@@ -513,12 +513,12 @@ func TestDynamicEngineTypeDispatch(t *testing.T) {
 			},
 		},
 		{
-			name:                "current - snowman, requested - avalanche",
+			name:                "current - snowman, requested - pepecoin",
 			currentEngineType:   p2p.EngineType_ENGINE_TYPE_SNOWMAN,
-			requestedEngineType: p2p.EngineType_ENGINE_TYPE_AVALANCHE,
+			requestedEngineType: p2p.EngineType_ENGINE_TYPE_PEPECOIN,
 			setup: func(h Handler, b common.BootstrapableEngine, e common.Engine) {
 				h.SetEngineManager(&EngineManager{
-					Avalanche: &Engine{
+					Pepecoin: &Engine{
 						StateSyncer:  nil,
 						Bootstrapper: nil,
 						Consensus:    e,
@@ -537,7 +537,7 @@ func TestDynamicEngineTypeDispatch(t *testing.T) {
 			requestedEngineType: p2p.EngineType_ENGINE_TYPE_SNOWMAN,
 			setup: func(h Handler, b common.BootstrapableEngine, e common.Engine) {
 				h.SetEngineManager(&EngineManager{
-					Avalanche: nil,
+					Pepecoin: nil,
 					Snowman: &Engine{
 						StateSyncer:  nil,
 						Bootstrapper: b,

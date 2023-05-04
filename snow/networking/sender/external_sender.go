@@ -4,10 +4,10 @@
 package sender
 
 import (
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/message"
-	"github.com/ava-labs/avalanchego/subnets"
-	"github.com/ava-labs/avalanchego/utils/set"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/message"
+	"github.com/memeticofficial/pepecoingo/subnets"
+	"github.com/memeticofficial/pepecoingo/utils/set"
 )
 
 // ExternalSender sends consensus messages to other validators

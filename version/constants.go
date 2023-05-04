@@ -9,11 +9,11 @@ import (
 
 	_ "embed"
 
-	"github.com/ava-labs/avalanchego/utils/constants"
+	"github.com/memeticofficial/pepecoingo/utils/constants"
 )
 
 // RPCChainVMProtocol should be bumped anytime changes are made which require
-// the plugin vm to upgrade to latest avalanchego release to be compatible.
+// the plugin vm to upgrade to latest pepecoingo release to be compatible.
 const RPCChainVMProtocol uint = 26
 
 // These are globals that describe network upgrades and node versions
@@ -56,8 +56,8 @@ var (
 	//go:embed compatibility.json
 	rpcChainVMProtocolCompatibilityBytes []byte
 	// RPCChainVMProtocolCompatibility maps RPCChainVMProtocol versions to the
-	// set of avalanchego versions that supported that version. This is not used
-	// by avalanchego, but is useful for downstream libraries.
+	// set of pepecoingo versions that supported that version. This is not used
+	// by pepecoingo, but is useful for downstream libraries.
 	RPCChainVMProtocolCompatibility map[uint][]*Semantic
 
 	ApricotPhase3Times = map[uint32]time.Time{

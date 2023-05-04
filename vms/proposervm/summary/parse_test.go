@@ -8,7 +8,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ava-labs/avalanchego/codec"
+	"github.com/memeticofficial/pepecoingo/codec"
 )
 
 func TestParse(t *testing.T) {

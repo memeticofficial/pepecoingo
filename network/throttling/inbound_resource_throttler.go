@@ -11,10 +11,10 @@ import (
 
 	"github.com/prometheus/client_golang/prometheus"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/snow/networking/tracker"
-	"github.com/ava-labs/avalanchego/utils/timer/mockable"
-	"github.com/ava-labs/avalanchego/utils/wrappers"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/snow/networking/tracker"
+	"github.com/memeticofficial/pepecoingo/utils/timer/mockable"
+	"github.com/memeticofficial/pepecoingo/utils/wrappers"
 )
 
 const epsilon = time.Millisecond

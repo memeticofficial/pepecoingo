@@ -6,9 +6,9 @@ package poll
 import (
 	"fmt"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/bag"
-	"github.com/ava-labs/avalanchego/utils/formatting"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/utils/bag"
+	"github.com/memeticofficial/pepecoingo/utils/formatting"
 )
 
 // Set is a collection of polls

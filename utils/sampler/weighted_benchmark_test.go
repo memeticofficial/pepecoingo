@@ -8,7 +8,7 @@ import (
 	"math"
 	"testing"
 
-	safemath "github.com/ava-labs/avalanchego/utils/math"
+	safemath "github.com/memeticofficial/pepecoingo/utils/math"
 )
 
 // BenchmarkAllWeightedSampling

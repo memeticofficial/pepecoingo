@@ -8,9 +8,9 @@ import (
 	"math"
 	"time"
 
-	"github.com/ava-labs/avalanchego/utils/timer/mockable"
+	"github.com/memeticofficial/pepecoingo/utils/timer/mockable"
 
-	safemath "github.com/ava-labs/avalanchego/utils/math"
+	safemath "github.com/memeticofficial/pepecoingo/utils/math"
 )
 
 var (

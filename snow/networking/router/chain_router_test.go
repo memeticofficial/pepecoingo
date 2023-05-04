@@ -15,29 +15,29 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ava-labs/avalanchego/api/metrics"
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/message"
-	"github.com/ava-labs/avalanchego/proto/pb/p2p"
-	"github.com/ava-labs/avalanchego/snow"
-	"github.com/ava-labs/avalanchego/snow/engine/common"
-	"github.com/ava-labs/avalanchego/snow/networking/benchlist"
-	"github.com/ava-labs/avalanchego/snow/networking/handler"
-	"github.com/ava-labs/avalanchego/snow/networking/timeout"
-	"github.com/ava-labs/avalanchego/snow/networking/tracker"
-	"github.com/ava-labs/avalanchego/snow/validators"
-	"github.com/ava-labs/avalanchego/subnets"
-	"github.com/ava-labs/avalanchego/utils/constants"
-	"github.com/ava-labs/avalanchego/utils/logging"
-	"github.com/ava-labs/avalanchego/utils/math/meter"
-	"github.com/ava-labs/avalanchego/utils/resource"
-	"github.com/ava-labs/avalanchego/utils/set"
-	"github.com/ava-labs/avalanchego/utils/timer"
-	"github.com/ava-labs/avalanchego/version"
+	"github.com/memeticofficial/pepecoingo/api/metrics"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/message"
+	"github.com/memeticofficial/pepecoingo/proto/pb/p2p"
+	"github.com/memeticofficial/pepecoingo/snow"
+	"github.com/memeticofficial/pepecoingo/snow/engine/common"
+	"github.com/memeticofficial/pepecoingo/snow/networking/benchlist"
+	"github.com/memeticofficial/pepecoingo/snow/networking/handler"
+	"github.com/memeticofficial/pepecoingo/snow/networking/timeout"
+	"github.com/memeticofficial/pepecoingo/snow/networking/tracker"
+	"github.com/memeticofficial/pepecoingo/snow/validators"
+	"github.com/memeticofficial/pepecoingo/subnets"
+	"github.com/memeticofficial/pepecoingo/utils/constants"
+	"github.com/memeticofficial/pepecoingo/utils/logging"
+	"github.com/memeticofficial/pepecoingo/utils/math/meter"
+	"github.com/memeticofficial/pepecoingo/utils/resource"
+	"github.com/memeticofficial/pepecoingo/utils/set"
+	"github.com/memeticofficial/pepecoingo/utils/timer"
+	"github.com/memeticofficial/pepecoingo/version"
 )
 
 const (
-	engineType         = p2p.EngineType_ENGINE_TYPE_AVALANCHE
+	engineType         = p2p.EngineType_ENGINE_TYPE_PEPECOIN
 	testThreadPoolSize = 2
 )
 
@@ -136,7 +136,7 @@ func TestShutdown(t *testing.T) {
 	}
 	engine.HaltF = func(context.Context) {}
 	h.SetEngineManager(&handler.EngineManager{
-		Avalanche: &handler.Engine{
+		Pepecoin: &handler.Engine{
 			StateSyncer:  nil,
 			Bootstrapper: bootstrapper,
 			Consensus:    engine,
@@ -271,7 +271,7 @@ func TestShutdownTimesOut(t *testing.T) {
 		return nil
 	}
 	h.SetEngineManager(&handler.EngineManager{
-		Avalanche: &handler.Engine{
+		Pepecoin: &handler.Engine{
 			StateSyncer:  nil,
 			Bootstrapper: bootstrapper,
 			Consensus:    engine,
@@ -466,7 +466,7 @@ func TestRouterTimeout(t *testing.T) {
 		return nil
 	}
 	h.SetEngineManager(&handler.EngineManager{
-		Avalanche: &handler.Engine{
+		Pepecoin: &handler.Engine{
 			StateSyncer:  nil,
 			Bootstrapper: bootstrapper,
 			Consensus:    nil,
@@ -880,7 +880,7 @@ func TestRouterClearTimeouts(t *testing.T) {
 		return ctx
 	}
 	h.SetEngineManager(&handler.EngineManager{
-		Avalanche: &handler.Engine{
+		Pepecoin: &handler.Engine{
 			StateSyncer:  nil,
 			Bootstrapper: bootstrapper,
 			Consensus:    engine,
@@ -1180,7 +1180,7 @@ func TestValidatorOnlyMessageDrops(t *testing.T) {
 	}
 	engine.Default(false)
 	h.SetEngineManager(&handler.EngineManager{
-		Avalanche: &handler.Engine{
+		Pepecoin: &handler.Engine{
 			StateSyncer:  nil,
 			Bootstrapper: bootstrapper,
 			Consensus:    engine,
@@ -1597,7 +1597,7 @@ func TestValidatorOnlyAllowedNodeMessageDrops(t *testing.T) {
 	engine.Default(false)
 
 	h.SetEngineManager(&handler.EngineManager{
-		Avalanche: &handler.Engine{
+		Pepecoin: &handler.Engine{
 			Bootstrapper: bootstrapper,
 			Consensus:    engine,
 		},

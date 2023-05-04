@@ -11,17 +11,17 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/message"
-	"github.com/ava-labs/avalanchego/proto/pb/p2p"
-	"github.com/ava-labs/avalanchego/snow"
-	"github.com/ava-labs/avalanchego/snow/engine/common"
-	"github.com/ava-labs/avalanchego/snow/networking/router"
-	"github.com/ava-labs/avalanchego/snow/networking/timeout"
-	"github.com/ava-labs/avalanchego/subnets"
-	"github.com/ava-labs/avalanchego/utils"
-	"github.com/ava-labs/avalanchego/utils/constants"
-	"github.com/ava-labs/avalanchego/utils/set"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/message"
+	"github.com/memeticofficial/pepecoingo/proto/pb/p2p"
+	"github.com/memeticofficial/pepecoingo/snow"
+	"github.com/memeticofficial/pepecoingo/snow/engine/common"
+	"github.com/memeticofficial/pepecoingo/snow/networking/router"
+	"github.com/memeticofficial/pepecoingo/snow/networking/timeout"
+	"github.com/memeticofficial/pepecoingo/subnets"
+	"github.com/memeticofficial/pepecoingo/utils"
+	"github.com/memeticofficial/pepecoingo/utils/constants"
+	"github.com/memeticofficial/pepecoingo/utils/set"
 )
 
 var _ common.Sender = (*sender)(nil)
@@ -79,8 +79,8 @@ func New(
 			if err := ctx.Registerer.Register(counter); err != nil {
 				return nil, fmt.Errorf("couldn't register metric for %s: %w", op, err)
 			}
-		case p2p.EngineType_ENGINE_TYPE_AVALANCHE:
-			if err := ctx.AvalancheRegisterer.Register(counter); err != nil {
+		case p2p.EngineType_ENGINE_TYPE_PEPECOIN:
+			if err := ctx.PepecoinRegisterer.Register(counter); err != nil {
 				return nil, fmt.Errorf("couldn't register metric for %s: %w", op, err)
 			}
 		default:

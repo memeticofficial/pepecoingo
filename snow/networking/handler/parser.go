@@ -6,8 +6,8 @@ package handler
 import (
 	"errors"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/set"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/utils/set"
 )
 
 var errDuplicatedID = errors.New("inbound message contains duplicated ID")

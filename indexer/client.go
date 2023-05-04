@@ -7,15 +7,15 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/formatting"
-	"github.com/ava-labs/avalanchego/utils/json"
-	"github.com/ava-labs/avalanchego/utils/rpc"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/utils/formatting"
+	"github.com/memeticofficial/pepecoingo/utils/json"
+	"github.com/memeticofficial/pepecoingo/utils/rpc"
 )
 
 var _ Client = (*client)(nil)
 
-// Client interface for Avalanche Indexer API Endpoint
+// Client interface for Pepecoin Indexer API Endpoint
 type Client interface {
 	// GetContainerRange returns the transactions at index [startIndex], [startIndex+1], ... , [startIndex+n-1]
 	// If [n] == 0, returns an empty response (i.e. null).
@@ -34,7 +34,7 @@ type Client interface {
 	GetContainerByID(ctx context.Context, containerID ids.ID, options ...rpc.Option) (Container, uint64, error)
 }
 
-// Client implementation for Avalanche Indexer API Endpoint
+// Client implementation for Pepecoin Indexer API Endpoint
 type client struct {
 	requester rpc.EndpointRequester
 }

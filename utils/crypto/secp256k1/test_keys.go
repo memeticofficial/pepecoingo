@@ -4,7 +4,7 @@
 package secp256k1
 
 import (
-	"github.com/ava-labs/avalanchego/utils/cb58"
+	"github.com/memeticofficial/pepecoingo/utils/cb58"
 )
 
 func TestKeys() []*PrivateKey {

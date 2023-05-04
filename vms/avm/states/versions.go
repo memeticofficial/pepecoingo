@@ -4,7 +4,7 @@
 package states
 
 import (
-	"github.com/ava-labs/avalanchego/ids"
+	"github.com/memeticofficial/pepecoingo/ids"
 )
 
 type Versions interface {

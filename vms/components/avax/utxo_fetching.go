@@ -8,11 +8,11 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils"
-	"github.com/ava-labs/avalanchego/utils/set"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/utils"
+	"github.com/memeticofficial/pepecoingo/utils/set"
 
-	safemath "github.com/ava-labs/avalanchego/utils/math"
+	safemath "github.com/memeticofficial/pepecoingo/utils/math"
 )
 
 // GetBalance returns the current balance of [addrs]

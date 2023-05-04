@@ -6,15 +6,15 @@ package primary
 import (
 	"context"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/constants"
-	"github.com/ava-labs/avalanchego/utils/crypto/keychain"
-	"github.com/ava-labs/avalanchego/vms/avm"
-	"github.com/ava-labs/avalanchego/vms/platformvm"
-	"github.com/ava-labs/avalanchego/vms/platformvm/txs"
-	"github.com/ava-labs/avalanchego/wallet/chain/p"
-	"github.com/ava-labs/avalanchego/wallet/chain/x"
-	"github.com/ava-labs/avalanchego/wallet/subnet/primary/common"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/utils/constants"
+	"github.com/memeticofficial/pepecoingo/utils/crypto/keychain"
+	"github.com/memeticofficial/pepecoingo/vms/avm"
+	"github.com/memeticofficial/pepecoingo/vms/platformvm"
+	"github.com/memeticofficial/pepecoingo/vms/platformvm/txs"
+	"github.com/memeticofficial/pepecoingo/wallet/chain/p"
+	"github.com/memeticofficial/pepecoingo/wallet/chain/x"
+	"github.com/memeticofficial/pepecoingo/wallet/subnet/primary/common"
 )
 
 var _ Wallet = (*wallet)(nil)

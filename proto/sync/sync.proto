@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package sync;
 
-option go_package = "github.com/ava-labs/avalanchego/proto/pb/sync";
+option go_package = "github.com/memeticofficial/pepecoingo/proto/pb/sync";
 
 message Request {
   oneof message {

@@ -24,7 +24,7 @@ type EngineType int32
 
 const (
 	EngineType_ENGINE_TYPE_UNSPECIFIED EngineType = 0
-	EngineType_ENGINE_TYPE_AVALANCHE   EngineType = 1
+	EngineType_ENGINE_TYPE_PEPECOIN   EngineType = 1
 	EngineType_ENGINE_TYPE_SNOWMAN     EngineType = 2
 )
 
@@ -32,12 +32,12 @@ const (
 var (
 	EngineType_name = map[int32]string{
 		0: "ENGINE_TYPE_UNSPECIFIED",
-		1: "ENGINE_TYPE_AVALANCHE",
+		1: "ENGINE_TYPE_PEPECOIN",
 		2: "ENGINE_TYPE_SNOWMAN",
 	}
 	EngineType_value = map[string]int32{
 		"ENGINE_TYPE_UNSPECIFIED": 0,
-		"ENGINE_TYPE_AVALANCHE":   1,
+		"ENGINE_TYPE_PEPECOIN":   1,
 		"ENGINE_TYPE_SNOWMAN":     2,
 	}
 )
@@ -654,8 +654,8 @@ func (x *Pong) GetSubnetUptimes() []*SubnetUptime {
 // tracked as a valid peer by the remote peer, the fields must be valid.
 // For instance, the network ID must be matched and timestamp should be in-sync.
 // Otherwise, the remote peer closes the connection.
-// ref. "avalanchego/network/peer#handleVersion"
-// ref. https://pkg.go.dev/github.com/ava-labs/avalanchego/network#Network "Dispatch"
+// ref. "pepecoingo/network/peer#handleVersion"
+// ref. https://pkg.go.dev/github.com/memeticofficial/pepecoingo/network#Network "Dispatch"
 type Version struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -759,7 +759,7 @@ func (x *Version) GetTrackedSubnets() [][]byte {
 	return nil
 }
 
-// ref. https://pkg.go.dev/github.com/ava-labs/avalanchego/utils/ips#ClaimedIPPort
+// ref. https://pkg.go.dev/github.com/memeticofficial/pepecoingo/utils/ips#ClaimedIPPort
 type ClaimedIpPort struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -850,7 +850,7 @@ func (x *ClaimedIpPort) GetTxId() []byte {
 // Message that contains a list of peer information (IP, certs, etc.)
 // in response to "version" message, and sent periodically to a set of
 // validators.
-// ref. "avalanchego/network/network#Dispatch.runtTimers"
+// ref. "pepecoingo/network/network#Dispatch.runtTimers"
 //
 // On receiving "peer_list", the engine starts/updates the tracking information
 // of the remote peer.
@@ -1277,7 +1277,7 @@ func (x *AcceptedStateSummary) GetSummaryIds() [][]byte {
 // accepted vertices that do not have any accepted descendants (i.e., frontier).
 //
 // During bootstrap, the local node sends out "get_accepted_frontier" to validators
-// (see "avalanchego/snow/engine/common/bootstrapper.Startup").
+// (see "pepecoingo/snow/engine/common/bootstrapper.Startup").
 // And the expected response is "accepted_frontier".
 //
 // See "snow/engine/common/bootstrapper.go#AcceptedFrontier".
@@ -1425,7 +1425,7 @@ func (x *AcceptedFrontier) GetContainerIds() [][]byte {
 // Basically, sending the list of the accepted frontier and expects the response of
 // the accepted IDs from the remote peer.
 //
-// See "avalanchego/snow/engine/common/bootstrapper.Startup" and "sendGetAccepted".
+// See "pepecoingo/snow/engine/common/bootstrapper.Startup" and "sendGetAccepted".
 // See "snow/engine/common/bootstrapper.go#AcceptedFrontier".
 type GetAccepted struct {
 	state         protoimpl.MessageState
@@ -1511,7 +1511,7 @@ func (x *GetAccepted) GetEngineType() EngineType {
 // the sender's accepted frontier IDs, the X-chain engine responds only with
 // the accepted vertex IDs of the X-chain DAG.
 //
-// See "snow/engine/avalanche#GetAccepted" and "SendAccepted".
+// See "snow/engine/pepecoin#GetAccepted" and "SendAccepted".
 // See "snow/engine/common/bootstrapper.go#Accepted".
 type Accepted struct {
 	state         protoimpl.MessageState
@@ -1890,7 +1890,7 @@ func (x *Put) GetEngineType() EngineType {
 // in order to query other peers for their preferences of the container.
 // For example, when a new container is issued, the engine sends out
 // "push_query" and "pull_query" queries to ask other peers their preferences.
-// See "avalanchego/snow/engine/common#SendMixedQuery".
+// See "pepecoingo/snow/engine/common#SendMixedQuery".
 //
 // On receiving the "push_query", the engine parses the incoming container
 // and tries to issue the container and all of its parents to the consensus,
@@ -1978,7 +1978,7 @@ func (x *PushQuery) GetEngineType() EngineType {
 // for their preferences of the container.
 // For example, when a new container is issued, the engine sends out
 // "push_query" and "pull_query" queries to ask other peers their preferences.
-// See "avalanchego/snow/engine/common#SendMixedQuery".
+// See "pepecoingo/snow/engine/common#SendMixedQuery".
 type PullQuery struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

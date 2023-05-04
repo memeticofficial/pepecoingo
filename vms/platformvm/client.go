@@ -7,17 +7,17 @@ import (
 	"context"
 	"time"
 
-	"github.com/ava-labs/avalanchego/api"
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/constants"
-	"github.com/ava-labs/avalanchego/utils/crypto/secp256k1"
-	"github.com/ava-labs/avalanchego/utils/formatting"
-	"github.com/ava-labs/avalanchego/utils/formatting/address"
-	"github.com/ava-labs/avalanchego/utils/json"
-	"github.com/ava-labs/avalanchego/utils/rpc"
-	"github.com/ava-labs/avalanchego/vms/platformvm/status"
+	"github.com/memeticofficial/pepecoingo/api"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/utils/constants"
+	"github.com/memeticofficial/pepecoingo/utils/crypto/secp256k1"
+	"github.com/memeticofficial/pepecoingo/utils/formatting"
+	"github.com/memeticofficial/pepecoingo/utils/formatting/address"
+	"github.com/memeticofficial/pepecoingo/utils/json"
+	"github.com/memeticofficial/pepecoingo/utils/rpc"
+	"github.com/memeticofficial/pepecoingo/vms/platformvm/status"
 
-	platformapi "github.com/ava-labs/avalanchego/vms/platformvm/api"
+	platformapi "github.com/memeticofficial/pepecoingo/vms/platformvm/api"
 )
 
 var _ Client = (*client)(nil)
@@ -85,7 +85,7 @@ type Client interface {
 	// and returns the txID
 	//
 	// Deprecated: Transactions should be issued using the
-	// `avalanchego/wallet/chain/p.Wallet` utility.
+	// `pepecoingo/wallet/chain/p.Wallet` utility.
 	AddValidator(
 		ctx context.Context,
 		user api.UserPass,
@@ -103,7 +103,7 @@ type Client interface {
 	// and returns the txID
 	//
 	// Deprecated: Transactions should be issued using the
-	// `avalanchego/wallet/chain/p.Wallet` utility.
+	// `pepecoingo/wallet/chain/p.Wallet` utility.
 	AddDelegator(
 		ctx context.Context,
 		user api.UserPass,
@@ -120,7 +120,7 @@ type Client interface {
 	// with ID [subnetID] and returns the txID
 	//
 	// Deprecated: Transactions should be issued using the
-	// `avalanchego/wallet/chain/p.Wallet` utility.
+	// `pepecoingo/wallet/chain/p.Wallet` utility.
 	AddSubnetValidator(
 		ctx context.Context,
 		user api.UserPass,
@@ -136,7 +136,7 @@ type Client interface {
 	// CreateSubnet issues a transaction to create [subnet] and returns the txID
 	//
 	// Deprecated: Transactions should be issued using the
-	// `avalanchego/wallet/chain/p.Wallet` utility.
+	// `pepecoingo/wallet/chain/p.Wallet` utility.
 	CreateSubnet(
 		ctx context.Context,
 		user api.UserPass,
@@ -149,7 +149,7 @@ type Client interface {
 	// ExportAVAX issues an ExportTx transaction and returns the txID
 	//
 	// Deprecated: Transactions should be issued using the
-	// `avalanchego/wallet/chain/p.Wallet` utility.
+	// `pepecoingo/wallet/chain/p.Wallet` utility.
 	ExportAVAX(
 		ctx context.Context,
 		user api.UserPass,
@@ -163,7 +163,7 @@ type Client interface {
 	// ImportAVAX issues an ImportTx transaction and returns the txID
 	//
 	// Deprecated: Transactions should be issued using the
-	// `avalanchego/wallet/chain/p.Wallet` utility.
+	// `pepecoingo/wallet/chain/p.Wallet` utility.
 	ImportAVAX(
 		ctx context.Context,
 		user api.UserPass,
@@ -176,7 +176,7 @@ type Client interface {
 	// CreateBlockchain issues a CreateBlockchain transaction and returns the txID
 	//
 	// Deprecated: Transactions should be issued using the
-	// `avalanchego/wallet/chain/p.Wallet` utility.
+	// `pepecoingo/wallet/chain/p.Wallet` utility.
 	CreateBlockchain(
 		ctx context.Context,
 		user api.UserPass,

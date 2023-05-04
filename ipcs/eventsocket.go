@@ -8,11 +8,11 @@ import (
 	"os"
 	"syscall"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/ipcs/socket"
-	"github.com/ava-labs/avalanchego/snow"
-	"github.com/ava-labs/avalanchego/utils/logging"
-	"github.com/ava-labs/avalanchego/utils/wrappers"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/ipcs/socket"
+	"github.com/memeticofficial/pepecoingo/snow"
+	"github.com/memeticofficial/pepecoingo/utils/logging"
+	"github.com/memeticofficial/pepecoingo/utils/wrappers"
 )
 
 var _ snow.Acceptor = (*EventSockets)(nil)
@@ -116,7 +116,7 @@ func newEventIPCSocket(
 	chainID ids.ID,
 	name string,
 	snowmanAcceptorGroup snow.AcceptorGroup,
-	avalancheAcceptorGroup snow.AcceptorGroup,
+	pepecoinAcceptorGroup snow.AcceptorGroup,
 ) (*eventSocket, error) {
 	var (
 		url     = ipcURL(ctx, chainID, name)
@@ -136,7 +136,7 @@ func newEventIPCSocket(
 			errs := wrappers.Errs{}
 			errs.Add(
 				snowmanAcceptorGroup.DeregisterAcceptor(chainID, ipcName),
-				avalancheAcceptorGroup.DeregisterAcceptor(chainID, ipcName),
+				pepecoinAcceptorGroup.DeregisterAcceptor(chainID, ipcName),
 			)
 			return errs.Err
 		},
@@ -156,7 +156,7 @@ func newEventIPCSocket(
 		return nil, err
 	}
 
-	if err := avalancheAcceptorGroup.RegisterAcceptor(chainID, ipcName, eis, false); err != nil {
+	if err := pepecoinAcceptorGroup.RegisterAcceptor(chainID, ipcName, eis, false); err != nil {
 		if err := eis.stop(); err != nil {
 			return nil, err
 		}

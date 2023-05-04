@@ -8,12 +8,12 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/crypto/bls"
-	"github.com/ava-labs/avalanchego/vms/platformvm/warp"
-	"github.com/ava-labs/avalanchego/vms/rpcchainvm/grpcutils"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/utils/crypto/bls"
+	"github.com/memeticofficial/pepecoingo/vms/platformvm/warp"
+	"github.com/memeticofficial/pepecoingo/vms/rpcchainvm/grpcutils"
 
-	pb "github.com/ava-labs/avalanchego/proto/pb/warp"
+	pb "github.com/memeticofficial/pepecoingo/proto/pb/warp"
 )
 
 type testSigner struct {

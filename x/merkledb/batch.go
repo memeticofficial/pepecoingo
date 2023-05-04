@@ -4,7 +4,7 @@
 package merkledb
 
 import (
-	"github.com/ava-labs/avalanchego/database"
+	"github.com/memeticofficial/pepecoingo/database"
 )
 
 var _ database.Batch = &batch{}

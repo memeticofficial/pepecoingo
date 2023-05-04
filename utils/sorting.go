@@ -10,7 +10,7 @@ import (
 	"golang.org/x/exp/constraints"
 	"golang.org/x/exp/slices"
 
-	"github.com/ava-labs/avalanchego/utils/hashing"
+	"github.com/memeticofficial/pepecoingo/utils/hashing"
 )
 
 // TODO can we handle sorting where the Less function relies on a codec?

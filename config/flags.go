@@ -13,27 +13,27 @@ import (
 	"github.com/spf13/pflag"
 	"github.com/spf13/viper"
 
-	"github.com/ava-labs/avalanchego/database/leveldb"
-	"github.com/ava-labs/avalanchego/database/memdb"
-	"github.com/ava-labs/avalanchego/genesis"
-	"github.com/ava-labs/avalanchego/trace"
-	"github.com/ava-labs/avalanchego/utils/compression"
-	"github.com/ava-labs/avalanchego/utils/constants"
-	"github.com/ava-labs/avalanchego/utils/ulimit"
-	"github.com/ava-labs/avalanchego/utils/units"
+	"github.com/memeticofficial/pepecoingo/database/leveldb"
+	"github.com/memeticofficial/pepecoingo/database/memdb"
+	"github.com/memeticofficial/pepecoingo/genesis"
+	"github.com/memeticofficial/pepecoingo/trace"
+	"github.com/memeticofficial/pepecoingo/utils/compression"
+	"github.com/memeticofficial/pepecoingo/utils/constants"
+	"github.com/memeticofficial/pepecoingo/utils/ulimit"
+	"github.com/memeticofficial/pepecoingo/utils/units"
 )
 
 const (
 	DefaultHTTPPort    = 9650
 	DefaultStakingPort = 9651
 
-	AvalancheGoDataDirVar    = "AVALANCHEGO_DATA_DIR"
-	defaultUnexpandedDataDir = "$" + AvalancheGoDataDirVar
+	PepecoinGoDataDirVar    = "PEPECOINGO_DATA_DIR"
+	defaultUnexpandedDataDir = "$" + PepecoinGoDataDirVar
 )
 
 var (
 	// [defaultUnexpandedDataDir] will be expanded when reading the flags
-	defaultDataDir              = filepath.Join("$HOME", ".avalanchego")
+	defaultDataDir              = filepath.Join("$HOME", ".pepecoingo")
 	defaultDBDir                = filepath.Join(defaultUnexpandedDataDir, "db")
 	defaultLogDir               = filepath.Join(defaultUnexpandedDataDir, "logs")
 	defaultProfileDir           = filepath.Join(defaultUnexpandedDataDir, "profiles")
@@ -105,7 +105,7 @@ func addNodeFlags(fs *pflag.FlagSet) {
 	fs.String(DBConfigContentKey, "", "Specifies base64 encoded database config content")
 
 	// Logging
-	fs.String(LogsDirKey, defaultLogDir, "Logging directory for Avalanche")
+	fs.String(LogsDirKey, defaultLogDir, "Logging directory for Pepecoin")
 	fs.String(LogLevelKey, "info", "The log level. Should be one of {verbo, debug, trace, info, warn, error, fatal, off}")
 	fs.String(LogDisplayLevelKey, "", "The log display level. If left blank, will inherit the value of log-level. Otherwise, should be one of {verbo, debug, trace, info, warn, error, fatal, off}")
 	fs.String(LogFormatKey, "auto", "The structure of log format. Defaults to 'auto' which formats terminal-like logs, when the output is a terminal. Otherwise, should be one of {auto, plain, colors, json}")
@@ -377,7 +377,7 @@ func addNodeFlags(fs *pflag.FlagSet) {
 	// TODO add flag to take in headers to send from exporter
 }
 
-// BuildFlagSet returns a complete set of flags for avalanchego
+// BuildFlagSet returns a complete set of flags for pepecoingo
 func BuildFlagSet() *pflag.FlagSet {
 	fs := pflag.NewFlagSet(constants.AppName, pflag.ContinueOnError)
 	addProcessFlags(fs)
@@ -386,7 +386,7 @@ func BuildFlagSet() *pflag.FlagSet {
 }
 
 // GetExpandedArg gets the string in viper corresponding to [key] and expands
-// any variables using the OS env. If the [AvalancheGoDataDirVar] var is used,
+// any variables using the OS env. If the [PepecoinGoDataDirVar] var is used,
 // we expand the value of the variable with the string in viper corresponding to
 // [DataDirKey].
 func GetExpandedArg(v *viper.Viper, key string) string {
@@ -394,13 +394,13 @@ func GetExpandedArg(v *viper.Viper, key string) string {
 }
 
 // GetExpandedString expands [s] with any variables using the OS env. If the
-// [AvalancheGoDataDirVar] var is used, we expand the value of the variable with
+// [PepecoinGoDataDirVar] var is used, we expand the value of the variable with
 // the string in viper corresponding to [DataDirKey].
 func GetExpandedString(v *viper.Viper, s string) string {
 	return os.Expand(
 		s,
 		func(strVar string) string {
-			if strVar == AvalancheGoDataDirVar {
+			if strVar == PepecoinGoDataDirVar {
 				return os.ExpandEnv(v.GetString(DataDirKey))
 			}
 			return os.Getenv(strVar)

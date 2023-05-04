@@ -4,9 +4,9 @@
 package bootstrap
 
 import (
-	"github.com/ava-labs/avalanchego/snow/engine/common"
-	"github.com/ava-labs/avalanchego/snow/engine/common/queue"
-	"github.com/ava-labs/avalanchego/snow/engine/snowman/block"
+	"github.com/memeticofficial/pepecoingo/snow/engine/common"
+	"github.com/memeticofficial/pepecoingo/snow/engine/common/queue"
+	"github.com/memeticofficial/pepecoingo/snow/engine/snowman/block"
 )
 
 type Config struct {

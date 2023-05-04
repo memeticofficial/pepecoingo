@@ -6,11 +6,11 @@ package avm
 import (
 	"testing"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/constants"
-	"github.com/ava-labs/avalanchego/utils/formatting"
-	"github.com/ava-labs/avalanchego/utils/formatting/address"
-	"github.com/ava-labs/avalanchego/utils/json"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/utils/constants"
+	"github.com/memeticofficial/pepecoingo/utils/formatting"
+	"github.com/memeticofficial/pepecoingo/utils/formatting/address"
+	"github.com/memeticofficial/pepecoingo/utils/json"
 )
 
 var addrStrArray = []string{

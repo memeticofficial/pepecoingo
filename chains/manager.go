@@ -18,55 +18,55 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/ava-labs/avalanchego/api/health"
-	"github.com/ava-labs/avalanchego/api/keystore"
-	"github.com/ava-labs/avalanchego/api/metrics"
-	"github.com/ava-labs/avalanchego/api/server"
-	"github.com/ava-labs/avalanchego/chains/atomic"
-	"github.com/ava-labs/avalanchego/database/prefixdb"
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/message"
-	"github.com/ava-labs/avalanchego/network"
-	"github.com/ava-labs/avalanchego/proto/pb/p2p"
-	"github.com/ava-labs/avalanchego/snow"
-	"github.com/ava-labs/avalanchego/snow/engine/avalanche/state"
-	"github.com/ava-labs/avalanchego/snow/engine/avalanche/vertex"
-	"github.com/ava-labs/avalanchego/snow/engine/common"
-	"github.com/ava-labs/avalanchego/snow/engine/common/queue"
-	"github.com/ava-labs/avalanchego/snow/engine/common/tracker"
-	"github.com/ava-labs/avalanchego/snow/engine/snowman/block"
-	"github.com/ava-labs/avalanchego/snow/engine/snowman/syncer"
-	"github.com/ava-labs/avalanchego/snow/networking/handler"
-	"github.com/ava-labs/avalanchego/snow/networking/router"
-	"github.com/ava-labs/avalanchego/snow/networking/sender"
-	"github.com/ava-labs/avalanchego/snow/networking/timeout"
-	"github.com/ava-labs/avalanchego/snow/validators"
-	"github.com/ava-labs/avalanchego/subnets"
-	"github.com/ava-labs/avalanchego/trace"
-	"github.com/ava-labs/avalanchego/utils/buffer"
-	"github.com/ava-labs/avalanchego/utils/constants"
-	"github.com/ava-labs/avalanchego/utils/crypto/bls"
-	"github.com/ava-labs/avalanchego/utils/logging"
-	"github.com/ava-labs/avalanchego/utils/perms"
-	"github.com/ava-labs/avalanchego/utils/set"
-	"github.com/ava-labs/avalanchego/version"
-	"github.com/ava-labs/avalanchego/vms"
-	"github.com/ava-labs/avalanchego/vms/metervm"
-	"github.com/ava-labs/avalanchego/vms/platformvm/warp"
-	"github.com/ava-labs/avalanchego/vms/proposervm"
-	"github.com/ava-labs/avalanchego/vms/tracedvm"
+	"github.com/memeticofficial/pepecoingo/api/health"
+	"github.com/memeticofficial/pepecoingo/api/keystore"
+	"github.com/memeticofficial/pepecoingo/api/metrics"
+	"github.com/memeticofficial/pepecoingo/api/server"
+	"github.com/memeticofficial/pepecoingo/chains/atomic"
+	"github.com/memeticofficial/pepecoingo/database/prefixdb"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/message"
+	"github.com/memeticofficial/pepecoingo/network"
+	"github.com/memeticofficial/pepecoingo/proto/pb/p2p"
+	"github.com/memeticofficial/pepecoingo/snow"
+	"github.com/memeticofficial/pepecoingo/snow/engine/pepecoin/state"
+	"github.com/memeticofficial/pepecoingo/snow/engine/pepecoin/vertex"
+	"github.com/memeticofficial/pepecoingo/snow/engine/common"
+	"github.com/memeticofficial/pepecoingo/snow/engine/common/queue"
+	"github.com/memeticofficial/pepecoingo/snow/engine/common/tracker"
+	"github.com/memeticofficial/pepecoingo/snow/engine/snowman/block"
+	"github.com/memeticofficial/pepecoingo/snow/engine/snowman/syncer"
+	"github.com/memeticofficial/pepecoingo/snow/networking/handler"
+	"github.com/memeticofficial/pepecoingo/snow/networking/router"
+	"github.com/memeticofficial/pepecoingo/snow/networking/sender"
+	"github.com/memeticofficial/pepecoingo/snow/networking/timeout"
+	"github.com/memeticofficial/pepecoingo/snow/validators"
+	"github.com/memeticofficial/pepecoingo/subnets"
+	"github.com/memeticofficial/pepecoingo/trace"
+	"github.com/memeticofficial/pepecoingo/utils/buffer"
+	"github.com/memeticofficial/pepecoingo/utils/constants"
+	"github.com/memeticofficial/pepecoingo/utils/crypto/bls"
+	"github.com/memeticofficial/pepecoingo/utils/logging"
+	"github.com/memeticofficial/pepecoingo/utils/perms"
+	"github.com/memeticofficial/pepecoingo/utils/set"
+	"github.com/memeticofficial/pepecoingo/version"
+	"github.com/memeticofficial/pepecoingo/vms"
+	"github.com/memeticofficial/pepecoingo/vms/metervm"
+	"github.com/memeticofficial/pepecoingo/vms/platformvm/warp"
+	"github.com/memeticofficial/pepecoingo/vms/proposervm"
+	"github.com/memeticofficial/pepecoingo/vms/tracedvm"
 
-	dbManager "github.com/ava-labs/avalanchego/database/manager"
-	timetracker "github.com/ava-labs/avalanchego/snow/networking/tracker"
+	dbManager "github.com/memeticofficial/pepecoingo/database/manager"
+	timetracker "github.com/memeticofficial/pepecoingo/snow/networking/tracker"
 
-	aveng "github.com/ava-labs/avalanchego/snow/engine/avalanche"
-	avbootstrap "github.com/ava-labs/avalanchego/snow/engine/avalanche/bootstrap"
-	avagetter "github.com/ava-labs/avalanchego/snow/engine/avalanche/getter"
+	aveng "github.com/memeticofficial/pepecoingo/snow/engine/pepecoin"
+	avbootstrap "github.com/memeticofficial/pepecoingo/snow/engine/pepecoin/bootstrap"
+	avagetter "github.com/memeticofficial/pepecoingo/snow/engine/pepecoin/getter"
 
-	smcon "github.com/ava-labs/avalanchego/snow/consensus/snowman"
-	smeng "github.com/ava-labs/avalanchego/snow/engine/snowman"
-	smbootstrap "github.com/ava-labs/avalanchego/snow/engine/snowman/bootstrap"
-	snowgetter "github.com/ava-labs/avalanchego/snow/engine/snowman/getter"
+	smcon "github.com/memeticofficial/pepecoingo/snow/consensus/snowman"
+	smeng "github.com/memeticofficial/pepecoingo/snow/engine/snowman"
+	smbootstrap "github.com/memeticofficial/pepecoingo/snow/engine/snowman/bootstrap"
+	snowgetter "github.com/memeticofficial/pepecoingo/snow/engine/snowman/getter"
 )
 
 const (
@@ -87,7 +87,7 @@ var (
 	// Bootstrapping prefixes for ChainVMs
 	bootstrappingDB = []byte("bs")
 
-	errUnknownVMType          = errors.New("the vm should have type avalanche.DAGVM or snowman.ChainVM")
+	errUnknownVMType          = errors.New("the vm should have type pepecoin.DAGVM or snowman.ChainVM")
 	errCreatePlatformVM       = errors.New("attempted to create a chain running the PlatformVM")
 	errNotBootstrapped        = errors.New("subnets not bootstrapped")
 	errNoPlatformSubnetConfig = errors.New("subnet config for platform chain not found")
@@ -442,12 +442,12 @@ func (m *manager) buildChain(chainParams ChainParameters, sb subnets.Subnet) (*c
 		return nil, fmt.Errorf("error while registering chain's metrics %w", err)
 	}
 
-	// This converts the prefix for all the Avalanche consensus metrics from
-	// `avalanche_{chainID}_` into `avalanche_{chainID}_avalanche_` so that
+	// This converts the prefix for all the Pepecoin consensus metrics from
+	// `pepecoin_{chainID}_` into `pepecoin_{chainID}_pepecoin_` so that
 	// there are no conflicts when registering the Snowman consensus metrics.
-	avalancheConsensusMetrics := prometheus.NewRegistry()
-	avalancheDAGNamespace := fmt.Sprintf("%s_avalanche", chainNamespace)
-	if err := m.Metrics.Register(avalancheDAGNamespace, avalancheConsensusMetrics); err != nil {
+	pepecoinConsensusMetrics := prometheus.NewRegistry()
+	pepecoinDAGNamespace := fmt.Sprintf("%s_pepecoin", chainNamespace)
+	if err := m.Metrics.Register(pepecoinDAGNamespace, pepecoinConsensusMetrics); err != nil {
 		return nil, fmt.Errorf("error while registering DAG metrics %w", err)
 	}
 
@@ -484,7 +484,7 @@ func (m *manager) buildChain(chainParams ChainParameters, sb subnets.Subnet) (*c
 		TxAcceptor:          m.TxAcceptorGroup,
 		VertexAcceptor:      m.VertexAcceptorGroup,
 		Registerer:          consensusMetrics,
-		AvalancheRegisterer: avalancheConsensusMetrics,
+		PepecoinRegisterer: pepecoinConsensusMetrics,
 	}
 
 	// Get a factory for the vm we want to use on our chain
@@ -541,7 +541,7 @@ func (m *manager) buildChain(chainParams ChainParameters, sb subnets.Subnet) (*c
 	var chain *chain
 	switch vm := vm.(type) {
 	case vertex.LinearizableVMWithEngine:
-		chain, err = m.createAvalancheChain(
+		chain, err = m.createPepecoinChain(
 			ctx,
 			chainParams.GenesisData,
 			vdrs,
@@ -552,7 +552,7 @@ func (m *manager) buildChain(chainParams ChainParameters, sb subnets.Subnet) (*c
 			sb,
 		)
 		if err != nil {
-			return nil, fmt.Errorf("error while creating new avalanche vm %w", err)
+			return nil, fmt.Errorf("error while creating new pepecoin vm %w", err)
 		}
 	case block.ChainVM:
 		chain, err = m.createSnowmanChain(
@@ -584,8 +584,8 @@ func (m *manager) AddRegistrant(r Registrant) {
 	m.registrants = append(m.registrants, r)
 }
 
-// Create a DAG-based blockchain that uses Avalanche
-func (m *manager) createAvalancheChain(
+// Create a DAG-based blockchain that uses Pepecoin
+func (m *manager) createPepecoinChain(
 	ctx *snow.ConsensusContext,
 	genesisData []byte,
 	vdrs,
@@ -599,7 +599,7 @@ func (m *manager) createAvalancheChain(
 	defer ctx.Lock.Unlock()
 
 	ctx.State.Set(snow.EngineState{
-		Type:  p2p.EngineType_ENGINE_TYPE_AVALANCHE,
+		Type:  p2p.EngineType_ENGINE_TYPE_PEPECOIN,
 		State: snow.Initializing,
 	})
 
@@ -616,11 +616,11 @@ func (m *manager) createAvalancheChain(
 	txBootstrappingDB := prefixdb.New(txBootstrappingDBPrefix, db.Database)
 	blockBootstrappingDB := prefixdb.New(blockBootstrappingDBPrefix, db.Database)
 
-	vtxBlocker, err := queue.NewWithMissing(vertexBootstrappingDB, "vtx", ctx.AvalancheRegisterer)
+	vtxBlocker, err := queue.NewWithMissing(vertexBootstrappingDB, "vtx", ctx.PepecoinRegisterer)
 	if err != nil {
 		return nil, err
 	}
-	txBlocker, err := queue.New(txBootstrappingDB, "tx", ctx.AvalancheRegisterer)
+	txBlocker, err := queue.New(txBootstrappingDB, "tx", ctx.PepecoinRegisterer)
 	if err != nil {
 		return nil, err
 	}
@@ -633,28 +633,28 @@ func (m *manager) createAvalancheChain(
 	// VM uses this channel to notify engine that a block is ready to be made
 	msgChan := make(chan common.Message, defaultChannelSize)
 
-	// Passes messages from the avalanche engines to the network
-	avalancheMessageSender, err := sender.New(
+	// Passes messages from the pepecoin engines to the network
+	pepecoinMessageSender, err := sender.New(
 		ctx,
 		m.MsgCreator,
 		m.Net,
 		m.ManagerConfig.Router,
 		m.TimeoutManager,
-		p2p.EngineType_ENGINE_TYPE_AVALANCHE,
+		p2p.EngineType_ENGINE_TYPE_PEPECOIN,
 		sb,
 	)
 	if err != nil {
-		return nil, fmt.Errorf("couldn't initialize avalanche sender: %w", err)
+		return nil, fmt.Errorf("couldn't initialize pepecoin sender: %w", err)
 	}
 
 	if m.TracingEnabled {
-		avalancheMessageSender = sender.Trace(avalancheMessageSender, m.Tracer)
+		pepecoinMessageSender = sender.Trace(pepecoinMessageSender, m.Tracer)
 	}
 
 	err = m.VertexAcceptorGroup.RegisterAcceptor(
 		ctx.ChainID,
 		"gossip",
-		avalancheMessageSender,
+		pepecoinMessageSender,
 		false,
 	)
 	if err != nil { // Set up the event dispatcher
@@ -672,7 +672,7 @@ func (m *manager) createAvalancheChain(
 		sb,
 	)
 	if err != nil {
-		return nil, fmt.Errorf("couldn't initialize avalanche sender: %w", err)
+		return nil, fmt.Errorf("couldn't initialize pepecoin sender: %w", err)
 	}
 
 	if m.TracingEnabled {
@@ -713,11 +713,11 @@ func (m *manager) createAvalancheChain(
 		},
 	)
 
-	avalancheRegisterer := metrics.NewOptionalGatherer()
+	pepecoinRegisterer := metrics.NewOptionalGatherer()
 	snowmanRegisterer := metrics.NewOptionalGatherer()
 
 	registerer := metrics.NewMultiGatherer()
-	if err := registerer.Register("avalanche", avalancheRegisterer); err != nil {
+	if err := registerer.Register("pepecoin", pepecoinRegisterer); err != nil {
 		return nil, err
 	}
 	if err := registerer.Register("", snowmanRegisterer); err != nil {
@@ -727,9 +727,9 @@ func (m *manager) createAvalancheChain(
 		return nil, err
 	}
 
-	ctx.Context.Metrics = avalancheRegisterer
+	ctx.Context.Metrics = pepecoinRegisterer
 
-	// The only difference between using avalancheMessageSender and
+	// The only difference between using pepecoinMessageSender and
 	// snowmanMessageSender here is where the metrics will be placed. Because we
 	// end up using this sender after the linearization, we pass in
 	// snowmanMessageSender here.
@@ -788,7 +788,7 @@ func (m *manager) createAvalancheChain(
 		vmWrappingProposerVM = tracedvm.NewBlockVM(vmWrappingProposerVM, "proposervm", m.Tracer)
 	}
 
-	// Note: linearizableVM is the VM that the Avalanche engines should be
+	// Note: linearizableVM is the VM that the Pepecoin engines should be
 	// using.
 	linearizableVM := &initializeOnLinearizeVM{
 		DAGVM:          vm,
@@ -820,7 +820,7 @@ func (m *manager) createAvalancheChain(
 		m.ConsensusGossipFrequency,
 		m.ConsensusAppConcurrency,
 		m.ResourceTracker,
-		validators.UnhandledSubnetConnector, // avalanche chains don't use subnet connector
+		validators.UnhandledSubnetConnector, // pepecoin chains don't use subnet connector
 		sb,
 	)
 	if err != nil {
@@ -896,13 +896,13 @@ func (m *manager) createAvalancheChain(
 		snowmanBootstrapper = common.TraceBootstrapableEngine(snowmanBootstrapper, m.Tracer)
 	}
 
-	avalancheCommonCfg := common.Config{
+	pepecoinCommonCfg := common.Config{
 		Ctx:                            ctx,
 		Beacons:                        beacons,
 		SampleK:                        sampleK,
 		StartupTracker:                 startupTracker,
 		Alpha:                          bootstrapWeight/2 + 1, // must be > 50%
-		Sender:                         avalancheMessageSender,
+		Sender:                         pepecoinMessageSender,
 		BootstrapTracker:               sb,
 		Timer:                          h,
 		RetryBootstrap:                 m.RetryBootstrap,
@@ -913,22 +913,22 @@ func (m *manager) createAvalancheChain(
 		SharedCfg:                      &common.SharedConfig{},
 	}
 
-	avaGetHandler, err := avagetter.New(vtxManager, avalancheCommonCfg)
+	avaGetHandler, err := avagetter.New(vtxManager, pepecoinCommonCfg)
 	if err != nil {
-		return nil, fmt.Errorf("couldn't initialize avalanche base message handler: %w", err)
+		return nil, fmt.Errorf("couldn't initialize pepecoin base message handler: %w", err)
 	}
 
 	// create engine gear
-	avalancheEngine := aveng.New(ctx, avaGetHandler, linearizableVM)
+	pepecoinEngine := aveng.New(ctx, avaGetHandler, linearizableVM)
 	if m.TracingEnabled {
-		avalancheEngine = common.TraceEngine(avalancheEngine, m.Tracer)
+		pepecoinEngine = common.TraceEngine(pepecoinEngine, m.Tracer)
 	}
 
 	// create bootstrap gear
 	_, specifiedLinearizationTime := version.CortinaTimes[ctx.NetworkID]
 	specifiedLinearizationTime = specifiedLinearizationTime && ctx.ChainID == m.XChainID
-	avalancheBootstrapperConfig := avbootstrap.Config{
-		Config:             avalancheCommonCfg,
+	pepecoinBootstrapperConfig := avbootstrap.Config{
+		Config:             pepecoinCommonCfg,
 		AllGetsServer:      avaGetHandler,
 		VtxBlocked:         vtxBlocker,
 		TxBlocked:          txBlocker,
@@ -937,23 +937,23 @@ func (m *manager) createAvalancheChain(
 		LinearizeOnStartup: !specifiedLinearizationTime,
 	}
 
-	avalancheBootstrapper, err := avbootstrap.New(
-		avalancheBootstrapperConfig,
+	pepecoinBootstrapper, err := avbootstrap.New(
+		pepecoinBootstrapperConfig,
 		snowmanBootstrapper.Start,
 	)
 	if err != nil {
-		return nil, fmt.Errorf("error initializing avalanche bootstrapper: %w", err)
+		return nil, fmt.Errorf("error initializing pepecoin bootstrapper: %w", err)
 	}
 
 	if m.TracingEnabled {
-		avalancheBootstrapper = common.TraceBootstrapableEngine(avalancheBootstrapper, m.Tracer)
+		pepecoinBootstrapper = common.TraceBootstrapableEngine(pepecoinBootstrapper, m.Tracer)
 	}
 
 	h.SetEngineManager(&handler.EngineManager{
-		Avalanche: &handler.Engine{
+		Pepecoin: &handler.Engine{
 			StateSyncer:  nil,
-			Bootstrapper: avalancheBootstrapper,
-			Consensus:    avalancheEngine,
+			Bootstrapper: pepecoinBootstrapper,
+			Consensus:    pepecoinEngine,
 		},
 		Snowman: &handler.Engine{
 			StateSyncer:  nil,
@@ -1252,7 +1252,7 @@ func (m *manager) createSnowmanChain(
 	}
 
 	h.SetEngineManager(&handler.EngineManager{
-		Avalanche: nil,
+		Pepecoin: nil,
 		Snowman: &handler.Engine{
 			StateSyncer:  stateSyncer,
 			Bootstrapper: bootstrapper,

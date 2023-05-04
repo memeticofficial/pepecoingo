@@ -17,15 +17,15 @@ import (
 
 	"google.golang.org/protobuf/proto"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/snow/engine/common"
-	"github.com/ava-labs/avalanchego/utils/constants"
-	"github.com/ava-labs/avalanchego/utils/hashing"
-	"github.com/ava-labs/avalanchego/utils/logging"
-	"github.com/ava-labs/avalanchego/utils/units"
-	"github.com/ava-labs/avalanchego/x/merkledb"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/snow/engine/common"
+	"github.com/memeticofficial/pepecoingo/utils/constants"
+	"github.com/memeticofficial/pepecoingo/utils/hashing"
+	"github.com/memeticofficial/pepecoingo/utils/logging"
+	"github.com/memeticofficial/pepecoingo/utils/units"
+	"github.com/memeticofficial/pepecoingo/x/merkledb"
 
-	syncpb "github.com/ava-labs/avalanchego/proto/pb/sync"
+	syncpb "github.com/memeticofficial/pepecoingo/proto/pb/sync"
 )
 
 const (
@@ -57,7 +57,7 @@ func NewNetworkServer(appSender common.AppSender, db *merkledb.Database, log log
 	}
 }
 
-// AppRequest is called by avalanchego -> VM when there is an incoming AppRequest from a peer.
+// AppRequest is called by pepecoingo -> VM when there is an incoming AppRequest from a peer.
 // Never returns errors as they are considered fatal.
 // Sends a response back to the sender if length of response returned by the handler > 0.
 func (s *NetworkServer) AppRequest(

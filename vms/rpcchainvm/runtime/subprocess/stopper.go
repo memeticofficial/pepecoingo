@@ -8,8 +8,8 @@ import (
 	"os/exec"
 	"sync"
 
-	"github.com/ava-labs/avalanchego/utils/logging"
-	"github.com/ava-labs/avalanchego/vms/rpcchainvm/runtime"
+	"github.com/memeticofficial/pepecoingo/utils/logging"
+	"github.com/memeticofficial/pepecoingo/vms/rpcchainvm/runtime"
 )
 
 func NewStopper(logger logging.Logger, cmd *exec.Cmd) runtime.Stopper {

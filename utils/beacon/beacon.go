@@ -4,8 +4,8 @@
 package beacon
 
 import (
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/ips"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/utils/ips"
 )
 
 var _ Beacon = (*beacon)(nil)

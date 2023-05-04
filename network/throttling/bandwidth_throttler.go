@@ -14,10 +14,10 @@ import (
 
 	"golang.org/x/time/rate"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/logging"
-	"github.com/ava-labs/avalanchego/utils/metric"
-	"github.com/ava-labs/avalanchego/utils/wrappers"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/utils/logging"
+	"github.com/memeticofficial/pepecoingo/utils/metric"
+	"github.com/memeticofficial/pepecoingo/utils/wrappers"
 )
 
 var _ bandwidthThrottler = (*bandwidthThrottlerImpl)(nil)

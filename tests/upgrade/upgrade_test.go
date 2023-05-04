@@ -15,8 +15,8 @@ import (
 	"github.com/onsi/ginkgo/v2"
 	"github.com/onsi/gomega"
 
-	runner_sdk "github.com/ava-labs/avalanche-network-runner-sdk"
-	"github.com/ava-labs/avalanchego/tests"
+	runner_sdk "github.com/memeticofficial/pepecoin-network-runner-sdk"
+	"github.com/memeticofficial/pepecoingo/tests"
 )
 
 func TestUpgrade(t *testing.T) {
@@ -27,9 +27,9 @@ func TestUpgrade(t *testing.T) {
 var (
 	logLevel                                  string
 	networkRunnerGRPCEp                       string
-	networkRunnerAvalancheGoExecPath          string
-	networkRunnerAvalancheGoExecPathToUpgrade string
-	networkRunnerAvalancheGoLogLevel          string
+	networkRunnerPepecoinGoExecPath          string
+	networkRunnerPepecoinGoExecPathToUpgrade string
+	networkRunnerPepecoinGoLogLevel          string
 )
 
 func init() {
@@ -46,32 +46,32 @@ func init() {
 		"gRPC server endpoint for network-runner",
 	)
 	flag.StringVar(
-		&networkRunnerAvalancheGoExecPath,
-		"network-runner-avalanchego-path",
+		&networkRunnerPepecoinGoExecPath,
+		"network-runner-pepecoingo-path",
 		"",
-		"avalanchego executable path",
+		"pepecoingo executable path",
 	)
 	flag.StringVar(
-		&networkRunnerAvalancheGoExecPathToUpgrade,
-		"network-runner-avalanchego-path-to-upgrade",
+		&networkRunnerPepecoinGoExecPathToUpgrade,
+		"network-runner-pepecoingo-path-to-upgrade",
 		"",
-		"avalanchego executable path (to upgrade to, only required for upgrade tests with local network-runner)",
+		"pepecoingo executable path (to upgrade to, only required for upgrade tests with local network-runner)",
 	)
 	flag.StringVar(
-		&networkRunnerAvalancheGoLogLevel,
-		"network-runner-avalanchego-log-level",
+		&networkRunnerPepecoinGoLogLevel,
+		"network-runner-pepecoingo-log-level",
 		"INFO",
-		"avalanchego log-level",
+		"pepecoingo log-level",
 	)
 }
 
 var runnerCli runner_sdk.Client
 
 var _ = ginkgo.BeforeSuite(func() {
-	_, err := os.Stat(networkRunnerAvalancheGoExecPath)
+	_, err := os.Stat(networkRunnerPepecoinGoExecPath)
 	gomega.Expect(err).Should(gomega.BeNil())
 
-	_, err = os.Stat(networkRunnerAvalancheGoExecPathToUpgrade)
+	_, err = os.Stat(networkRunnerPepecoinGoExecPathToUpgrade)
 	gomega.Expect(err).Should(gomega.BeNil())
 
 	runnerCli, err = runner_sdk.New(runner_sdk.Config{
@@ -87,11 +87,11 @@ var _ = ginkgo.BeforeSuite(func() {
 	gomega.Expect(err).Should(gomega.BeNil())
 	tests.Outf("{{green}}network-runner running in PID %d{{/}}\n", presp.Pid)
 
-	tests.Outf("{{magenta}}starting network-runner with %q{{/}}\n", networkRunnerAvalancheGoExecPath)
+	tests.Outf("{{magenta}}starting network-runner with %q{{/}}\n", networkRunnerPepecoinGoExecPath)
 	ctx, cancel = context.WithTimeout(context.Background(), 15*time.Second)
-	resp, err := runnerCli.Start(ctx, networkRunnerAvalancheGoExecPath,
+	resp, err := runnerCli.Start(ctx, networkRunnerPepecoinGoExecPath,
 		runner_sdk.WithNumNodes(5),
-		runner_sdk.WithGlobalNodeConfig(fmt.Sprintf(`{"log-level":"%s"}`, networkRunnerAvalancheGoLogLevel)),
+		runner_sdk.WithGlobalNodeConfig(fmt.Sprintf(`{"log-level":"%s"}`, networkRunnerPepecoinGoLogLevel)),
 	)
 	cancel()
 	gomega.Expect(err).Should(gomega.BeNil())
@@ -120,16 +120,16 @@ var _ = ginkgo.AfterSuite(func() {
 
 var _ = ginkgo.Describe("[Upgrade]", func() {
 	ginkgo.It("can upgrade versions", func() {
-		tests.Outf("{{magenta}}starting upgrade tests %q{{/}}\n", networkRunnerAvalancheGoExecPathToUpgrade)
+		tests.Outf("{{magenta}}starting upgrade tests %q{{/}}\n", networkRunnerPepecoinGoExecPathToUpgrade)
 		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		sresp, err := runnerCli.Status(ctx)
 		cancel()
 		gomega.Expect(err).Should(gomega.BeNil())
 
 		for _, name := range sresp.ClusterInfo.NodeNames {
-			tests.Outf("{{magenta}}restarting the node %q{{/}} with %q\n", name, networkRunnerAvalancheGoExecPathToUpgrade)
+			tests.Outf("{{magenta}}restarting the node %q{{/}} with %q\n", name, networkRunnerPepecoinGoExecPathToUpgrade)
 			ctx, cancel := context.WithTimeout(context.Background(), 2*time.Minute)
-			resp, err := runnerCli.RestartNode(ctx, name, runner_sdk.WithExecPath(networkRunnerAvalancheGoExecPathToUpgrade))
+			resp, err := runnerCli.RestartNode(ctx, name, runner_sdk.WithExecPath(networkRunnerPepecoinGoExecPathToUpgrade))
 			cancel()
 			gomega.Expect(err).Should(gomega.BeNil())
 
@@ -139,7 +139,7 @@ var _ = ginkgo.Describe("[Upgrade]", func() {
 			_, err = runnerCli.Health(ctx)
 			cancel()
 			gomega.Expect(err).Should(gomega.BeNil())
-			tests.Outf("{{green}}successfully upgraded %q to %q{{/}} (current info: %+v)\n", name, networkRunnerAvalancheGoExecPathToUpgrade, resp.ClusterInfo.NodeInfos)
+			tests.Outf("{{green}}successfully upgraded %q to %q{{/}} (current info: %+v)\n", name, networkRunnerPepecoinGoExecPathToUpgrade, resp.ClusterInfo.NodeInfos)
 		}
 	})
 })

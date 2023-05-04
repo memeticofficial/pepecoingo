@@ -11,14 +11,14 @@ import (
 
 	"github.com/onsi/gomega"
 
-	"github.com/ava-labs/avalanchego/tests/e2e"
+	"github.com/memeticofficial/pepecoingo/tests/e2e"
 
 	// ensure test packages are scanned by ginkgo
-	_ "github.com/ava-labs/avalanchego/tests/e2e/banff"
-	_ "github.com/ava-labs/avalanchego/tests/e2e/p"
-	_ "github.com/ava-labs/avalanchego/tests/e2e/ping"
-	_ "github.com/ava-labs/avalanchego/tests/e2e/static-handlers"
-	_ "github.com/ava-labs/avalanchego/tests/e2e/x/transfer"
+	_ "github.com/memeticofficial/pepecoingo/tests/e2e/banff"
+	_ "github.com/memeticofficial/pepecoingo/tests/e2e/p"
+	_ "github.com/memeticofficial/pepecoingo/tests/e2e/ping"
+	_ "github.com/memeticofficial/pepecoingo/tests/e2e/static-handlers"
+	_ "github.com/memeticofficial/pepecoingo/tests/e2e/x/transfer"
 )
 
 func TestE2E(t *testing.T) {
@@ -31,8 +31,8 @@ var (
 	logLevel string
 
 	networkRunnerGRPCEp              string
-	networkRunnerAvalancheGoExecPath string
-	networkRunnerAvalancheGoLogLevel string
+	networkRunnerPepecoinGoExecPath string
+	networkRunnerPepecoinGoLogLevel string
 
 	uris string
 
@@ -54,16 +54,16 @@ func init() {
 		"[optional] gRPC server endpoint for network-runner (only required for local network-runner tests)",
 	)
 	flag.StringVar(
-		&networkRunnerAvalancheGoExecPath,
-		"network-runner-avalanchego-path",
+		&networkRunnerPepecoinGoExecPath,
+		"network-runner-pepecoingo-path",
 		"",
-		"[optional] avalanchego executable path (only required for local network-runner tests)",
+		"[optional] pepecoingo executable path (only required for local network-runner tests)",
 	)
 	flag.StringVar(
-		&networkRunnerAvalancheGoLogLevel,
-		"network-runner-avalanchego-log-level",
+		&networkRunnerPepecoinGoLogLevel,
+		"network-runner-pepecoingo-log-level",
 		"INFO",
-		"[optional] avalanchego log-level (only required for local network-runner tests)",
+		"[optional] pepecoingo log-level (only required for local network-runner tests)",
 	)
 
 	// e.g., custom network HTTP RPC endpoints
@@ -71,7 +71,7 @@ func init() {
 		&uris,
 		"uris",
 		"",
-		"HTTP RPC endpoint URIs for avalanche node (comma-separated, required to run against existing cluster)",
+		"HTTP RPC endpoint URIs for pepecoin node (comma-separated, required to run against existing cluster)",
 	)
 
 	// file that contains a list of new-line separated secp256k1 private keys
@@ -87,8 +87,8 @@ var _ = ginkgo.BeforeSuite(func() {
 	err := e2e.Env.ConfigCluster(
 		logLevel,
 		networkRunnerGRPCEp,
-		networkRunnerAvalancheGoExecPath,
-		networkRunnerAvalancheGoLogLevel,
+		networkRunnerPepecoinGoExecPath,
+		networkRunnerPepecoinGoLogLevel,
 		uris,
 		testKeysFile,
 	)

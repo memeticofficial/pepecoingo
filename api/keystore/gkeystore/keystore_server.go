@@ -6,13 +6,13 @@ package gkeystore
 import (
 	"context"
 
-	"github.com/ava-labs/avalanchego/api/keystore"
-	"github.com/ava-labs/avalanchego/database"
-	"github.com/ava-labs/avalanchego/database/rpcdb"
-	"github.com/ava-labs/avalanchego/vms/rpcchainvm/grpcutils"
+	"github.com/memeticofficial/pepecoingo/api/keystore"
+	"github.com/memeticofficial/pepecoingo/database"
+	"github.com/memeticofficial/pepecoingo/database/rpcdb"
+	"github.com/memeticofficial/pepecoingo/vms/rpcchainvm/grpcutils"
 
-	keystorepb "github.com/ava-labs/avalanchego/proto/pb/keystore"
-	rpcdbpb "github.com/ava-labs/avalanchego/proto/pb/rpcdb"
+	keystorepb "github.com/memeticofficial/pepecoingo/proto/pb/keystore"
+	rpcdbpb "github.com/memeticofficial/pepecoingo/proto/pb/rpcdb"
 )
 
 var _ keystorepb.KeystoreServer = (*Server)(nil)

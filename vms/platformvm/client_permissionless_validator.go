@@ -6,10 +6,10 @@ package platformvm
 import (
 	"encoding/json"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/formatting/address"
-	"github.com/ava-labs/avalanchego/vms/platformvm/api"
-	"github.com/ava-labs/avalanchego/vms/platformvm/signer"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/utils/formatting/address"
+	"github.com/memeticofficial/pepecoingo/vms/platformvm/api"
+	"github.com/memeticofficial/pepecoingo/vms/platformvm/signer"
 )
 
 // ClientStaker is the representation of a staker sent via client.

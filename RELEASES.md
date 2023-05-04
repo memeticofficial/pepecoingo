@@ -1,8 +1,8 @@
 # Release Notes
 
-## [v1.10.1](https://github.com/ava-labs/avalanchego/releases/tag/v1.10.1)
+## [v1.10.1](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.10.1)
 
-This version is backwards compatible to [v1.10.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.10.0). It is optional, but encouraged. The supported plugin version is `26`.
+This version is backwards compatible to [v1.10.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.10.0). It is optional, but encouraged. The supported plugin version is `26`.
 
 ### APIs
 
@@ -16,13 +16,13 @@ This version is backwards compatible to [v1.10.0](https://github.com/ava-labs/av
 - Removed `avm.issueStopVertex`
 - Fixed `wallet` methods to correctly allow issuance of dependent transactions after the X-chain linearization
 - Added `validatorOnly` flag in `platform.getStake`
-- Removed all avalanche consensus metrics
+- Removed all pepecoin consensus metrics
 - Fixed `msgHandlingTime` metrics
 
 ### Configs
 
-- Removed `--snow-avalanche-num-parents`
-- Removed `--snow-avalanche-batch-size`
+- Removed `--snow-pepecoin-num-parents`
+- Removed `--snow-pepecoin-batch-size`
 
 ### Fixes
 
@@ -33,71 +33,71 @@ This version is backwards compatible to [v1.10.0](https://github.com/ava-labs/av
 
 ### What's Changed
 
-- Add benchmark for gRPC GetValidatorSet by @hexfusion in https://github.com/ava-labs/avalanchego/pull/1326
-- Add checks for database being closed in merkledb; other nits by @danlaine in https://github.com/ava-labs/avalanchego/pull/1333
-- Update linkedhashmap to only Rlock when possible by @dboehm-avalabs in https://github.com/ava-labs/avalanchego/pull/1329
-- Remove no-op changes from history results by @dboehm-avalabs in https://github.com/ava-labs/avalanchego/pull/1335
-- Cleanup type assertions in the linkedHashmap by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1341
-- Fix racy avm tx access by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1349
-- Update Fuji beacon ips by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1354
-- Remove duplicate TLS verification by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1364
-- Adjust Merkledb Trie invalidation locking by @dboehm-avalabs in https://github.com/ava-labs/avalanchego/pull/1355
-- Use require in Avalanche bootstrapping tests by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1344
-- Add Proof size limit to sync client by @dboehm-avalabs in https://github.com/ava-labs/avalanchego/pull/1269
-- Add stake priority helpers by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1375
-- add contribution file by @joshua-kim in https://github.com/ava-labs/avalanchego/pull/1373
-- Remove max sample value by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1374
-- Prefetch rpcdb iterator batches by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1323
-- Temp fix for flaky Sync Test by @dboehm-avalabs in https://github.com/ava-labs/avalanchego/pull/1378
-- Update merkle cache to be FIFO instead of LRU by @dboehm-avalabs in https://github.com/ava-labs/avalanchego/pull/1353
-- Improve cost of BLS key serialization for gRPC by @hexfusion in https://github.com/ava-labs/avalanchego/pull/1343
-- [Issue-1368]: Panic in serializedPath.HasPrefix by @dboehm-avalabs in https://github.com/ava-labs/avalanchego/pull/1371
-- Add ValidatorsOnly flag to GetStake by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1377
-- Use proto in `x/sync` by @danlaine in https://github.com/ava-labs/avalanchego/pull/1336
-- Update incorrect fuji beacon IPs by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1392
-- Update `api/` error handling by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1393
-- refactor concurrent work limiting in sync in `x/sync` by @danlaine in https://github.com/ava-labs/avalanchego/pull/1347
-- Remove check for impossible condition in `x/sync` by @danlaine in https://github.com/ava-labs/avalanchego/pull/1348
-- Improve `codec/` error handling by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1396
-- Improve `config/` error handling by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1397
-- Improve `genesis/` error handling by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1398
-- Improve various error handling locations by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1399
-- Improve `utils/` error handling by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1400
-- Improve consensus error handling by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1401
-- Improve secp256k1fx + merkledb error handling by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1402
-- Ban usage of require.Error by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1346
-- Remove slice capacity hint in `x/sync` by @danlaine in https://github.com/ava-labs/avalanchego/pull/1350
-- Simplify `syncWorkHeap` less function in `x/sync` by @danlaine in https://github.com/ava-labs/avalanchego/pull/1351
-- Replace `switch` with `txs.Visitor` in X chain signer by @dhrubabasu in https://github.com/ava-labs/avalanchego/pull/1404
-- Include IDs in json marshalling by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1408
-- Adjust find next key logic in x/Sync by @dboehm-avalabs in https://github.com/ava-labs/avalanchego/pull/1331
-- Remove bitmask from writeMsgLen by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1342
-- Require `txID`s in PeerList messages by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1411
-- Allow dependent tx issuance over the wallet API by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1413
-- Add support for proto `message.Tx` decoding by @danlaine in https://github.com/ava-labs/avalanchego/pull/1332
-- Remove avalanche bootstrapping -> avalanche consensus transition by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1345
-- Benchmark get canonical validator set by @aaronbuchwald in https://github.com/ava-labs/avalanchego/pull/1417
-- Simplify IP status calculation by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1421
-- Honor AllowPrivateIPs config by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1422
-- Update BLS signature ordering to avoid public key compression by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1416
-- Remove DAG based consensus by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1359
-- Remove IssueStopVertex message by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1419
-- Fix msgHandlingTime by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1432
-- Change ChangeProofs to only have one list of key/value change instead of key/values and deleted by @dboehm-avalabs in https://github.com/ava-labs/avalanchego/pull/1385
-- Update AMI generation workflow by @charlie-ava in https://github.com/ava-labs/avalanchego/pull/1289
-- Support `height` as a string in `avm.getBlockByHeight` by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1437
-- Defer Snowman Bootstrapper parser initialization to Start by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1442
-- Cleanup proposervm ancestors packing @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1446
+- Add benchmark for gRPC GetValidatorSet by @hexfusion in https://github.com/memeticofficial/pepecoingo/pull/1326
+- Add checks for database being closed in merkledb; other nits by @danlaine in https://github.com/memeticofficial/pepecoingo/pull/1333
+- Update linkedhashmap to only Rlock when possible by @dboehm-avalabs in https://github.com/memeticofficial/pepecoingo/pull/1329
+- Remove no-op changes from history results by @dboehm-avalabs in https://github.com/memeticofficial/pepecoingo/pull/1335
+- Cleanup type assertions in the linkedHashmap by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1341
+- Fix racy avm tx access by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1349
+- Update Fuji beacon ips by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1354
+- Remove duplicate TLS verification by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1364
+- Adjust Merkledb Trie invalidation locking by @dboehm-avalabs in https://github.com/memeticofficial/pepecoingo/pull/1355
+- Use require in Pepecoin bootstrapping tests by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1344
+- Add Proof size limit to sync client by @dboehm-avalabs in https://github.com/memeticofficial/pepecoingo/pull/1269
+- Add stake priority helpers by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1375
+- add contribution file by @joshua-kim in https://github.com/memeticofficial/pepecoingo/pull/1373
+- Remove max sample value by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1374
+- Prefetch rpcdb iterator batches by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1323
+- Temp fix for flaky Sync Test by @dboehm-avalabs in https://github.com/memeticofficial/pepecoingo/pull/1378
+- Update merkle cache to be FIFO instead of LRU by @dboehm-avalabs in https://github.com/memeticofficial/pepecoingo/pull/1353
+- Improve cost of BLS key serialization for gRPC by @hexfusion in https://github.com/memeticofficial/pepecoingo/pull/1343
+- [Issue-1368]: Panic in serializedPath.HasPrefix by @dboehm-avalabs in https://github.com/memeticofficial/pepecoingo/pull/1371
+- Add ValidatorsOnly flag to GetStake by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1377
+- Use proto in `x/sync` by @danlaine in https://github.com/memeticofficial/pepecoingo/pull/1336
+- Update incorrect fuji beacon IPs by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1392
+- Update `api/` error handling by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1393
+- refactor concurrent work limiting in sync in `x/sync` by @danlaine in https://github.com/memeticofficial/pepecoingo/pull/1347
+- Remove check for impossible condition in `x/sync` by @danlaine in https://github.com/memeticofficial/pepecoingo/pull/1348
+- Improve `codec/` error handling by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1396
+- Improve `config/` error handling by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1397
+- Improve `genesis/` error handling by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1398
+- Improve various error handling locations by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1399
+- Improve `utils/` error handling by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1400
+- Improve consensus error handling by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1401
+- Improve secp256k1fx + merkledb error handling by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1402
+- Ban usage of require.Error by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1346
+- Remove slice capacity hint in `x/sync` by @danlaine in https://github.com/memeticofficial/pepecoingo/pull/1350
+- Simplify `syncWorkHeap` less function in `x/sync` by @danlaine in https://github.com/memeticofficial/pepecoingo/pull/1351
+- Replace `switch` with `txs.Visitor` in X chain signer by @dhrubabasu in https://github.com/memeticofficial/pepecoingo/pull/1404
+- Include IDs in json marshalling by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1408
+- Adjust find next key logic in x/Sync by @dboehm-avalabs in https://github.com/memeticofficial/pepecoingo/pull/1331
+- Remove bitmask from writeMsgLen by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1342
+- Require `txID`s in PeerList messages by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1411
+- Allow dependent tx issuance over the wallet API by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1413
+- Add support for proto `message.Tx` decoding by @danlaine in https://github.com/memeticofficial/pepecoingo/pull/1332
+- Remove pepecoin bootstrapping -> pepecoin consensus transition by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1345
+- Benchmark get canonical validator set by @aaronbuchwald in https://github.com/memeticofficial/pepecoingo/pull/1417
+- Simplify IP status calculation by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1421
+- Honor AllowPrivateIPs config by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1422
+- Update BLS signature ordering to avoid public key compression by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1416
+- Remove DAG based consensus by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1359
+- Remove IssueStopVertex message by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1419
+- Fix msgHandlingTime by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1432
+- Change ChangeProofs to only have one list of key/value change instead of key/values and deleted by @dboehm-avalabs in https://github.com/memeticofficial/pepecoingo/pull/1385
+- Update AMI generation workflow by @charlie-ava in https://github.com/memeticofficial/pepecoingo/pull/1289
+- Support `height` as a string in `avm.getBlockByHeight` by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1437
+- Defer Snowman Bootstrapper parser initialization to Start by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1442
+- Cleanup proposervm ancestors packing @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1446
 
 ### New Contributors
 
-- @hexfusion made their first contribution in https://github.com/ava-labs/avalanchego/pull/1326
+- @hexfusion made their first contribution in https://github.com/memeticofficial/pepecoingo/pull/1326
 
-**Full Changelog**: https://github.com/ava-labs/avalanchego/compare/v1.10.0...v1.10.1
+**Full Changelog**: https://github.com/memeticofficial/pepecoingo/compare/v1.10.0...v1.10.1
 
-## [v1.10.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.10.0)
+## [v1.10.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.10.0)
 
-[This upgrade](https://medium.com/avalancheavax/cortina-x-chain-linearization-a1d9305553f6) linearizes the X-chain, introduces delegation batching to the P-chain, and increases the maximum block size on the C-chain.
+[This upgrade](https://medium.com/pepecoinavax/cortina-x-chain-linearization-a1d9305553f6) linearizes the X-chain, introduces delegation batching to the P-chain, and increases the maximum block size on the C-chain.
 
 The changes in the upgrade go into effect at 11 AM ET, April 25th 2023 on Mainnet.
 
@@ -107,66 +107,66 @@ The supported plugin version is `25`.
 
 ### What's Changed
 
-- Add CODEOWNERS for the x/ package by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1260
-- Feature Spec Template by @richardpringle in https://github.com/ava-labs/avalanchego/pull/1258
-- Standardize CI triggers by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1265
-- special case no sent/received message in network health check by @ceyonur in https://github.com/ava-labs/avalanchego/pull/1263
-- Fix bug template by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1268
-- Replace `flags` usage with `pflags` by @danlaine in https://github.com/ava-labs/avalanchego/pull/1270
-- Fixed grammatical errors in `README.md` by @krakxn in https://github.com/ava-labs/avalanchego/pull/1102
-- Add tests for race conditions in merkledb by @kyl27 in https://github.com/ava-labs/avalanchego/pull/1256
-- Add P-chain indexer API example by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1271
-- use `require` in `snow/choices` tests by @dhrubabasu in https://github.com/ava-labs/avalanchego/pull/1279
-- use `require` in `utils/wrappers` tests by @dhrubabasu in https://github.com/ava-labs/avalanchego/pull/1280
-- add support for tracking delegatee rewards to validator metadata by @dhrubabasu in https://github.com/ava-labs/avalanchego/pull/1273
-- defer delegatee rewards until end of validator staking period by @dhrubabasu in https://github.com/ava-labs/avalanchego/pull/1262
-- Initialize UptimeCalculator in TestPeer by @joshua-kim in https://github.com/ava-labs/avalanchego/pull/1283
-- Add Avalanche liveness health checks by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1287
-- Skip AMI generation with Fuji tags by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1288
-- Use `maps.Equal` in `set.Equals` by @danlaine in https://github.com/ava-labs/avalanchego/pull/1290
-- return accrued delegator rewards in `GetCurrentValidators` by @dhrubabasu in https://github.com/ava-labs/avalanchego/pull/1291
-- Add zstd compression by @danlaine in https://github.com/ava-labs/avalanchego/pull/1278
-- implement `txs.Visitor` in X chain wallet by @dhrubabasu in https://github.com/ava-labs/avalanchego/pull/1299
-- Parallelize gzip compression by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1293
-- Add zip bomb tests by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1300
-- Gossip Avalanche frontier after the linearization by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1303
-- Add fine grained metrics+logging for handling, processing, and grab l… by @aaronbuchwald in https://github.com/ava-labs/avalanchego/pull/1301
-- Persist stateless block in AVM state by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1305
-- Initialize FxID fields in GetBlock and GetBlockByHeight by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1306
-- Filterable Health Tags by @ceyonur in https://github.com/ava-labs/avalanchego/pull/1304
-- increase health await timeout by @ceyonur in https://github.com/ava-labs/avalanchego/pull/1317
-- Expose GetEngineManager from the chain Handler by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1316
-- Add BLS benchmarks by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1318
-- Encode codec version in merkledb by @danlaine in https://github.com/ava-labs/avalanchego/pull/1313
-- Expose consensus-app-concurrency by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1322
-- Adjust Logic In Merkle DB History by @dboehm-avalabs in https://github.com/ava-labs/avalanchego/pull/1310
-- Fix Concurrency Bug In CommitToParent by @dboehm-avalabs in https://github.com/ava-labs/avalanchego/pull/1320
-- Cleanup goroutines on health.Stop by @StephenButtolph in https://github.com/ava-labs/avalanchego/pull/1325
+- Add CODEOWNERS for the x/ package by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1260
+- Feature Spec Template by @richardpringle in https://github.com/memeticofficial/pepecoingo/pull/1258
+- Standardize CI triggers by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1265
+- special case no sent/received message in network health check by @ceyonur in https://github.com/memeticofficial/pepecoingo/pull/1263
+- Fix bug template by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1268
+- Replace `flags` usage with `pflags` by @danlaine in https://github.com/memeticofficial/pepecoingo/pull/1270
+- Fixed grammatical errors in `README.md` by @krakxn in https://github.com/memeticofficial/pepecoingo/pull/1102
+- Add tests for race conditions in merkledb by @kyl27 in https://github.com/memeticofficial/pepecoingo/pull/1256
+- Add P-chain indexer API example by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1271
+- use `require` in `snow/choices` tests by @dhrubabasu in https://github.com/memeticofficial/pepecoingo/pull/1279
+- use `require` in `utils/wrappers` tests by @dhrubabasu in https://github.com/memeticofficial/pepecoingo/pull/1280
+- add support for tracking delegatee rewards to validator metadata by @dhrubabasu in https://github.com/memeticofficial/pepecoingo/pull/1273
+- defer delegatee rewards until end of validator staking period by @dhrubabasu in https://github.com/memeticofficial/pepecoingo/pull/1262
+- Initialize UptimeCalculator in TestPeer by @joshua-kim in https://github.com/memeticofficial/pepecoingo/pull/1283
+- Add Pepecoin liveness health checks by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1287
+- Skip AMI generation with Fuji tags by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1288
+- Use `maps.Equal` in `set.Equals` by @danlaine in https://github.com/memeticofficial/pepecoingo/pull/1290
+- return accrued delegator rewards in `GetCurrentValidators` by @dhrubabasu in https://github.com/memeticofficial/pepecoingo/pull/1291
+- Add zstd compression by @danlaine in https://github.com/memeticofficial/pepecoingo/pull/1278
+- implement `txs.Visitor` in X chain wallet by @dhrubabasu in https://github.com/memeticofficial/pepecoingo/pull/1299
+- Parallelize gzip compression by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1293
+- Add zip bomb tests by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1300
+- Gossip Pepecoin frontier after the linearization by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1303
+- Add fine grained metrics+logging for handling, processing, and grab l… by @aaronbuchwald in https://github.com/memeticofficial/pepecoingo/pull/1301
+- Persist stateless block in AVM state by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1305
+- Initialize FxID fields in GetBlock and GetBlockByHeight by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1306
+- Filterable Health Tags by @ceyonur in https://github.com/memeticofficial/pepecoingo/pull/1304
+- increase health await timeout by @ceyonur in https://github.com/memeticofficial/pepecoingo/pull/1317
+- Expose GetEngineManager from the chain Handler by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1316
+- Add BLS benchmarks by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1318
+- Encode codec version in merkledb by @danlaine in https://github.com/memeticofficial/pepecoingo/pull/1313
+- Expose consensus-app-concurrency by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1322
+- Adjust Logic In Merkle DB History by @dboehm-avalabs in https://github.com/memeticofficial/pepecoingo/pull/1310
+- Fix Concurrency Bug In CommitToParent by @dboehm-avalabs in https://github.com/memeticofficial/pepecoingo/pull/1320
+- Cleanup goroutines on health.Stop by @StephenButtolph in https://github.com/memeticofficial/pepecoingo/pull/1325
 
 ### New Contributors
 
-- @richardpringle made their first contribution in https://github.com/ava-labs/avalanchego/pull/1258
-- @ceyonur made their first contribution in https://github.com/ava-labs/avalanchego/pull/1263
-- @krakxn made their first contribution in https://github.com/ava-labs/avalanchego/pull/1102
-- @kyl27 made their first contribution in https://github.com/ava-labs/avalanchego/pull/1256
-- @dhrubabasu made their first contribution in https://github.com/ava-labs/avalanchego/pull/1279
-- @joshua-kim made their first contribution in https://github.com/ava-labs/avalanchego/pull/1283
-- @dboehm-avalabs made their first contribution in https://github.com/ava-labs/avalanchego/pull/1310
+- @richardpringle made their first contribution in https://github.com/memeticofficial/pepecoingo/pull/1258
+- @ceyonur made their first contribution in https://github.com/memeticofficial/pepecoingo/pull/1263
+- @krakxn made their first contribution in https://github.com/memeticofficial/pepecoingo/pull/1102
+- @kyl27 made their first contribution in https://github.com/memeticofficial/pepecoingo/pull/1256
+- @dhrubabasu made their first contribution in https://github.com/memeticofficial/pepecoingo/pull/1279
+- @joshua-kim made their first contribution in https://github.com/memeticofficial/pepecoingo/pull/1283
+- @dboehm-avalabs made their first contribution in https://github.com/memeticofficial/pepecoingo/pull/1310
 
-**Full Changelog**: https://github.com/ava-labs/avalanchego/compare/v1.9.16...v1.10.0
+**Full Changelog**: https://github.com/memeticofficial/pepecoingo/compare/v1.9.16...v1.10.0
 
-## [v1.9.16](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.16)
+## [v1.9.16](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.16)
 
-This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `24`.
+This version is backwards compatible to [v1.9.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `24`.
 
 - Removed unnecessary repoll after rejecting vertices
 - Improved snowstorm lookup error handling
-- Removed rejected vertices from the Avalanche frontier more aggressively
+- Removed rejected vertices from the Pepecoin frontier more aggressively
 - Reduced default health check values for processing decisions
 
-## [v1.9.15](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.15)
+## [v1.9.15](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.15)
 
-This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `24`.
+This version is backwards compatible to [v1.9.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `24`.
 
 - Fixed `x/merkledb.ChangeProof#getLargestKey` to correctly handle no changes
 - Added test for `avm/txs/executor.SemanticVerifier#verifyFxUsage` with multiple valid fxs
@@ -175,17 +175,17 @@ This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/ava
 - Reduced the default value of `--snow-optimal-processing` from `50` to `10`
 - Updated the year in the license header
 
-## [v1.9.14](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.14)
+## [v1.9.14](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.14)
 
-This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `24`.
+This version is backwards compatible to [v1.9.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `24`.
 
-## [v1.9.13](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.13)
+## [v1.9.13](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.13)
 
-This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `24`.
+This version is backwards compatible to [v1.9.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `24`.
 
-## [v1.9.12](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.12)
+## [v1.9.12](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.12)
 
-This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `24`.
+This version is backwards compatible to [v1.9.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `24`.
 
 ### Networking
 
@@ -197,13 +197,13 @@ This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/ava
 
 ### Consensus
 
-- Added support to switch from `Avalanche` consensus to `Snowman` consensus
-- Added support for routing consensus messages to either `Avalanche` or `Snowman` consensus on the same chain
-- Removed usage of deferred evaluation of the `handler.Consensus` in the `Avalanche` `OnFinished` callback
-- Dropped inbound `Avalanche` consensus messages after switching to `Snowman` consensus
-- Renamed the `Avalanche` VM metrics prefix from `avalanche_{chainID}_vm_` to `avalanche_{chainID}_vm_avalanche`
+- Added support to switch from `Pepecoin` consensus to `Snowman` consensus
+- Added support for routing consensus messages to either `Pepecoin` or `Snowman` consensus on the same chain
+- Removed usage of deferred evaluation of the `handler.Consensus` in the `Pepecoin` `OnFinished` callback
+- Dropped inbound `Pepecoin` consensus messages after switching to `Snowman` consensus
+- Renamed the `Pepecoin` VM metrics prefix from `pepecoin_{chainID}_vm_` to `pepecoin_{chainID}_vm_pepecoin`
 - Replaced `consensus` and `decision` dispatchers with `block`, `tx`, and `vertex` dispatchers
-- Removed `Avalanche` bootstrapping restarts during the switch to `Snowman` consensus
+- Removed `Pepecoin` bootstrapping restarts during the switch to `Snowman` consensus
 
 ### AVM
 
@@ -245,7 +245,7 @@ This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/ava
 - Exported various errors to use in testing
 - Removed the `vms/components/state` package
 - Replaced ad-hoc linked hashmaps with the standard data-structure
-- Removed `usr/local/lib/avalanche` from deb packages
+- Removed `usr/local/lib/pepecoin` from deb packages
 - Standardized usage of `constants.UnitTestID`
 
 ### Examples
@@ -322,9 +322,9 @@ This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/ava
   - `platform.getRewardUTXOs`
 - Deprecated the `stake` field in the `platform.getTotalStake` response in favor of `weight`
 
-## [v1.9.11](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.11)
+## [v1.9.11](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.11)
 
-This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `24`.
+This version is backwards compatible to [v1.9.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `24`.
 
 ### Plugins
 
@@ -342,9 +342,9 @@ This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/ava
 - Removed reliance on premature root calculations for `merkledb.trieView` validity tracking
 - Updated `x/merkledb/README.md`
 
-## [v1.9.10](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.10)
+## [v1.9.10](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.10)
 
-This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `24`.
+This version is backwards compatible to [v1.9.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `24`.
 
 ### MerkleDB
 
@@ -365,7 +365,7 @@ This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/ava
 - Fixed `rpcchainvm` signal handling to only shutdown upon receipt of `SIGTERM`
 - Added `warp.Signature#NumSigners` for better cost tracking support
 - Added `snow.Context#PublicKey` to provide access to the local node's BLS public key inside the VM execution environment
-- Renamed Avalanche consensus metric prefix to `avalanche_{chainID}_avalanche`
+- Renamed Pepecoin consensus metric prefix to `pepecoin_{chainID}_pepecoin`
 - Specified an explicit TCP `Linger` timeout of `15` seconds
 - Updated the `secp256k1` library to `v4.1.0`
 
@@ -379,9 +379,9 @@ This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/ava
 - Replaced `snow.Context` in `Factory.New` with `logging.Logger`
 - Renamed `set.Bits#Len` to `BitLen` and `set.Bits#HammingWeight` to `Len` to align with `set.Bits64`
 
-## [v1.9.9](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.9)
+## [v1.9.9](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.9)
 
-This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `23`.
+This version is backwards compatible to [v1.9.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `23`.
 
 **Note: The `--whitelisted-subnets` flag was deprecated in `v1.9.6`. This is the last release in which it will be supported. Use `--track-subnets` instead.**
 
@@ -444,9 +444,9 @@ This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/ava
 - Simplified the `utxo.Spender` interface
 - Removed unused field `common.Config#Validators`
 
-## [v1.9.8](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.8)
+## [v1.9.8](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.8)
 
-This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `22`.
+This version is backwards compatible to [v1.9.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `22`.
 
 ### Networking
 
@@ -499,17 +499,17 @@ This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/ava
 - Converted cache implementations to use generics
 - Added optional cache eviction callback
 
-## [v1.9.7](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.7)
+## [v1.9.7](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.7)
 
-This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `22`.
+This version is backwards compatible to [v1.9.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `22`.
 
 ### Fixes
 
 - Fixed subnet validator lookup regression
 
-## [v1.9.6](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.6)
+## [v1.9.6](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.6)
 
-This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `22`.
+This version is backwards compatible to [v1.9.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `22`.
 
 ### Consensus
 
@@ -522,7 +522,7 @@ This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/ava
 ### Configs
 
 - Added `--plugin-dir` flag. The default value is `[DATADIR]/plugins`
-- Removed `--build-dir` flag. The location of the avalanchego binary is no longer considered when looking for the `plugins` directory. Subnet maintainers should ensure that their node is able to properly discover plugins, as the default location is likely changed. See `--plugin-dir`
+- Removed `--build-dir` flag. The location of the pepecoingo binary is no longer considered when looking for the `plugins` directory. Subnet maintainers should ensure that their node is able to properly discover plugins, as the default location is likely changed. See `--plugin-dir`
 - Changed the default value of `--api-keystore-enabled` to `false`
 - Added `--track-subnets` flag as a replacement of `--whitelisted-subnets`
 
@@ -541,10 +541,10 @@ This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/ava
 
 ### Metrics
 
-- Added `avalanche_network_peer_connected_duration_average` metric
-- Added `avalanche_api_calls_processing` metric
-- Added `avalanche_api_calls` metric
-- Added `avalanche_api_calls_duration` metric
+- Added `pepecoin_network_peer_connected_duration_average` metric
+- Added `pepecoin_api_calls_processing` metric
+- Added `pepecoin_api_calls` metric
+- Added `pepecoin_api_calls_duration` metric
 
 ### Documentation
 
@@ -553,16 +553,16 @@ This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/ava
 
 ### Miscellaneous
 
-- Updated ledger-avalanche to v0.6.5
+- Updated ledger-pepecoin to v0.6.5
 - Added linter to ban the usage of `fmt.Errorf` without format directives
 - Added `List` to the `buffer#Deque` interface
 - Added `Index` to the `buffer#Deque` interface
 - Added `SetLevel` to the `Logger` interface
 - Updated `auth` API to use the new `jwt` standard
 
-## [v1.9.5](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.5)
+## [v1.9.5](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.5)
 
-This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `21`.
+This version is backwards compatible to [v1.9.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `21`.
 
 ### Subnet Messaging
 
@@ -598,9 +598,9 @@ This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/ava
 - Moved bit sets from the `ids` package to the `set` package
 - Added more wallet examples
 
-## [v1.9.4](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.4)
+## [v1.9.4](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.4)
 
-This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `20`.
+This version is backwards compatible to [v1.9.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `20`.
 
 **This version modifies the db format. The db format is compatible with v1.9.3, but not v1.9.2 or earlier. After running a node with v1.9.4 attempting to run a node with a version earlier than v1.9.3 may report a fatal error on startup.**
 
@@ -659,7 +659,7 @@ This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/ava
 
 ### Chain Data
 
-- Added `ChainDataDir` to the `snow.Context` to allow blockchains to canonically access disk outside avalanchego's database
+- Added `ChainDataDir` to the `snow.Context` to allow blockchains to canonically access disk outside pepecoingo's database
 - Added `--chain-data-dir` as a CLI flag to specify the base directory for all `ChainDataDir`s
 
 ### Miscellaneous
@@ -671,9 +671,9 @@ This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/ava
 - Converted all sorting to utilize generics
 - Converted all set management to utilize generics
 
-## [v1.9.3](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.3)
+## [v1.9.3](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.3)
 
-This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `19`.
+This version is backwards compatible to [v1.9.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `19`.
 
 ### Tracing
 
@@ -683,7 +683,7 @@ This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/ava
 - Added `tracedVM` implementations for `block.ChainVM` and `vertex.DAGVM`
 - Added `tracedState` implementation for `validators.State`
 - Added `tracedHandler` implementation for `http.Handler`
-- Added `tracedConsensus` implementations for `snowman.Consensus` and `avalanche.Consensus`
+- Added `tracedConsensus` implementations for `snowman.Consensus` and `pepecoin.Consensus`
 
 ### Fixes
 
@@ -730,25 +730,25 @@ This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/ava
 ### Documentation
 
 - Documented `Database.Put` invariant for `nil` and empty slices
-- Documented avalanchego's versioning scheme
+- Documented pepecoingo's versioning scheme
 - Improved `vm.proto` docs
 
 ### Miscellaneous
 
 - Added peer gossip tracker
-- Added `avalanche_P_vm_time_until_unstake` and `avalanche_P_vm_time_until_unstake_subnet` metrics
+- Added `pepecoin_P_vm_time_until_unstake` and `pepecoin_P_vm_time_until_unstake_subnet` metrics
 - Added `keychain.NewLedgerKeychainFromIndices`
 - Removed usage of `Temporary` error handling after `listener#Accept`
 - Removed `Parameters` from all `Consensus` interfaces
-- Updated `avalanche-network-runner` to `v1.3.0`
+- Updated `pepecoin-network-runner` to `v1.3.0`
 - Added `ids.BigBitSet` to extend `ids.BitSet64` for arbitrarily large sets
 - Added support for parsing future subnet uptime tracking data to the P-chain's state implementation
 - Increased validator set cache size
 - Added `avax.UTXOIDFromString` helper for managing `UTXOID`s more easily
 
-## [v1.9.2](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.2)
+## [v1.9.2](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.2)
 
-This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `19`.
+This version is backwards compatible to [v1.9.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `19`.
 
 ### Coreth
 
@@ -761,7 +761,7 @@ This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/ava
 - Added `validators.State` to the rpcchainvm server's `snow.Context`
 - Added `rpcProtocolVersion` to the output of `info.getNodeVersion`
 - Added `rpcchainvm` protocol version to the output of the `--version` flag
-- Added `version.RPCChainVMProtocolCompatibility` map to easily compare plugin compatibility against avalanchego versions
+- Added `version.RPCChainVMProtocolCompatibility` map to easily compare plugin compatibility against pepecoingo versions
 
 ### Builds
 
@@ -783,9 +783,9 @@ This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/ava
 - Simplified the `validators.Set` implementation
 - Added a warning if synchronous consensus messages take too long
 
-## [v1.9.1](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.1)
+## [v1.9.1](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.1)
 
-This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `18`.
+This version is backwards compatible to [v1.9.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.0). It is optional, but encouraged. The supported plugin version is `18`.
 
 ### Features
 
@@ -814,14 +814,14 @@ This version is backwards compatible to [v1.9.0](https://github.com/ava-labs/ava
 - Fixed ProposerVM inner block caching after verification
 - Fixed PlatformVM mempool verification to use an updated chain time
 - Removed deprecated CLI flags: `--dynamic-update-duration`, `--dynamic-public-ip`
-- Added unexpected Put bytes tests to the Avalanche and Snowman consensus engines
+- Added unexpected Put bytes tests to the Pepecoin and Snowman consensus engines
 - Removed mockery generated mock implementations
 - Converted safe math functions to use generics where possible
 - Added linting to prevent usage of `assert` in unit tests
 - Converted empty struct usage to `nil` for interface compliance checks
 - Added CODEOWNERs to own first rounds of PR review
 
-## [v1.9.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.9.0)
+## [v1.9.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.9.0)
 
 This upgrade adds support for creating Proof-of-Stake Subnets.
 
@@ -858,9 +858,9 @@ The supported plugin version is `17`.
 - Improved isolation and execution of the E2E tests
 - Updated the linked hashmap implementation to use generics
 
-## [v1.8.6](https://github.com/ava-labs/avalanchego/releases/tag/v1.8.6)
+## [v1.8.6](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.8.6)
 
-This version is backwards compatible to [v1.8.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.8.0). It is optional, but encouraged. The supported plugin version is `16`.
+This version is backwards compatible to [v1.8.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.8.0). It is optional, but encouraged. The supported plugin version is `16`.
 
 ### BLS
 
@@ -868,7 +868,7 @@ This version is backwards compatible to [v1.8.0](https://github.com/ava-labs/ava
 - Exposed BLS proof of possession in the `info.getNodeID` API
 - Added BLS proof of possession to `AddPermissionlessValidatorTx`s for the Primary Network
 
-The default value of `--staking-signer-key-file` is `~/.avalanchego/staking/signer.key`. If the key file doesn't exist, it will be populated with a new key.
+The default value of `--staking-signer-key-file` is `~/.pepecoingo/staking/signer.key`. If the key file doesn't exist, it will be populated with a new key.
 
 ### Networking
 
@@ -890,7 +890,7 @@ The default value of `--staking-signer-key-file` is `~/.avalanchego/staking/sign
 
 - Added failure reason to bad block API
 
-## [v1.8.5](https://github.com/ava-labs/avalanchego/releases/tag/v1.8.5)
+## [v1.8.5](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.8.5)
 
 Please upgrade your node as soon as possible.
 
@@ -900,11 +900,11 @@ The supported plugin version is `16`.
 
 - Fixed stale block reference by evicting blocks upon successful verification
 
-### [Coreth](https://medium.com/avalancheavax/apricot-phase-6-native-asset-call-deprecation-a7b7a77b850a)
+### [Coreth](https://medium.com/pepecoinavax/apricot-phase-6-native-asset-call-deprecation-a7b7a77b850a)
 
 - Removed check for Apricot Phase6 incompatible fork to unblock nodes that did not upgrade ahead of the activation time
 
-## [v1.8.4](https://github.com/ava-labs/avalanchego/releases/tag/v1.8.4)
+## [v1.8.4](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.8.4)
 
 Please upgrade your node as soon as possible.
 
@@ -915,12 +915,12 @@ The supported plugin version is `16`.
 - Added temporarily invalid block caching to reduce repeated network requests
 - Added caching to the proposervm's inner block parsing
 
-### [Coreth](https://medium.com/avalancheavax/apricot-phase-6-native-asset-call-deprecation-a7b7a77b850a)
+### [Coreth](https://medium.com/pepecoinavax/apricot-phase-6-native-asset-call-deprecation-a7b7a77b850a)
 
 - Reduced the log level of `BAD BLOCK`s from `ERROR` to `DEBUG`
 - Deprecated Native Asset Call
 
-## [v1.8.2](https://github.com/ava-labs/avalanchego/releases/tag/v1.8.2)
+## [v1.8.2](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.8.2)
 
 Please upgrade your node as soon as possible.
 
@@ -928,13 +928,13 @@ The changes in `v1.8.x` go into effect at 4 PM EDT on September 6th, 2022 on bot
 
 The supported plugin version is `16`.
 
-### [Coreth](https://medium.com/avalancheavax/apricot-phase-6-native-asset-call-deprecation-a7b7a77b850a)
+### [Coreth](https://medium.com/pepecoinavax/apricot-phase-6-native-asset-call-deprecation-a7b7a77b850a)
 
 - Fixed live-lock in bootstrapping, after performing state-sync, by properly reporting `database.ErrNotFound` in `GetBlockIDAtHeight` rather than a formatted error
 - Increased the log level of `BAD BLOCK`s from `DEBUG` to `ERROR`
 - Fixed typo in Chain Config `String` function
 
-## [v1.8.1](https://github.com/ava-labs/avalanchego/releases/tag/v1.8.1)
+## [v1.8.1](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.8.1)
 
 Please upgrade your node as soon as possible.
 
@@ -946,12 +946,12 @@ The supported plugin version is `16`.
 
 - Reduced the severity of not quickly connecting to bootstrap nodes from `FATAL` to `WARN`
 
-### [Coreth](https://medium.com/avalancheavax/apricot-phase-6-native-asset-call-deprecation-a7b7a77b850a)
+### [Coreth](https://medium.com/pepecoinavax/apricot-phase-6-native-asset-call-deprecation-a7b7a77b850a)
 
 - Reduced the log level of `BAD BLOCK`s from `ERROR` to `DEBUG`
 - Added Apricot Phase6 to Chain Config `String` function
 
-## [v1.8.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.8.0)
+## [v1.8.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.8.0)
 
 This is a mandatory security upgrade. Please upgrade your node **as soon as possible.**
 
@@ -1029,7 +1029,7 @@ The supported plugin version is `16`.
 
 - Defined `p2p.proto` to be used for future network messages
 - Added `--network-tls-key-log-file-unsafe` to support inspecting p2p messages
-- Added `avalanche_network_accept_failed` metrics to track networking `Accept` errors
+- Added `pepecoin_network_accept_failed` metrics to track networking `Accept` errors
 
 ### Miscellaneous
 
@@ -1043,15 +1043,15 @@ The supported plugin version is `16`.
   - `timer.NewStagedTimer`
   - `timer.TimedMeter`
 
-### [Coreth](https://medium.com/avalancheavax/apricot-phase-6-native-asset-call-deprecation-a7b7a77b850a)
+### [Coreth](https://medium.com/pepecoinavax/apricot-phase-6-native-asset-call-deprecation-a7b7a77b850a)
 
 - Incorrectly deprecated Native Asset Call
 - Migrated to go-ethereum v1.10.23
 - Added API to fetch Chain Config
 
-## [v1.7.18](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.18)
+## [v1.7.18](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.18)
 
-This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.0). It is optional, but encouraged. The supported plugin version is `15`.
+This version is backwards compatible to [v1.7.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.0). It is optional, but encouraged. The supported plugin version is `15`.
 
 ### Fixes
 
@@ -1087,9 +1087,9 @@ This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/ava
 - Added retries to windows CI installations
 - Removed useless ID aliasing during chain creation
 
-## [v1.7.17](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.17)
+## [v1.7.17](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.17)
 
-This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.0). It is optional, but encouraged. The supported plugin version is `15`.
+This version is backwards compatible to [v1.7.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.0). It is optional, but encouraged. The supported plugin version is `15`.
 
 ### VMs
 
@@ -1123,17 +1123,17 @@ This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/ava
 - Improved Snowman++ oracle block verification error messages
 - Removed deprecated or unused scripts
 
-## [v1.7.16](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.16)
+## [v1.7.16](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.16)
 
-This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.0). It is optional, but encouraged. The supported plugin version is `15`.
+This version is backwards compatible to [v1.7.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.0). It is optional, but encouraged. The supported plugin version is `15`.
 
 ### LevelDB
 
 - Fix rapid disk growth by manually specifying the maximum manifest file size
 
-## [v1.7.15](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.15)
+## [v1.7.15](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.15)
 
-This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.0). It is optional, but encouraged. The supported plugin version is `15`.
+This version is backwards compatible to [v1.7.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.0). It is optional, but encouraged. The supported plugin version is `15`.
 
 ### PlatformVM
 
@@ -1154,7 +1154,7 @@ This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/ava
 
 ### Fixes
 
-- Updated Snowman and Avalanche consensus engines to report original container preferences before processing the provided container
+- Updated Snowman and Pepecoin consensus engines to report original container preferences before processing the provided container
 - Fixed inbound message byte throttler context cancellation cleanup
 - Removed case sensitivity of IP resolver services
 - Added failing health check when a whitelisted subnet fails to initialize a chain
@@ -1168,13 +1168,13 @@ This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/ava
 - Cleaned up various dead parameters
 - Improved various tests
 
-## [v1.7.14](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.14)
+## [v1.7.14](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.14)
 
-This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.0). It is optional, but encouraged.
+This version is backwards compatible to [v1.7.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.0). It is optional, but encouraged.
 
 ### APIs
 
-**These API format changes are breaking changes. https://api.avax.network and https://api.avax-test.network have been updated with this format. If you are using AvalancheGo APIs in your code, please ensure you have updated to the latest versions. See  https://docs.avax.network/apis/avalanchego/cb58-deprecation for details about the CB58 removal.**
+**These API format changes are breaking changes. https://api.avax.network and https://api.avax-test.network have been updated with this format. If you are using PepecoinGo APIs in your code, please ensure you have updated to the latest versions. See  https://docs.avax.network/apis/pepecoingo/cb58-deprecation for details about the CB58 removal.**
 
 - Removed `CB58` as an encoding option from all APIs
 - Added `HexC` and `HexNC` as encoding options for all APIs that accept an encoding format
@@ -1207,14 +1207,14 @@ This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/ava
 
 - Fixed `--public-ip-resolution-frequency` invalid overwrite of the resolution service
 - Added additional metrics to distinguish between virtuous and rogue currently processing transactions
-- Suppressed the super cool `avalanchego` banner when `stdout` is not directed to a terminal
+- Suppressed the super cool `pepecoingo` banner when `stdout` is not directed to a terminal
 - Updated linter version
 - Improved various comments and documentation
 - Standardized primary network handling across subnet maps
 
-## [v1.7.13](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.13)
+## [v1.7.13](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.13)
 
-This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.0). It is optional, but encouraged.
+This version is backwards compatible to [v1.7.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.0). It is optional, but encouraged.
 
 ### State Sync
 
@@ -1224,7 +1224,7 @@ This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/ava
 - Improved `coreth` state sync request retry logic
 - Improved `coreth` state sync handler metrics
 - Improved `coreth` state sync ETA
-- Added `avalanche_{chainID}_handler_async_expired` metric
+- Added `pepecoin_{chainID}_handler_async_expired` metric
 
 ### Miscellaneous
 
@@ -1238,9 +1238,9 @@ This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/ava
 - Deprecated `--dynamic-update-duration` and `--dynamic-public-ip` CLI flags
 - Added `--public-ip-resolution-frequency` and `--public-ip-resolution-service` to replace `--dynamic-update-duration` and `--dynamic-public-ip`, respectively
 
-## [v1.7.12](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.12)
+## [v1.7.12](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.12)
 
-This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.0). It is optional, but encouraged.
+This version is backwards compatible to [v1.7.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.0). It is optional, but encouraged.
 
 ### State Sync
 
@@ -1257,7 +1257,7 @@ This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/ava
 ### Metrics
 
 - Added leveldb metrics
-- Added process and golang metrics for the avalanchego binary
+- Added process and golang metrics for the pepecoingo binary
 - Added available disk space health check
   - Ensured that the disk space will not be fully utilized by shutting down the node if there is a critically low amount of free space remaining
 - Improved C-chain state sync metrics
@@ -1281,9 +1281,9 @@ This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/ava
 - Standardized json imports
 - Added vm factory interface checks
 
-## [v1.7.11](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.11)
+## [v1.7.11](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.11)
 
-This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.0). It is optional, but encouraged.
+This version is backwards compatible to [v1.7.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.0). It is optional, but encouraged.
 
 **The first startup of the C-Chain will cause an increase in CPU and IO usage due to an index update. This index update runs in the background and does not impact restart time.**
 
@@ -1339,8 +1339,8 @@ This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/ava
 
 ### Logging
 
-- Replaced AvalancheGo's internal logger with [uber-go/zap](https://github.com/uber-go/zap).
-- Replaced AvalancheGo's log rotation with [lumberjack](https://github.com/natefinch/lumberjack).
+- Replaced PepecoinGo's internal logger with [uber-go/zap](https://github.com/uber-go/zap).
+- Replaced PepecoinGo's log rotation with [lumberjack](https://github.com/natefinch/lumberjack).
 - Renamed `log-display-highlight` to `log-format` and added `json` option.
 - Added `log-rotater-max-size`, `log-rotater-max-files`, `log-rotater-max-age`, `log-rotater-compress-enabled` options for log rotation.
 
@@ -1351,8 +1351,8 @@ This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/ava
 - Logged health checks whenever a failing health check is queried
 - Added callback support for the validator set manager
 - Increased `coreth` trie tip buffer size to 32
-- Added CPU usage metrics for AvalancheGo and all sub-processes
-- Added Disk IO usage metrics for AvalancheGo and all sub-processes
+- Added CPU usage metrics for PepecoinGo and all sub-processes
+- Added Disk IO usage metrics for PepecoinGo and all sub-processes
 
 ### Cleanup
 
@@ -1368,9 +1368,9 @@ This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/ava
 - Updated issue template
 - Documented additional `snowman.Block` invariants
 
-## [v1.7.10](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.10)
+## [v1.7.10](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.10)
 
-This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.0). It is optional, but encouraged.
+This version is backwards compatible to [v1.7.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.0). It is optional, but encouraged.
 
 ### Networking
 
@@ -1400,14 +1400,14 @@ This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/ava
 
 - Fixed a bug where a deadlock on shutdown caused historical re-generation on restart.
 - Added an API endpoint to fetch the current VM Config.
-- Added AvalancheGo custom log formatting to the logs.
+- Added PepecoinGo custom log formatting to the logs.
 - Removed support for the JS Tracer.
 
 ### Logging
 
 - Added piping of subnet logs to stdout.
 - Lazily initialized logs to avoid opening files that are never written to.
-- Added support for arbitrarily deleted log files while avalanchego is running.
+- Added support for arbitrarily deleted log files while pepecoingo is running.
 - Removed redundant logging configs.
 
 ### Miscellaneous
@@ -1421,9 +1421,9 @@ This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/ava
 - Simplified consensus engine `Shutdown` notification dispatching.
 - Removed `Sleep` call in the inbound connection throttler.
 
-## [v1.7.9](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.9)
+## [v1.7.9](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.9)
 
-This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.0). It is optional, but encouraged.
+This version is backwards compatible to [v1.7.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.0). It is optional, but encouraged.
 
 ### Updates
 
@@ -1433,9 +1433,9 @@ This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/ava
 - Removed dead code from network packer.
 - Improved logging of invalid hash length errors.
 
-## [v1.7.8](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.8)
+## [v1.7.8](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.8)
 
-This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.0). It is optional, but encouraged.
+This version is backwards compatible to [v1.7.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.0). It is optional, but encouraged.
 
 ### Networking
 
@@ -1464,9 +1464,9 @@ This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/ava
 - Optimized various queue removals for improved memory freeing.
 - Added a basic X-chain E2E usage test to the new testing framework.
 
-## [v1.7.7](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.7)
+## [v1.7.7](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.7)
 
-This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.0). It is optional, but encouraged.
+This version is backwards compatible to [v1.7.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.0). It is optional, but encouraged.
 
 ### Networking
 
@@ -1508,18 +1508,18 @@ This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/ava
 
 ### Miscellaneous
 
-- Fixed error reporting when making Avalanche chains that did not manually specify a primary alias.
+- Fixed error reporting when making Pepecoin chains that did not manually specify a primary alias.
 - Added beacon utils for easier programmatic handling of beacon nodes.
 - Resolved the default log directory on initialization to avoid additional error handling.
 - Added support to the chain state module to specify an arbitrary new accepted block.
 
-## [v1.7.6](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.6)
+## [v1.7.6](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.6)
 
-This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.0). It is optional, but encouraged.
+This version is backwards compatible to [v1.7.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.0). It is optional, but encouraged.
 
 ### Consensus
 
-- Introduced a new vertex type to support future `Avalanche` based network upgrades.
+- Introduced a new vertex type to support future `Pepecoin` based network upgrades.
 - Added pending message metrics to the chain message queues.
 - Refactored event dispatchers to simplify dependencies and remove dead code.
 
@@ -1548,9 +1548,9 @@ This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/ava
 - Extended chain shutdown timeout.
 - Performed various cleanup passes.
 
-## [v1.7.5](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.5)
+## [v1.7.5](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.5)
 
-This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.0). It is optional, but encouraged.
+This version is backwards compatible to [v1.7.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.0). It is optional, but encouraged.
 
 ### Consensus
 
@@ -1579,9 +1579,9 @@ This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/ava
 - Fixed bug in BLOCKHASH opcode during traceBlock.
 - Fixed bug in handling updated chain config on startup.
 
-## [v1.7.4](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.4)
+## [v1.7.4](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.4)
 
-This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.0). It is optional, but encouraged.
+This version is backwards compatible to [v1.7.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.0). It is optional, but encouraged.
 
 **The first startup of the C-Chain will take a few minutes longer due to an index update.**
 
@@ -1633,9 +1633,9 @@ This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/ava
 - Separated health checks into `readiness`, `healthiness`, and `liveness` checks to support more fine-grained monitoring.
 - Refactored API client utilities to use a `Context` rather than an explicit timeout.
 
-## [v1.7.3](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.3)
+## [v1.7.3](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.3)
 
-This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.0). It is optional, but encouraged.
+This version is backwards compatible to [v1.7.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.0). It is optional, but encouraged.
 
 ### Consensus
 
@@ -1661,11 +1661,11 @@ This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/ava
 
 - Notified VMs of peer versions on `Connected`.
 - Fixed acceptance broadcasting over IPC.
-- Fixed 32-bit architecture builds for AvalancheGo (not Coreth).
+- Fixed 32-bit architecture builds for PepecoinGo (not Coreth).
 
-## [v1.7.2](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.2)
+## [v1.7.2](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.2)
 
-This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.0). It is optional, but encouraged.
+This version is backwards compatible to [v1.7.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.0). It is optional, but encouraged.
 
 ### Coreth
 
@@ -1695,9 +1695,9 @@ This version is backwards compatible to [v1.7.0](https://github.com/ava-labs/ava
 
 - Fixed panic bug in logging library when importing from external projects.
 
-## [v1.7.1](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.1)
+## [v1.7.1](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.1)
 
-This update is backwards compatible with [v1.7.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.0). Please see the expected update times in the v1.7.0 release.
+This update is backwards compatible with [v1.7.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.0). Please see the expected update times in the v1.7.0 release.
 
 ### Coreth
 
@@ -1707,7 +1707,7 @@ This update is backwards compatible with [v1.7.0](https://github.com/ava-labs/av
 
 - Fixed vote bubbling for unverified block chits.
 
-## [v1.7.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.7.0)
+## [v1.7.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.7.0)
 
 This upgrade adds support for issuing multiple atomic transactions into a single block and directly transferring assets between the P-chain and the C-chain.
 
@@ -1743,9 +1743,9 @@ The changes in the upgrade go into effect at 1 PM EST, December 2nd 2021 on Main
 
 - Removed `--snow-epoch-first-transition` and `snow-epoch-duration` as command line arguments.
 
-## [v1.6.5](https://github.com/ava-labs/avalanchego/releases/tag/v1.6.5)
+## [v1.6.5](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.6.5)
 
-This version is backwards compatible to [v1.6.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.6.0). It is optional, but encouraged.
+This version is backwards compatible to [v1.6.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.6.0). It is optional, but encouraged.
 
 ### Bootstrapping
 
@@ -1754,7 +1754,7 @@ This version is backwards compatible to [v1.6.0](https://github.com/ava-labs/ava
 
 ### Metrics
 
-- Added `avalanche_{ChainID}_bootstrap_finished`, which is 1 if the chain is done bootstrapping, 0 otherwise.
+- Added `pepecoin_{ChainID}_bootstrap_finished`, which is 1 if the chain is done bootstrapping, 0 otherwise.
 
 ### APIs
 
@@ -1766,9 +1766,9 @@ This version is backwards compatible to [v1.6.0](https://github.com/ava-labs/ava
 - Added reported uptime to pong messages to be able to better track a local node's uptime as viewed by the network.
 - Refactored request timeout registry to avoid a potential race condition.
 
-## [v1.6.4](https://github.com/ava-labs/avalanchego/releases/tag/v1.6.4)
+## [v1.6.4](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.6.4)
 
-This version is backwards compatible to [v1.6.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.6.0). It is optional, but encouraged.
+This version is backwards compatible to [v1.6.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.6.0). It is optional, but encouraged.
 
 ### Config
 
@@ -1782,16 +1782,16 @@ This version is backwards compatible to [v1.6.0](https://github.com/ava-labs/ava
 
 ### Metrics
 
-- Updated `avalanche_{ChainID}_handler_gossip_{count,sum}` to `avalanche_{ChainID}_handler_gossip_request_{count,sum}`.
-- Updated `avalanche_{ChainID}_lat_get_accepted_{count,sum}` to `avalanche_{ChainID}_lat_accepted_{count,sum}`.
-- Updated `avalanche_{ChainID}_lat_get_accepted_frontier_{count,sum}` to `avalanche_{ChainID}_lat_accepted_frontier_{count,sum}`.
-- Updated `avalanche_{ChainID}_lat_get_ancestors_{count,sum}` to `avalanche_{ChainID}_lat_multi_put_{count,sum}`.
-- Combined `avalanche_{ChainID}_lat_pull_query_{count,sum}` and `avalanche_{ChainID}_lat_push_query_{count,sum}` to `avalanche_{ChainID}_lat_chits_{count,sum}`.
-- Added `avalanche_{ChainID}_app_response_{count,sum}`.
-- Added `avalanche_network_bandwidth_throttler_inbound_acquire_latency_{count,sum}`
-- Added `avalanche_network_bandwidth_throttler_inbound_awaiting_acquire`
-- Added `avalanche_P_vm_votes_won`
-- Added `avalanche_P_vm_votes_lost`
+- Updated `pepecoin_{ChainID}_handler_gossip_{count,sum}` to `pepecoin_{ChainID}_handler_gossip_request_{count,sum}`.
+- Updated `pepecoin_{ChainID}_lat_get_accepted_{count,sum}` to `pepecoin_{ChainID}_lat_accepted_{count,sum}`.
+- Updated `pepecoin_{ChainID}_lat_get_accepted_frontier_{count,sum}` to `pepecoin_{ChainID}_lat_accepted_frontier_{count,sum}`.
+- Updated `pepecoin_{ChainID}_lat_get_ancestors_{count,sum}` to `pepecoin_{ChainID}_lat_multi_put_{count,sum}`.
+- Combined `pepecoin_{ChainID}_lat_pull_query_{count,sum}` and `pepecoin_{ChainID}_lat_push_query_{count,sum}` to `pepecoin_{ChainID}_lat_chits_{count,sum}`.
+- Added `pepecoin_{ChainID}_app_response_{count,sum}`.
+- Added `pepecoin_network_bandwidth_throttler_inbound_acquire_latency_{count,sum}`
+- Added `pepecoin_network_bandwidth_throttler_inbound_awaiting_acquire`
+- Added `pepecoin_P_vm_votes_won`
+- Added `pepecoin_P_vm_votes_lost`
 
 ### Indexer
 
@@ -1810,9 +1810,9 @@ This version is backwards compatible to [v1.6.0](https://github.com/ava-labs/ava
 
 ---
 
-## [v1.6.3](https://github.com/ava-labs/avalanchego/releases/tag/v1.6.3)
+## [v1.6.3](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.6.3)
 
-This version is backwards compatible to [v1.6.0](https://github.com/ava-labs/avalanchego/releases/tag/v1.6.0). It is optional, but encouraged.
+This version is backwards compatible to [v1.6.0](https://github.com/memeticofficial/pepecoingo/releases/tag/v1.6.0). It is optional, but encouraged.
 
 ### Config Options
 
@@ -1822,22 +1822,22 @@ This version is backwards compatible to [v1.6.0](https://github.com/ava-labs/ava
 
 ### Metrics
 
-- Changed the behavior of `avalanche_network_buffer_throttler_inbound_awaiting_acquire` to only increment if the message is actually blocking.
-- Changed the behavior of `avalanche_network_byte_throttler_inbound_awaiting_acquire` to only increment if the message is actually blocking.
+- Changed the behavior of `pepecoin_network_buffer_throttler_inbound_awaiting_acquire` to only increment if the message is actually blocking.
+- Changed the behavior of `pepecoin_network_byte_throttler_inbound_awaiting_acquire` to only increment if the message is actually blocking.
 - Added `Block/Tx` metrics on `meterVM`s.
-  - Added `avalanche_{ChainID}_vm_metervm_build_block_err_{count,sum}`.
-  - Added `avalanche_{ChainID}_vm_metervm_parse_block_err_{count,sum}`.
-  - Added `avalanche_{ChainID}_vm_metervm_get_block_err_{count,sum}`.
-  - Added `avalanche_{ChainID}_vm_metervm_verify_{count,sum}`.
-  - Added `avalanche_{ChainID}_vm_metervm_verify_err_{count,sum}`.
-  - Added `avalanche_{ChainID}_vm_metervm_accept_{count,sum}`.
-  - Added `avalanche_{ChainID}_vm_metervm_reject_{count,sum}`.
-  - Added `avalanche_{DAGID}_vm_metervm_parse_tx_err_{count,sum}`.
-  - Added `avalanche_{DAGID}_vm_metervm_get_tx_err_{count,sum}`.
-  - Added `avalanche_{DAGID}_vm_metervm_verify_tx_{count,sum}`.
-  - Added `avalanche_{DAGID}_vm_metervm_verify_tx_err_{count,sum}`.
-  - Added `avalanche_{DAGID}_vm_metervm_accept_{count,sum}`.
-  - Added `avalanche_{DAGID}_vm_metervm_reject_{count,sum}`.
+  - Added `pepecoin_{ChainID}_vm_metervm_build_block_err_{count,sum}`.
+  - Added `pepecoin_{ChainID}_vm_metervm_parse_block_err_{count,sum}`.
+  - Added `pepecoin_{ChainID}_vm_metervm_get_block_err_{count,sum}`.
+  - Added `pepecoin_{ChainID}_vm_metervm_verify_{count,sum}`.
+  - Added `pepecoin_{ChainID}_vm_metervm_verify_err_{count,sum}`.
+  - Added `pepecoin_{ChainID}_vm_metervm_accept_{count,sum}`.
+  - Added `pepecoin_{ChainID}_vm_metervm_reject_{count,sum}`.
+  - Added `pepecoin_{DAGID}_vm_metervm_parse_tx_err_{count,sum}`.
+  - Added `pepecoin_{DAGID}_vm_metervm_get_tx_err_{count,sum}`.
+  - Added `pepecoin_{DAGID}_vm_metervm_verify_tx_{count,sum}`.
+  - Added `pepecoin_{DAGID}_vm_metervm_verify_tx_err_{count,sum}`.
+  - Added `pepecoin_{DAGID}_vm_metervm_accept_{count,sum}`.
+  - Added `pepecoin_{DAGID}_vm_metervm_reject_{count,sum}`.
 
 ### Coreth
 

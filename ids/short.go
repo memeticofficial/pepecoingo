@@ -9,9 +9,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/ava-labs/avalanchego/utils"
-	"github.com/ava-labs/avalanchego/utils/cb58"
-	"github.com/ava-labs/avalanchego/utils/hashing"
+	"github.com/memeticofficial/pepecoingo/utils"
+	"github.com/memeticofficial/pepecoingo/utils/cb58"
+	"github.com/memeticofficial/pepecoingo/utils/hashing"
 )
 
 // ShortEmpty is a useful all zero value

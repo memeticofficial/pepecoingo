@@ -8,7 +8,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ava-labs/avalanchego/proto/pb/p2p"
+	"github.com/memeticofficial/pepecoingo/proto/pb/p2p"
 )
 
 func TestEngineManager_Get(t *testing.T) {
@@ -16,7 +16,7 @@ func TestEngineManager_Get(t *testing.T) {
 		engineType p2p.EngineType
 	}
 
-	avalanche := &Engine{}
+	pepecoin := &Engine{}
 	snowman := &Engine{}
 
 	type expected struct {
@@ -38,12 +38,12 @@ func TestEngineManager_Get(t *testing.T) {
 			},
 		},
 		{
-			name: "request avalanche engine",
+			name: "request pepecoin engine",
 			args: args{
-				engineType: p2p.EngineType_ENGINE_TYPE_AVALANCHE,
+				engineType: p2p.EngineType_ENGINE_TYPE_PEPECOIN,
 			},
 			expected: expected{
-				engine: avalanche,
+				engine: pepecoin,
 			},
 		},
 		{
@@ -61,7 +61,7 @@ func TestEngineManager_Get(t *testing.T) {
 			r := require.New(t)
 
 			e := EngineManager{
-				Avalanche: avalanche,
+				Pepecoin: pepecoin,
 				Snowman:   snowman,
 			}
 

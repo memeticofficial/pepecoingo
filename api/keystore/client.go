@@ -6,14 +6,14 @@ package keystore
 import (
 	"context"
 
-	"github.com/ava-labs/avalanchego/api"
-	"github.com/ava-labs/avalanchego/utils/formatting"
-	"github.com/ava-labs/avalanchego/utils/rpc"
+	"github.com/memeticofficial/pepecoingo/api"
+	"github.com/memeticofficial/pepecoingo/utils/formatting"
+	"github.com/memeticofficial/pepecoingo/utils/rpc"
 )
 
 var _ Client = (*client)(nil)
 
-// Client interface for Avalanche Keystore API Endpoint
+// Client interface for Pepecoin Keystore API Endpoint
 //
 // Deprecated: The Keystore API is deprecated. Dedicated wallets should be used
 // instead.
@@ -29,7 +29,7 @@ type Client interface {
 	DeleteUser(context.Context, api.UserPass, ...rpc.Option) error
 }
 
-// Client implementation for Avalanche Keystore API Endpoint
+// Client implementation for Pepecoin Keystore API Endpoint
 type client struct {
 	requester rpc.EndpointRequester
 }

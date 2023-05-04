@@ -15,11 +15,11 @@ import (
 
 	"google.golang.org/protobuf/proto"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/proto/pb/p2p"
-	"github.com/ava-labs/avalanchego/staking"
-	"github.com/ava-labs/avalanchego/utils/compression"
-	"github.com/ava-labs/avalanchego/utils/logging"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/proto/pb/p2p"
+	"github.com/memeticofficial/pepecoingo/staking"
+	"github.com/memeticofficial/pepecoingo/utils/compression"
+	"github.com/memeticofficial/pepecoingo/utils/logging"
 )
 
 func TestMessage(t *testing.T) {
@@ -382,7 +382,7 @@ func TestMessage(t *testing.T) {
 						ChainId:    testID[:],
 						RequestId:  1,
 						Deadline:   1,
-						EngineType: p2p.EngineType_ENGINE_TYPE_AVALANCHE,
+						EngineType: p2p.EngineType_ENGINE_TYPE_PEPECOIN,
 					},
 				},
 			},
@@ -416,7 +416,7 @@ func TestMessage(t *testing.T) {
 						RequestId:    1,
 						Deadline:     1,
 						ContainerIds: [][]byte{testID[:], testID[:]},
-						EngineType:   p2p.EngineType_ENGINE_TYPE_AVALANCHE,
+						EngineType:   p2p.EngineType_ENGINE_TYPE_PEPECOIN,
 					},
 				},
 			},
@@ -450,7 +450,7 @@ func TestMessage(t *testing.T) {
 						RequestId:   1,
 						Deadline:    1,
 						ContainerId: testID[:],
-						EngineType:  p2p.EngineType_ENGINE_TYPE_AVALANCHE,
+						EngineType:  p2p.EngineType_ENGINE_TYPE_PEPECOIN,
 					},
 				},
 			},
@@ -516,7 +516,7 @@ func TestMessage(t *testing.T) {
 						RequestId:   1,
 						Deadline:    1,
 						ContainerId: testID[:],
-						EngineType:  p2p.EngineType_ENGINE_TYPE_AVALANCHE,
+						EngineType:  p2p.EngineType_ENGINE_TYPE_PEPECOIN,
 					},
 				},
 			},
@@ -533,7 +533,7 @@ func TestMessage(t *testing.T) {
 						ChainId:    testID[:],
 						RequestId:  1,
 						Container:  []byte{0},
-						EngineType: p2p.EngineType_ENGINE_TYPE_AVALANCHE,
+						EngineType: p2p.EngineType_ENGINE_TYPE_PEPECOIN,
 					},
 				},
 			},
@@ -550,7 +550,7 @@ func TestMessage(t *testing.T) {
 						ChainId:    testID[:],
 						RequestId:  1,
 						Container:  compressibleContainers[0],
-						EngineType: p2p.EngineType_ENGINE_TYPE_AVALANCHE,
+						EngineType: p2p.EngineType_ENGINE_TYPE_PEPECOIN,
 					},
 				},
 			},
@@ -567,7 +567,7 @@ func TestMessage(t *testing.T) {
 						ChainId:    testID[:],
 						RequestId:  1,
 						Container:  compressibleContainers[0],
-						EngineType: p2p.EngineType_ENGINE_TYPE_AVALANCHE,
+						EngineType: p2p.EngineType_ENGINE_TYPE_PEPECOIN,
 					},
 				},
 			},
@@ -585,7 +585,7 @@ func TestMessage(t *testing.T) {
 						RequestId:  1,
 						Deadline:   1,
 						Container:  []byte{0},
-						EngineType: p2p.EngineType_ENGINE_TYPE_AVALANCHE,
+						EngineType: p2p.EngineType_ENGINE_TYPE_PEPECOIN,
 					},
 				},
 			},
@@ -603,7 +603,7 @@ func TestMessage(t *testing.T) {
 						RequestId:  1,
 						Deadline:   1,
 						Container:  compressibleContainers[0],
-						EngineType: p2p.EngineType_ENGINE_TYPE_AVALANCHE,
+						EngineType: p2p.EngineType_ENGINE_TYPE_PEPECOIN,
 					},
 				},
 			},
@@ -621,7 +621,7 @@ func TestMessage(t *testing.T) {
 						RequestId:  1,
 						Deadline:   1,
 						Container:  compressibleContainers[0],
-						EngineType: p2p.EngineType_ENGINE_TYPE_AVALANCHE,
+						EngineType: p2p.EngineType_ENGINE_TYPE_PEPECOIN,
 					},
 				},
 			},
@@ -639,7 +639,7 @@ func TestMessage(t *testing.T) {
 						RequestId:   1,
 						Deadline:    1,
 						ContainerId: testID[:],
-						EngineType:  p2p.EngineType_ENGINE_TYPE_AVALANCHE,
+						EngineType:  p2p.EngineType_ENGINE_TYPE_PEPECOIN,
 					},
 				},
 			},

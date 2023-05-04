@@ -6,11 +6,11 @@ package gsharedmemory
 import (
 	"context"
 
-	"github.com/ava-labs/avalanchego/chains/atomic"
-	"github.com/ava-labs/avalanchego/database"
-	"github.com/ava-labs/avalanchego/ids"
+	"github.com/memeticofficial/pepecoingo/chains/atomic"
+	"github.com/memeticofficial/pepecoingo/database"
+	"github.com/memeticofficial/pepecoingo/ids"
 
-	sharedmemorypb "github.com/ava-labs/avalanchego/proto/pb/sharedmemory"
+	sharedmemorypb "github.com/memeticofficial/pepecoingo/proto/pb/sharedmemory"
 )
 
 var _ sharedmemorypb.SharedMemoryServer = (*Server)(nil)

@@ -9,7 +9,7 @@ import (
 	"errors"
 	"net"
 
-	"github.com/ava-labs/avalanchego/ids"
+	"github.com/memeticofficial/pepecoingo/ids"
 )
 
 var (

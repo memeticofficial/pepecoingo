@@ -5,16 +5,16 @@ set -o pipefail
 
 # e.g.,
 # ./scripts/build.sh
-# ./scripts/tests.e2e.sh ./build/avalanchego
+# ./scripts/tests.e2e.sh ./build/pepecoingo
 if ! [[ "$0" =~ scripts/tests.e2e.sh ]]; then
   echo "must be run from repository root"
   exit 255
 fi
 
-AVALANCHEGO_PATH="${1-}"
-if [[ -z "${AVALANCHEGO_PATH}" ]]; then
-  echo "Missing AVALANCHEGO_PATH argument!"
-  echo "Usage: ${0} [AVALANCHEGO_PATH]" >> /dev/stderr
+PEPECOINGO_PATH="${1-}"
+if [[ -z "${PEPECOINGO_PATH}" ]]; then
+  echo "Missing PEPECOINGO_PATH argument!"
+  echo "Usage: ${0} [PEPECOINGO_PATH]" >> /dev/stderr
   exit 255
 fi
 
@@ -28,24 +28,24 @@ export CGO_CFLAGS="-O -D__BLST_PORTABLE__"
 export CGO_ENABLED=1
 
 #################################
-# download avalanche-network-runner
-# https://github.com/ava-labs/avalanche-network-runner
-# TODO: migrate to upstream avalanche-network-runner
+# download pepecoin-network-runner
+# https://github.com/memeticofficial/pepecoin-network-runner
+# TODO: migrate to upstream pepecoin-network-runner
 GOARCH=$(go env GOARCH)
 GOOS=$(go env GOOS)
 NETWORK_RUNNER_VERSION=1.3.5-rc.0
-DOWNLOAD_PATH=/tmp/avalanche-network-runner.tar.gz
-DOWNLOAD_URL="https://github.com/ava-labs/avalanche-network-runner/releases/download/v${NETWORK_RUNNER_VERSION}/avalanche-network-runner_${NETWORK_RUNNER_VERSION}_${GOOS}_${GOARCH}.tar.gz"
+DOWNLOAD_PATH=/tmp/pepecoin-network-runner.tar.gz
+DOWNLOAD_URL="https://github.com/memeticofficial/pepecoin-network-runner/releases/download/v${NETWORK_RUNNER_VERSION}/pepecoin-network-runner_${NETWORK_RUNNER_VERSION}_${GOOS}_${GOARCH}.tar.gz"
 
 rm -f ${DOWNLOAD_PATH}
-rm -f /tmp/avalanche-network-runner
+rm -f /tmp/pepecoin-network-runner
 
-echo "downloading avalanche-network-runner ${NETWORK_RUNNER_VERSION} at ${DOWNLOAD_URL} to ${DOWNLOAD_PATH}"
+echo "downloading pepecoin-network-runner ${NETWORK_RUNNER_VERSION} at ${DOWNLOAD_URL} to ${DOWNLOAD_PATH}"
 curl --fail -L ${DOWNLOAD_URL} -o ${DOWNLOAD_PATH}
 
-echo "extracting downloaded avalanche-network-runner"
+echo "extracting downloaded pepecoin-network-runner"
 tar xzvf ${DOWNLOAD_PATH} -C /tmp
-/tmp/avalanche-network-runner -h
+/tmp/pepecoin-network-runner -h
 
 GOPATH="$(go env GOPATH)"
 PATH="${GOPATH}/bin:${PATH}"
@@ -58,9 +58,9 @@ ACK_GINKGO_RC=true ginkgo build ./tests/e2e
 ./tests/e2e/e2e.test --help
 
 #################################
-# run "avalanche-network-runner" server
-echo "launch avalanche-network-runner in the background"
-/tmp/avalanche-network-runner \
+# run "pepecoin-network-runner" server
+echo "launch pepecoin-network-runner in the background"
+/tmp/pepecoin-network-runner \
 server \
 --log-level debug \
 --port=":12342" \
@@ -68,13 +68,13 @@ server \
 PID=${!}
 
 #################################
-echo "running e2e tests against the local cluster with ${AVALANCHEGO_PATH}"
+echo "running e2e tests against the local cluster with ${PEPECOINGO_PATH}"
 ./tests/e2e/e2e.test \
 --ginkgo.v \
 --log-level debug \
 --network-runner-grpc-endpoint="0.0.0.0:12342" \
---network-runner-avalanchego-path=${AVALANCHEGO_PATH} \
---network-runner-avalanchego-log-level="WARN" \
+--network-runner-pepecoingo-path=${PEPECOINGO_PATH} \
+--network-runner-pepecoingo-log-level="WARN" \
 --test-keys-file=tests/test.insecure.secp256k1.keys \
 && EXIT_CODE=$? || EXIT_CODE=$?
 

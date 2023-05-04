@@ -8,22 +8,22 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils"
-	"github.com/ava-labs/avalanchego/utils/formatting"
-	"github.com/ava-labs/avalanchego/utils/formatting/address"
-	"github.com/ava-labs/avalanchego/utils/json"
-	"github.com/ava-labs/avalanchego/utils/math"
-	"github.com/ava-labs/avalanchego/vms/components/avax"
-	"github.com/ava-labs/avalanchego/vms/platformvm/genesis"
-	"github.com/ava-labs/avalanchego/vms/platformvm/signer"
-	"github.com/ava-labs/avalanchego/vms/platformvm/stakeable"
-	"github.com/ava-labs/avalanchego/vms/platformvm/txs"
-	"github.com/ava-labs/avalanchego/vms/platformvm/txs/txheap"
-	"github.com/ava-labs/avalanchego/vms/secp256k1fx"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/utils"
+	"github.com/memeticofficial/pepecoingo/utils/formatting"
+	"github.com/memeticofficial/pepecoingo/utils/formatting/address"
+	"github.com/memeticofficial/pepecoingo/utils/json"
+	"github.com/memeticofficial/pepecoingo/utils/math"
+	"github.com/memeticofficial/pepecoingo/vms/components/avax"
+	"github.com/memeticofficial/pepecoingo/vms/platformvm/genesis"
+	"github.com/memeticofficial/pepecoingo/vms/platformvm/signer"
+	"github.com/memeticofficial/pepecoingo/vms/platformvm/stakeable"
+	"github.com/memeticofficial/pepecoingo/vms/platformvm/txs"
+	"github.com/memeticofficial/pepecoingo/vms/platformvm/txs/txheap"
+	"github.com/memeticofficial/pepecoingo/vms/secp256k1fx"
 )
 
-// Note that since an Avalanche network has exactly one Platform Chain,
+// Note that since an Pepecoin network has exactly one Platform Chain,
 // and the Platform Chain defines the genesis state of the network
 // (who is staking, which chains exist, etc.), defining the genesis
 // state of the Platform Chain is the same as defining the genesis
@@ -196,7 +196,7 @@ func bech32ToID(addrStr string) (ids.ShortID, error) {
 	return ids.ToShortID(addrBytes)
 }
 
-// BuildGenesis build the genesis state of the Platform Chain (and thereby the Avalanche network.)
+// BuildGenesis build the genesis state of the Platform Chain (and thereby the Pepecoin network.)
 func (*StaticService) BuildGenesis(_ *http.Request, args *BuildGenesisArgs, reply *BuildGenesisReply) error {
 	// Specify the UTXOs on the Platform chain that exist at genesis.
 	utxos := make([]*genesis.UTXO, 0, len(args.UTXOs))

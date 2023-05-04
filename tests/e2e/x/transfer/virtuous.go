@@ -14,23 +14,23 @@ import (
 
 	ginkgo "github.com/onsi/ginkgo/v2"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/snow/choices"
-	"github.com/ava-labs/avalanchego/tests"
-	"github.com/ava-labs/avalanchego/tests/e2e"
-	"github.com/ava-labs/avalanchego/utils/set"
-	"github.com/ava-labs/avalanchego/vms/avm"
-	"github.com/ava-labs/avalanchego/vms/components/avax"
-	"github.com/ava-labs/avalanchego/vms/secp256k1fx"
-	"github.com/ava-labs/avalanchego/wallet/subnet/primary"
-	"github.com/ava-labs/avalanchego/wallet/subnet/primary/common"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/snow/choices"
+	"github.com/memeticofficial/pepecoingo/tests"
+	"github.com/memeticofficial/pepecoingo/tests/e2e"
+	"github.com/memeticofficial/pepecoingo/utils/set"
+	"github.com/memeticofficial/pepecoingo/vms/avm"
+	"github.com/memeticofficial/pepecoingo/vms/components/avax"
+	"github.com/memeticofficial/pepecoingo/vms/secp256k1fx"
+	"github.com/memeticofficial/pepecoingo/wallet/subnet/primary"
+	"github.com/memeticofficial/pepecoingo/wallet/subnet/primary/common"
 )
 
 const (
 	totalRounds = 50
 
-	metricBlksProcessing = "avalanche_X_blks_processing"
-	metricBlksAccepted   = "avalanche_X_blks_accepted_count"
+	metricBlksProcessing = "pepecoin_X_blks_processing"
+	metricBlksAccepted   = "pepecoin_X_blks_accepted_count"
 )
 
 var _ = e2e.DescribeXChain("[Virtuous Transfer Tx AVAX]", func() {

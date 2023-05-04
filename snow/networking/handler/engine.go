@@ -4,9 +4,9 @@
 package handler
 
 import (
-	"github.com/ava-labs/avalanchego/proto/pb/p2p"
-	"github.com/ava-labs/avalanchego/snow"
-	"github.com/ava-labs/avalanchego/snow/engine/common"
+	"github.com/memeticofficial/pepecoingo/proto/pb/p2p"
+	"github.com/memeticofficial/pepecoingo/snow"
+	"github.com/memeticofficial/pepecoingo/snow/engine/common"
 )
 
 // Engine is a wrapper around a consensus engine's components.
@@ -37,7 +37,7 @@ func (e *Engine) Get(state snow.State) (common.Engine, bool) {
 // EngineManager resolves the engine that should be used given the current
 // execution context of the chain.
 type EngineManager struct {
-	Avalanche *Engine
+	Pepecoin *Engine
 	Snowman   *Engine
 }
 
@@ -45,8 +45,8 @@ type EngineManager struct {
 // If an engine type is not specified, the initial engine type is returned.
 func (e *EngineManager) Get(engineType p2p.EngineType) *Engine {
 	switch engineType {
-	case p2p.EngineType_ENGINE_TYPE_AVALANCHE:
-		return e.Avalanche
+	case p2p.EngineType_ENGINE_TYPE_PEPECOIN:
+		return e.Pepecoin
 	case p2p.EngineType_ENGINE_TYPE_SNOWMAN:
 		return e.Snowman
 	default:

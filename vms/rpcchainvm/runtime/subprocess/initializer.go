@@ -8,8 +8,8 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/ava-labs/avalanchego/version"
-	"github.com/ava-labs/avalanchego/vms/rpcchainvm/runtime"
+	"github.com/memeticofficial/pepecoingo/version"
+	"github.com/memeticofficial/pepecoingo/vms/rpcchainvm/runtime"
 )
 
 var _ runtime.Initializer = (*initializer)(nil)
@@ -35,7 +35,7 @@ func (i *initializer) Initialize(_ context.Context, protocolVersion uint, vmAddr
 	i.once.Do(func() {
 		if version.RPCChainVMProtocol != protocolVersion {
 			i.err = fmt.Errorf(
-				"%w avalanchego: %d, vm: %d",
+				"%w pepecoingo: %d, vm: %d",
 				runtime.ErrProtocolVersionMismatch,
 				version.RPCChainVMProtocol,
 				protocolVersion,

@@ -11,7 +11,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ava-labs/avalanchego/utils/math"
+	"github.com/memeticofficial/pepecoingo/utils/math"
 )
 
 var (

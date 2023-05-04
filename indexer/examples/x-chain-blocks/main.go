@@ -9,10 +9,10 @@ import (
 	"log"
 	"time"
 
-	"github.com/ava-labs/avalanchego/indexer"
-	"github.com/ava-labs/avalanchego/vms/proposervm/block"
-	"github.com/ava-labs/avalanchego/wallet/chain/x"
-	"github.com/ava-labs/avalanchego/wallet/subnet/primary"
+	"github.com/memeticofficial/pepecoingo/indexer"
+	"github.com/memeticofficial/pepecoingo/vms/proposervm/block"
+	"github.com/memeticofficial/pepecoingo/wallet/chain/x"
+	"github.com/memeticofficial/pepecoingo/wallet/subnet/primary"
 )
 
 // This example program continuously polls for the next X-Chain block

@@ -12,9 +12,9 @@ import (
 
 	"golang.org/x/term"
 
-	"github.com/ava-labs/avalanchego/app"
-	"github.com/ava-labs/avalanchego/config"
-	"github.com/ava-labs/avalanchego/version"
+	"github.com/memeticofficial/pepecoingo/app"
+	"github.com/memeticofficial/pepecoingo/config"
+	"github.com/memeticofficial/pepecoingo/version"
 )
 
 func main() {

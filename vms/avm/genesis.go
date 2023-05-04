@@ -4,8 +4,8 @@
 package avm
 
 import (
-	"github.com/ava-labs/avalanchego/utils"
-	"github.com/ava-labs/avalanchego/vms/avm/txs"
+	"github.com/memeticofficial/pepecoingo/utils"
+	"github.com/memeticofficial/pepecoingo/vms/avm/txs"
 )
 
 var _ utils.Sortable[*GenesisAsset] = (*GenesisAsset)(nil)

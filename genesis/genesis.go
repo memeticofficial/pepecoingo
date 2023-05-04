@@ -8,23 +8,23 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils"
-	"github.com/ava-labs/avalanchego/utils/constants"
-	"github.com/ava-labs/avalanchego/utils/formatting"
-	"github.com/ava-labs/avalanchego/utils/formatting/address"
-	"github.com/ava-labs/avalanchego/utils/json"
-	"github.com/ava-labs/avalanchego/utils/set"
-	"github.com/ava-labs/avalanchego/vms/avm"
-	"github.com/ava-labs/avalanchego/vms/avm/fxs"
-	"github.com/ava-labs/avalanchego/vms/nftfx"
-	"github.com/ava-labs/avalanchego/vms/platformvm/api"
-	"github.com/ava-labs/avalanchego/vms/platformvm/genesis"
-	"github.com/ava-labs/avalanchego/vms/propertyfx"
-	"github.com/ava-labs/avalanchego/vms/secp256k1fx"
+	"github.com/memeticofficial/pepecoingo/ids"
+	"github.com/memeticofficial/pepecoingo/utils"
+	"github.com/memeticofficial/pepecoingo/utils/constants"
+	"github.com/memeticofficial/pepecoingo/utils/formatting"
+	"github.com/memeticofficial/pepecoingo/utils/formatting/address"
+	"github.com/memeticofficial/pepecoingo/utils/json"
+	"github.com/memeticofficial/pepecoingo/utils/set"
+	"github.com/memeticofficial/pepecoingo/vms/avm"
+	"github.com/memeticofficial/pepecoingo/vms/avm/fxs"
+	"github.com/memeticofficial/pepecoingo/vms/nftfx"
+	"github.com/memeticofficial/pepecoingo/vms/platformvm/api"
+	"github.com/memeticofficial/pepecoingo/vms/platformvm/genesis"
+	"github.com/memeticofficial/pepecoingo/vms/propertyfx"
+	"github.com/memeticofficial/pepecoingo/vms/secp256k1fx"
 
-	xchaintxs "github.com/ava-labs/avalanchego/vms/avm/txs"
-	pchaintxs "github.com/ava-labs/avalanchego/vms/platformvm/txs"
+	xchaintxs "github.com/memeticofficial/pepecoingo/vms/avm/txs"
+	pchaintxs "github.com/memeticofficial/pepecoingo/vms/platformvm/txs"
 )
 
 const (
@@ -182,7 +182,7 @@ func validateConfig(networkID uint32, config *Config, stakingCfg *StakingConfig)
 
 // FromFile returns the genesis data of the Platform Chain.
 //
-// Since an Avalanche network has exactly one Platform Chain, and the Platform
+// Since an Pepecoin network has exactly one Platform Chain, and the Platform
 // Chain defines the genesis state of the network (who is staking, which chains
 // exist, etc.), defining the genesis state of the Platform Chain is the same as
 // defining the genesis state of the network.
@@ -224,7 +224,7 @@ func FromFile(networkID uint32, filepath string, stakingCfg *StakingConfig) ([]b
 
 // FromFlag returns the genesis data of the Platform Chain.
 //
-// Since an Avalanche network has exactly one Platform Chain, and the Platform
+// Since an Pepecoin network has exactly one Platform Chain, and the Platform
 // Chain defines the genesis state of the network (who is staking, which chains
 // exist, etc.), defining the genesis state of the Platform Chain is the same as
 // defining the genesis state of the network.
@@ -281,7 +281,7 @@ func FromConfig(config *Config) ([]byte, ids.ID, error) {
 	}
 	{
 		avax := avm.AssetDefinition{
-			Name:         "Avalanche",
+			Name:         "Pepecoin",
 			Symbol:       "AVAX",
 			Denomination: 9,
 			InitialState: map[string][]interface{}{},

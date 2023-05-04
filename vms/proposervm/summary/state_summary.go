@@ -4,7 +4,7 @@
 package summary
 
 import (
-	"github.com/ava-labs/avalanchego/ids"
+	"github.com/memeticofficial/pepecoingo/ids"
 )
 
 var _ StateSummary = (*stateSummary)(nil)

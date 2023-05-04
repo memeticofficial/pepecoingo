@@ -6,7 +6,7 @@ package validators
 import (
 	"context"
 
-	"github.com/ava-labs/avalanchego/ids"
+	"github.com/memeticofficial/pepecoingo/ids"
 )
 
 // SubnetConnector represents a handler that is called when a connection is

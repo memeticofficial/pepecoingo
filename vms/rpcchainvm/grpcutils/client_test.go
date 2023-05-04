@@ -16,10 +16,10 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ava-labs/avalanchego/database/memdb"
-	"github.com/ava-labs/avalanchego/database/rpcdb"
+	"github.com/memeticofficial/pepecoingo/database/memdb"
+	"github.com/memeticofficial/pepecoingo/database/rpcdb"
 
-	pb "github.com/ava-labs/avalanchego/proto/pb/rpcdb"
+	pb "github.com/memeticofficial/pepecoingo/proto/pb/rpcdb"
 )
 
 func TestDialOptsSmoke(t *testing.T) {

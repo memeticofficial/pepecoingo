@@ -9,10 +9,10 @@ coreth_path=''
 evm_path=''
 
 # Directory above this script
-AVALANCHE_PATH=$( cd "$( dirname "${BASH_SOURCE[0]}" )"; cd .. && pwd )
+PEPECOIN_PATH=$( cd "$( dirname "${BASH_SOURCE[0]}" )"; cd .. && pwd )
 
 # Load the constants
-source "$AVALANCHE_PATH"/scripts/constants.sh
+source "$PEPECOIN_PATH"/scripts/constants.sh
 
 print_usage() {
   printf "Usage: build_coreth [OPTIONS]
@@ -44,15 +44,15 @@ if [[ -z $coreth_path ]] || [[ -z $evm_path ]]; then
 fi
 
 if [[ ! -d "$coreth_path" ]]; then
-  go get "github.com/ava-labs/coreth@$coreth_version"
+  go get "github.com/memeticofficial/coreth@$coreth_version"
 fi
 
 # Build Coreth
 build_args="$race"
 echo "Building Coreth @ ${coreth_version} ..."
 cd "$coreth_path"
-go build $build_args -ldflags "-X github.com/ava-labs/coreth/plugin/evm.Version=$coreth_version $static_ld_flags" -o "$evm_path" "plugin/"*.go
-cd "$AVALANCHE_PATH"
+go build $build_args -ldflags "-X github.com/memeticofficial/coreth/plugin/evm.Version=$coreth_version $static_ld_flags" -o "$evm_path" "plugin/"*.go
+cd "$PEPECOIN_PATH"
 
 # Building coreth + using go get can mess with the go.mod file.
 go mod tidy -compat=1.19

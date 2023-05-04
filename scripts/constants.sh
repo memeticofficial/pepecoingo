@@ -3,28 +3,28 @@
 # Use lower_case variables in the scripts and UPPER_CASE variables for override
 # Use the constants.sh for env overrides
 
-AVALANCHE_PATH=$( cd "$( dirname "${BASH_SOURCE[0]}" )"; cd .. && pwd ) # Directory above this script
+PEPECOIN_PATH=$( cd "$( dirname "${BASH_SOURCE[0]}" )"; cd .. && pwd ) # Directory above this script
 
-# Where AvalancheGo binary goes
-avalanchego_path="$AVALANCHE_PATH/build/avalanchego"
-plugin_dir=${PLUGIN_DIR:-$HOME/.avalanchego/plugins}
+# Where PepecoinGo binary goes
+pepecoingo_path="$PEPECOIN_PATH/build/pepecoingo"
+plugin_dir=${PLUGIN_DIR:-$HOME/.pepecoingo/plugins}
 evm_path=${EVM_PATH:-$plugin_dir/evm}
 coreth_version=${CORETH_VERSION:-'v0.12.1-rc.0'}
 
 # Set the PATHS
 GOPATH="$(go env GOPATH)"
-coreth_path=${CORETH_PATH:-"$GOPATH/pkg/mod/github.com/ava-labs/coreth@$coreth_version"}
+coreth_path=${CORETH_PATH:-"$GOPATH/pkg/mod/github.com/memeticofficial/coreth@$coreth_version"}
 
 # Avalabs docker hub
-# avaplatform/avalanchego - defaults to local as to avoid unintentional pushes
-# You should probably set it - export DOCKER_REPO='avaplatform/avalanchego'
-avalanchego_dockerhub_repo=${DOCKER_REPO:-"avalanchego"}
+# avaplatform/pepecoingo - defaults to local as to avoid unintentional pushes
+# You should probably set it - export DOCKER_REPO='avaplatform/pepecoingo'
+pepecoingo_dockerhub_repo=${DOCKER_REPO:-"pepecoingo"}
 
 # Current branch
 # TODO: fix "fatal: No names found, cannot describe anything" in github CI
 current_branch=$(git symbolic-ref -q --short HEAD || git describe --tags --exact-match || true)
 
-git_commit=${AVALANCHEGO_COMMIT:-$( git rev-list -1 HEAD )}
+git_commit=${PEPECOINGO_COMMIT:-$( git rev-list -1 HEAD )}
 
 # Static compilation
 static_ld_flags=''
